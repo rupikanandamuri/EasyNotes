@@ -46,26 +46,36 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func addWorkButtonClicked(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! DisplayNotesWithinTableViewController
-        nextViewController.tagColor = workView.backgroundColor
-        nextViewController.tagType = "work"
-        self.navigationController?.pushViewController(nextViewController, animated: true)
+       showTableController("work")
     }
   
     @IBAction func addTemporaryButtonClicked(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! DisplayNotesWithinTableViewController
-         nextViewController.tagColor = temporaryView.backgroundColor
-         nextViewController.tagType = "temporary"
-        self.navigationController?.pushViewController(nextViewController, animated: true)
+        showTableController("temporary")
     }
     @IBAction func addImportantButtonClicked(){
+         showTableController("important")
+    }
+    
+    
+    func showTableController(_ tag : String){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! DisplayNotesWithinTableViewController
-         nextViewController.tagColor = importantView.backgroundColor
-         nextViewController.tagType = "important"
+        nextViewController.tagColor = getColorForTag(tag)
+        nextViewController.tagType = tag
         self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    func getColorForTag(_ tag : String) -> UIColor?{
+        switch tag {
+        case "temporary":
+                 return temporaryView.backgroundColor
+        case "important":
+            return importantView.backgroundColor
+        case "work":
+            return workView.backgroundColor
+        default:
+           return  UIColor.white
+        }
     }
     
     
