@@ -4,6 +4,15 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Exo2-Black.ttf</string>
+		<string>Exo2-BlackItalic.ttf</string>
+		<string>Exo2-Bold.ttf</string>
+		<string>Exo2-BoldItalic.ttf</string>
+		<string>Exo2-SemiBoldItalic.ttf</string>
+		<string>Ex02-SemiBold</string>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

@@ -7,15 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1D62B823021D04005BA869 /* ChoosePersonPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1D62B723021D04005BA869 /* ChoosePersonPassViewController.swift */; };
+		0B2A370C23031DDF003A23CD /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A370B23031DDF003A23CD /* DashboardViewController.swift */; };
+		0B5ED43F2301CC8500169397 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5ED43E2301CC8500169397 /* SecondViewController.swift */; };
+		0B5ED4412301E8B800169397 /* PersonalPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5ED4402301E8B800169397 /* PersonalPasswordViewController.swift */; };
 		0B8F647B2301A46C00120B0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F647A2301A46C00120B0B /* AppDelegate.swift */; };
 		0B8F647D2301A46C00120B0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F647C2301A46C00120B0B /* ViewController.swift */; };
 		0B8F64802301A46C00120B0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F647E2301A46C00120B0B /* Main.storyboard */; };
 		0B8F64832301A46C00120B0B /* EasyNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F64812301A46C00120B0B /* EasyNotes.xcdatamodeld */; };
 		0B8F64852301A47100120B0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64842301A47100120B0B /* Assets.xcassets */; };
 		0B8F64882301A47100120B0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64862301A47100120B0B /* LaunchScreen.storyboard */; };
+		0B8F64A52301AC8900120B0B /* Exo2-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64922301AC8600120B0B /* Exo2-ExtraLightItalic.ttf */; };
+		0B8F64A62301AC8900120B0B /* Exo2-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64932301AC8600120B0B /* Exo2-LightItalic.ttf */; };
+		0B8F64A72301AC8900120B0B /* Exo2-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64942301AC8700120B0B /* Exo2-ThinItalic.ttf */; };
+		0B8F64A82301AC8900120B0B /* Exo2-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64952301AC8700120B0B /* Exo2-SemiBold.ttf */; };
+		0B8F64A92301AC8900120B0B /* Exo2-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64962301AC8700120B0B /* Exo2-RegularItalic.ttf */; };
+		0B8F64AA2301AC8900120B0B /* Exo2-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64972301AC8700120B0B /* Exo2-BlackItalic.ttf */; };
+		0B8F64AB2301AC8900120B0B /* Exo2-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64982301AC8700120B0B /* Exo2-ExtraBoldItalic.ttf */; };
+		0B8F64AC2301AC8900120B0B /* Exo2-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64992301AC8700120B0B /* Exo2-BoldItalic.ttf */; };
+		0B8F64AD2301AC8900120B0B /* Exo2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F649A2301AC8700120B0B /* Exo2-Regular.ttf */; };
+		0B8F64AE2301AC8900120B0B /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F649B2301AC8700120B0B /* OFL.txt */; };
+		0B8F64AF2301AC8900120B0B /* Exo2-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F649C2301AC8700120B0B /* Exo2-ExtraLight.ttf */; };
+		0B8F64B02301AC8900120B0B /* Exo2-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F649D2301AC8800120B0B /* Exo2-Medium.ttf */; };
+		0B8F64B12301AC8900120B0B /* Exo2-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F649E2301AC8800120B0B /* Exo2-Light.ttf */; };
+		0B8F64B22301AC8900120B0B /* Exo2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F649F2301AC8800120B0B /* Exo2-Bold.ttf */; };
+		0B8F64B32301AC8900120B0B /* Exo2-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64A02301AC8800120B0B /* Exo2-Black.ttf */; };
+		0B8F64B42301AC8900120B0B /* Exo2-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64A12301AC8800120B0B /* Exo2-Thin.ttf */; };
+		0B8F64B52301AC8900120B0B /* Exo2-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64A22301AC8800120B0B /* Exo2-ExtraBold.ttf */; };
+		0B8F64B62301AC8900120B0B /* Exo2-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64A32301AC8900120B0B /* Exo2-SemiBoldItalic.ttf */; };
+		0B8F64B72301AC8900120B0B /* Exo2-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64A42301AC8900120B0B /* Exo2-MediumItalic.ttf */; };
+		0B9446AA230C51B200C1C843 /* DisplayNotesInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9446A8230C51B200C1C843 /* DisplayNotesInTableViewCell.swift */; };
+		0B9446AB230C51B200C1C843 /* DisplayNotesInTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B9446A9230C51B200C1C843 /* DisplayNotesInTableViewCell.xib */; };
+		0B9446AD230C522A00C1C843 /* DisplayNotesWithinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9446AC230C522A00C1C843 /* DisplayNotesWithinTableViewController.swift */; };
+		0B9446AF230C55BE00C1C843 /* Produtc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9446AE230C55BE00C1C843 /* Produtc.swift */; };
+		0B9CA643230C486B00569197 /* Dashboard2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9CA642230C486B00569197 /* Dashboard2ViewController.swift */; };
+		DBAA53D691C2B91603BA77FE /* Pods_EasyNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C4980F6FB6A1844D065564 /* Pods_EasyNotes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1D62B723021D04005BA869 /* ChoosePersonPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePersonPassViewController.swift; sourceTree = "<group>"; };
+		0B2A370B23031DDF003A23CD /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		0B5ED43E2301CC8500169397 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		0B5ED4402301E8B800169397 /* PersonalPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPasswordViewController.swift; sourceTree = "<group>"; };
 		0B8F64772301A46C00120B0B /* EasyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8F647A2301A46C00120B0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B8F647C2301A46C00120B0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +57,33 @@
 		0B8F64842301A47100120B0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B8F64872301A47100120B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B8F64892301A47100120B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B8F64922301AC8600120B0B /* Exo2-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		0B8F64932301AC8600120B0B /* Exo2-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-LightItalic.ttf"; sourceTree = "<group>"; };
+		0B8F64942301AC8700120B0B /* Exo2-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-ThinItalic.ttf"; sourceTree = "<group>"; };
+		0B8F64952301AC8700120B0B /* Exo2-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-SemiBold.ttf"; sourceTree = "<group>"; };
+		0B8F64962301AC8700120B0B /* Exo2-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-RegularItalic.ttf"; sourceTree = "<group>"; };
+		0B8F64972301AC8700120B0B /* Exo2-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-BlackItalic.ttf"; sourceTree = "<group>"; };
+		0B8F64982301AC8700120B0B /* Exo2-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		0B8F64992301AC8700120B0B /* Exo2-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-BoldItalic.ttf"; sourceTree = "<group>"; };
+		0B8F649A2301AC8700120B0B /* Exo2-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Regular.ttf"; sourceTree = "<group>"; };
+		0B8F649B2301AC8700120B0B /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		0B8F649C2301AC8700120B0B /* Exo2-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-ExtraLight.ttf"; sourceTree = "<group>"; };
+		0B8F649D2301AC8800120B0B /* Exo2-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Medium.ttf"; sourceTree = "<group>"; };
+		0B8F649E2301AC8800120B0B /* Exo2-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Light.ttf"; sourceTree = "<group>"; };
+		0B8F649F2301AC8800120B0B /* Exo2-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Bold.ttf"; sourceTree = "<group>"; };
+		0B8F64A02301AC8800120B0B /* Exo2-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Black.ttf"; sourceTree = "<group>"; };
+		0B8F64A12301AC8800120B0B /* Exo2-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Thin.ttf"; sourceTree = "<group>"; };
+		0B8F64A22301AC8800120B0B /* Exo2-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0B8F64A32301AC8900120B0B /* Exo2-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		0B8F64A42301AC8900120B0B /* Exo2-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-MediumItalic.ttf"; sourceTree = "<group>"; };
+		0B9446A8230C51B200C1C843 /* DisplayNotesInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayNotesInTableViewCell.swift; sourceTree = "<group>"; };
+		0B9446A9230C51B200C1C843 /* DisplayNotesInTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayNotesInTableViewCell.xib; sourceTree = "<group>"; };
+		0B9446AC230C522A00C1C843 /* DisplayNotesWithinTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayNotesWithinTableViewController.swift; sourceTree = "<group>"; };
+		0B9446AE230C55BE00C1C843 /* Produtc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produtc.swift; sourceTree = "<group>"; };
+		0B9CA642230C486B00569197 /* Dashboard2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard2ViewController.swift; sourceTree = "<group>"; };
+		3B811C456D4D073DA0B24958 /* Pods-EasyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNotes.release.xcconfig"; path = "Target Support Files/Pods-EasyNotes/Pods-EasyNotes.release.xcconfig"; sourceTree = "<group>"; };
+		A7C4980F6FB6A1844D065564 /* Pods_EasyNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF496C72655D271244CC918C /* Pods-EasyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNotes.debug.xcconfig"; path = "Target Support Files/Pods-EasyNotes/Pods-EasyNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBAA53D691C2B91603BA77FE /* Pods_EasyNotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +103,9 @@
 			children = (
 				0B8F64792301A46C00120B0B /* EasyNotes */,
 				0B8F64782301A46C00120B0B /* Products */,
+				0B8F64912301AC5A00120B0B /* Resources */,
+				BE573B3FBAF1D20AC9FECA90 /* Pods */,
+				F567D47FADFCB078F4063976 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +123,64 @@
 				0B8F647A2301A46C00120B0B /* AppDelegate.swift */,
 				0B8F647C2301A46C00120B0B /* ViewController.swift */,
 				0B8F647E2301A46C00120B0B /* Main.storyboard */,
+				0B5ED43E2301CC8500169397 /* SecondViewController.swift */,
+				0B5ED4402301E8B800169397 /* PersonalPasswordViewController.swift */,
+				0B1D62B723021D04005BA869 /* ChoosePersonPassViewController.swift */,
+				0B2A370B23031DDF003A23CD /* DashboardViewController.swift */,
+				0B9CA642230C486B00569197 /* Dashboard2ViewController.swift */,
+				0B9446AC230C522A00C1C843 /* DisplayNotesWithinTableViewController.swift */,
+				0B9446A8230C51B200C1C843 /* DisplayNotesInTableViewCell.swift */,
+				0B9446A9230C51B200C1C843 /* DisplayNotesInTableViewCell.xib */,
+				0B9446AE230C55BE00C1C843 /* Produtc.swift */,
 				0B8F64842301A47100120B0B /* Assets.xcassets */,
 				0B8F64862301A47100120B0B /* LaunchScreen.storyboard */,
 				0B8F64892301A47100120B0B /* Info.plist */,
 				0B8F64812301A46C00120B0B /* EasyNotes.xcdatamodeld */,
 			);
 			path = EasyNotes;
+			sourceTree = "<group>";
+		};
+		0B8F64912301AC5A00120B0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0B8F64A02301AC8800120B0B /* Exo2-Black.ttf */,
+				0B8F64972301AC8700120B0B /* Exo2-BlackItalic.ttf */,
+				0B8F649F2301AC8800120B0B /* Exo2-Bold.ttf */,
+				0B8F64992301AC8700120B0B /* Exo2-BoldItalic.ttf */,
+				0B8F64A22301AC8800120B0B /* Exo2-ExtraBold.ttf */,
+				0B8F64982301AC8700120B0B /* Exo2-ExtraBoldItalic.ttf */,
+				0B8F649C2301AC8700120B0B /* Exo2-ExtraLight.ttf */,
+				0B8F64922301AC8600120B0B /* Exo2-ExtraLightItalic.ttf */,
+				0B8F649E2301AC8800120B0B /* Exo2-Light.ttf */,
+				0B8F64932301AC8600120B0B /* Exo2-LightItalic.ttf */,
+				0B8F649D2301AC8800120B0B /* Exo2-Medium.ttf */,
+				0B8F64A42301AC8900120B0B /* Exo2-MediumItalic.ttf */,
+				0B8F649A2301AC8700120B0B /* Exo2-Regular.ttf */,
+				0B8F64962301AC8700120B0B /* Exo2-RegularItalic.ttf */,
+				0B8F64952301AC8700120B0B /* Exo2-SemiBold.ttf */,
+				0B8F64A32301AC8900120B0B /* Exo2-SemiBoldItalic.ttf */,
+				0B8F64A12301AC8800120B0B /* Exo2-Thin.ttf */,
+				0B8F64942301AC8700120B0B /* Exo2-ThinItalic.ttf */,
+				0B8F649B2301AC8700120B0B /* OFL.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE573B3FBAF1D20AC9FECA90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF496C72655D271244CC918C /* Pods-EasyNotes.debug.xcconfig */,
+				3B811C456D4D073DA0B24958 /* Pods-EasyNotes.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F567D47FADFCB078F4063976 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7C4980F6FB6A1844D065564 /* Pods_EasyNotes.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B8F648C2301A47100120B0B /* Build configuration list for PBXNativeTarget "EasyNotes" */;
 			buildPhases = (
+				BF566A4F13AD018D272B15CD /* [CP] Check Pods Manifest.lock */,
 				0B8F64732301A46C00120B0B /* Sources */,
 				0B8F64742301A46C00120B0B /* Frameworks */,
 				0B8F64752301A46C00120B0B /* Resources */,
+				530D7AD11359EC640F9F412D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,21 +243,98 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B8F64B32301AC8900120B0B /* Exo2-Black.ttf in Resources */,
+				0B8F64AB2301AC8900120B0B /* Exo2-ExtraBoldItalic.ttf in Resources */,
+				0B8F64B52301AC8900120B0B /* Exo2-ExtraBold.ttf in Resources */,
 				0B8F64882301A47100120B0B /* LaunchScreen.storyboard in Resources */,
+				0B8F64A62301AC8900120B0B /* Exo2-LightItalic.ttf in Resources */,
 				0B8F64852301A47100120B0B /* Assets.xcassets in Resources */,
+				0B8F64AA2301AC8900120B0B /* Exo2-BlackItalic.ttf in Resources */,
+				0B8F64AD2301AC8900120B0B /* Exo2-Regular.ttf in Resources */,
+				0B8F64AC2301AC8900120B0B /* Exo2-BoldItalic.ttf in Resources */,
+				0B8F64B22301AC8900120B0B /* Exo2-Bold.ttf in Resources */,
+				0B8F64A52301AC8900120B0B /* Exo2-ExtraLightItalic.ttf in Resources */,
+				0B8F64AF2301AC8900120B0B /* Exo2-ExtraLight.ttf in Resources */,
+				0B8F64AE2301AC8900120B0B /* OFL.txt in Resources */,
 				0B8F64802301A46C00120B0B /* Main.storyboard in Resources */,
+				0B8F64A92301AC8900120B0B /* Exo2-RegularItalic.ttf in Resources */,
+				0B8F64A72301AC8900120B0B /* Exo2-ThinItalic.ttf in Resources */,
+				0B9446AB230C51B200C1C843 /* DisplayNotesInTableViewCell.xib in Resources */,
+				0B8F64B12301AC8900120B0B /* Exo2-Light.ttf in Resources */,
+				0B8F64B02301AC8900120B0B /* Exo2-Medium.ttf in Resources */,
+				0B8F64B62301AC8900120B0B /* Exo2-SemiBoldItalic.ttf in Resources */,
+				0B8F64B42301AC8900120B0B /* Exo2-Thin.ttf in Resources */,
+				0B8F64A82301AC8900120B0B /* Exo2-SemiBold.ttf in Resources */,
+				0B8F64B72301AC8900120B0B /* Exo2-MediumItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		530D7AD11359EC640F9F412D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyNotes/Pods-EasyNotes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyNotes/Pods-EasyNotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF566A4F13AD018D272B15CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyNotes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B8F64732301A46C00120B0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B5ED43F2301CC8500169397 /* SecondViewController.swift in Sources */,
+				0B9446AA230C51B200C1C843 /* DisplayNotesInTableViewCell.swift in Sources */,
+				0B2A370C23031DDF003A23CD /* DashboardViewController.swift in Sources */,
+				0B9446AD230C522A00C1C843 /* DisplayNotesWithinTableViewController.swift in Sources */,
+				0B9CA643230C486B00569197 /* Dashboard2ViewController.swift in Sources */,
 				0B8F647D2301A46C00120B0B /* ViewController.swift in Sources */,
 				0B8F647B2301A46C00120B0B /* AppDelegate.swift in Sources */,
+				0B1D62B823021D04005BA869 /* ChoosePersonPassViewController.swift in Sources */,
+				0B9446AF230C55BE00C1C843 /* Produtc.swift in Sources */,
+				0B5ED4412301E8B800169397 /* PersonalPasswordViewController.swift in Sources */,
 				0B8F64832301A46C00120B0B /* EasyNotes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +479,7 @@
 		};
 		0B8F648D2301A47100120B0B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF496C72655D271244CC918C /* Pods-EasyNotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +497,7 @@
 		};
 		0B8F648E2301A47100120B0B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B811C456D4D073DA0B24958 /* Pods-EasyNotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
