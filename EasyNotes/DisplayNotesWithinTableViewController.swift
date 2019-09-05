@@ -97,8 +97,6 @@ class DisplayNotesWithinTableViewController: UIViewController,UITableViewDelegat
         nextViewController.tagTypeInSelectedNotes = tagType
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
-  
-
     /*
     // MARK: - Navigation
 

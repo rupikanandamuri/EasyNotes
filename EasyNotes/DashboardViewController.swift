@@ -56,7 +56,6 @@ class DashboardViewController: UIViewController {
          showTableController("important")
     }
     
-    
     func showTableController(_ tag : String){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! DisplayNotesWithinTableViewController

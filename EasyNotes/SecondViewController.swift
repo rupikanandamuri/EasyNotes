@@ -52,7 +52,6 @@ class SecondViewController: UIViewController {
     @IBAction func backButtonClicked(){
         self.navigationController?.popViewController(animated: true)
     }
-   
     /*
     // MARK: - Navigation
 

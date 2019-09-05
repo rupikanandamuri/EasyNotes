@@ -146,7 +146,6 @@ class Dashboard2ViewController: UIViewController,UITextViewDelegate {
             showAlertAction()
         }
     }
-    // for creating alert.
     
     func showAlertAction(){
         // Create the alert controller
