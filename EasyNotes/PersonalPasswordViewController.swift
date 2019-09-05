@@ -77,30 +77,49 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
     func contains(key: String) -> Bool {
         return UserDefaults.standard.value(forKey: "password") != nil
     }
-    @IBAction func continueButtonClicked(){
-        
-        //appending all the text filed text into one array
+    //adding textfiled to array
+    func addTextFieldToArray(){
+          //appending all the text filed text into one array
         dataSource.append(firstTextField.text ?? "0")
         dataSource.append(secondTextField.text ?? "0")
         dataSource.append(thirdTextField.text ?? "0")
         dataSource.append(fourthTextField.text ?? "0")
+        
+    }
+    @IBAction func continueButtonClicked(){
         let str1 = dataSource.joined()
         
         if   navigationController?.viewControllers[1] is SecondViewController && navigationController?.viewControllers.count             == 3 {
             performSegue(withIdentifier: "Confirmpassword", sender: dataSource)
         }
         else{
-            
-             //if getPassword == str1{
+             if let getPassword = UserDefaults.standard.string(forKey: "password"){
+             if getPassword == str1{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! DisplayNotesWithinTableViewController
             nextViewController.tagType = "personal"
             nextViewController.tagColor = tagColor
             self.navigationController?.pushViewController(nextViewController, animated: true)
             print(dataSource)
-            //}
+             }
+            else{
+                     showAlertForPassword()
+                }
+         }
+       }
+}
+    
+    //show alert if user enter password onbaording  is not matched with  when entered in personal tag to show personal list.
+    func showAlertForPassword(){
+        
+        let alertController = UIAlertController(title: "Wrong password try again", message: "password you entered onboarding for personal tag is not matched try again", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
         }
-
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        
     }
     //sending tetxfile values to next contoller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -141,8 +160,9 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
                 fourthTextField.becomeFirstResponder()
             case fourthTextField:
                 fourthTextField.resignFirstResponder()
-                if let getPassword = UserDefaults.standard.string(forKey: "password") {
-                   continueButton.isEnabled = true
+                addTextFieldToArray()
+                if let getPassword = UserDefaults.standard.string(forKey: "password"){
+                        continueButton.isEnabled = true
                 }
             default:
                 break
