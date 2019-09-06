@@ -72,6 +72,8 @@ class DashboardViewController: UIViewController {
             return importantView.backgroundColor
         case "work":
             return workView.backgroundColor
+        case "personal" :
+            return personalView.backgroundColor
         default:
            return  UIColor.white
         }

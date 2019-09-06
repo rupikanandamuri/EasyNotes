@@ -23,7 +23,7 @@ class ChoosePersonPassViewController: UIViewController,UITextFieldDelegate {
    
     var selectedText = [String]()
     var conformArray = [String]()
-    
+     var tagColor : UIColor?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -59,7 +59,7 @@ class ChoosePersonPassViewController: UIViewController,UITextFieldDelegate {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     @IBAction func backButtonClicked(){
-       self.navigationController?.popViewController(animated: true)
+       navigationController?.popViewController(animated: true)
     }
     func addtextFieldToArray(){
         conformArray.removeAll()
@@ -158,17 +158,24 @@ class ChoosePersonPassViewController: UIViewController,UITextFieldDelegate {
             
             if navigationController?.viewControllers[1] is SecondViewController && navigationController?.viewControllers.count             == 4{
                 //Coming from first onboarding
-        
                 performSegue(withIdentifier: "goToDashboard", sender: nil)
             }else{
-                //Might be comng from personal notes
-                if  let vc = navigationController?.viewControllers[5]  {
-                    navigationController?.popToViewController(vc, animated: true)
+                //Might be comng from personal note
+                
+//                if  let vc = navigationController?.viewControllers[5]   {
+//                     navigationController?.popToViewController(vc, animated: true)
+//                }
+               // else{
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! DisplayNotesWithinTableViewController
+                    nextViewController.tagType = "personal"
+                    nextViewController.tagColor = tagColor
+                    self.navigationController?.pushViewController(nextViewController, animated: true)
+                   //}
                 }
             }
-          
+        
         }
-    }
     
 
     /*

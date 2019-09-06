@@ -22,6 +22,7 @@ class Dashboard2ViewController: UIViewController,UITextViewDelegate {
     var deletedButtonClicked = false
     var isNewNote = false
     var isAddNoteFromTable = false
+    let defaults    = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,36 +140,36 @@ class Dashboard2ViewController: UIViewController,UITextViewDelegate {
     @IBAction func personalButtonClciked(sender : UIButton){
         underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
            //to get tag type when button is pressed.
-       tagTypeInSelectedNotes = "personal"
-        if contains(key: "password"){
-            
-        }else{
-            showAlertAction()
-        }
+         tagTypeInSelectedNotes = "personal"
+//        if contains(key: "password"){
+//
+//        }else{
+//            showAlertAction()
+//        }
     }
     
-    func showAlertAction(){
-        // Create the alert controller
-        let alertController = UIAlertController(title: "Password Protection", message: "personal notes are password protected", preferredStyle: .alert)
-        
-        // Create the actions
-        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-            UIAlertAction in
-            NSLog("OK Pressed")
-            self.performSegue(withIdentifier: "goToPassword", sender: nil)
-        }
-        let skipAction = UIAlertAction(title: "Skip", style: UIAlertAction.Style.cancel) {
-            UIAlertAction in
-            NSLog("Skip Pressed")
-        }
-        
-        // Add the actions
-        alertController.addAction(okAction)
-        alertController.addAction(skipAction)
-        
-        // Present the controller
-        self.present(alertController, animated: true, completion: nil)
-    }
+//    func showAlertAction(){
+//        // Create the alert controller
+//        let alertController = UIAlertController(title: "Password Protection", message: "personal notes are password protected", preferredStyle: .alert)
+//
+//        // Create the actions
+//        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+//            UIAlertAction in
+//            NSLog("OK Pressed")
+//            self.performSegue(withIdentifier: "goToPassword", sender: nil)
+//        }
+//        let skipAction = UIAlertAction(title: "Skip", style: UIAlertAction.Style.cancel) {
+//            UIAlertAction in
+//            NSLog("Skip Pressed")
+//        }
+//
+//        // Add the actions
+//        alertController.addAction(okAction)
+//        alertController.addAction(skipAction)
+//
+//        // Present the controller
+//        self.present(alertController, animated: true, completion: nil)
+//    }
     
     // work button clicked
     @IBAction func workButtonClciked(sender : UIButton){

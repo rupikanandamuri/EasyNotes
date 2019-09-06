@@ -12,6 +12,7 @@ import  RealmSwift
 class DisplayNotesWithinTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
   
     @IBOutlet var tableView : UITableView!
+    @IBOutlet var backButton : UIButton!
    var dataSource :  Results<Notes>?
     var tagColor : UIColor?
     var tagType  : String?
@@ -24,8 +25,7 @@ class DisplayNotesWithinTableViewController: UIViewController,UITableViewDelegat
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-        self.navigationController?.navigationBar.tintColor = UIColor.orange
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         let realm = try! Realm()
         let allData = realm.objects(Notes.self)
         //filter asccording to tag so that i will display in table view.
@@ -33,7 +33,15 @@ class DisplayNotesWithinTableViewController: UIViewController,UITableViewDelegat
        tableView.reloadData()
     }
     
-
+//for back button to go back to dash board.
+    @IBAction func backButtonClicked(){
+//        if  let vc = navigationController?.viewControllers[4]  {
+//            navigationController?.popToViewController(vc, animated: true)
+//        }
+        if let vc = navigationController?.viewControllers.filter({ $0 is DashboardViewController }).first {
+            navigationController?.popToViewController(vc, animated: true)
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
         return dataSource?.count ?? 0
@@ -44,7 +52,7 @@ class DisplayNotesWithinTableViewController: UIViewController,UITableViewDelegat
         if let selectedNote = dataSource?[indexPath.row]{
               cell.notesFirstLabel.text = selectedNote.notes
               cell.dateLabel.text = selectedNote.dateCreated
-            cell.viewBackgroundColor.backgroundColor = tagColor
+              cell.viewBackgroundColor.backgroundColor = tagColor
         }
       
         return cell

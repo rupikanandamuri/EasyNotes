@@ -38,7 +38,7 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
         fourthTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         //for aliging tetx on center
         textAlignmetCenter()
-        continueButton.isEnabled = false
+        //continueButton.isEnabled = false
         //for skip button enabled while onboarding and diable in other cases.
         if navigationController?.viewControllers[1] is SecondViewController && navigationController?.viewControllers.count             == 3{
          skipButton.isEnabled = true
@@ -100,12 +100,15 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
             nextViewController.tagType = "personal"
             nextViewController.tagColor = tagColor
             self.navigationController?.pushViewController(nextViewController, animated: true)
-            print(dataSource)
+            print(getPassword)
              }
             else{
                      showAlertForPassword()
                 }
-         }
+             }else{
+                //.show confirm pass
+                 performSegue(withIdentifier: "Confirmpassword", sender: dataSource)
+            }
        }
 }
     
@@ -161,9 +164,9 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
             case fourthTextField:
                 fourthTextField.resignFirstResponder()
                 addTextFieldToArray()
-                if let getPassword = UserDefaults.standard.string(forKey: "password"){
+                 // if let getPassword = UserDefaults.standard.string(forKey: "password"){
                         continueButton.isEnabled = true
-                }
+                //}
             default:
                 break
             }
