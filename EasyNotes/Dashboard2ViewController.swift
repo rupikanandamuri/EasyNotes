@@ -23,6 +23,11 @@ class Dashboard2ViewController: UIViewController,UITextViewDelegate {
     var isNewNote = false
     var isAddNoteFromTable = false
     let defaults    = UserDefaults.standard
+    //to get the current date so that we can delete temporary list within 7 days
+    let date = Date()
+    let formatter = DateFormatter()
+    //to get make personal as default when it enter into add quick notes
+    var isdefault = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +43,10 @@ class Dashboard2ViewController: UIViewController,UITextViewDelegate {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.navigationBar.tintColor = UIColor.orange
-       
+        //to show by default personal tag.
+        if isdefault{
+            tagTypeInSelectedNotes = "personal"
+        }
         if isNewNote == false{
             headerViewHeightConstraint.constant = 0
             self.view.layoutIfNeeded()
@@ -92,6 +100,7 @@ class Dashboard2ViewController: UIViewController,UITextViewDelegate {
             //sending tag value to relam tag
             if let slectedTagForNote = tagTypeInSelectedNotes{
                 myNote.tag = slectedTagForNote
+                myNote.expireDate = getExpiryDate() ?? ""
                 //save in realm
                 let realm = try! Realm()
                 
@@ -101,6 +110,19 @@ class Dashboard2ViewController: UIViewController,UITextViewDelegate {
             }
      }
 }
+    
+    func getExpiryDate() -> String?{
+        
+        let currentDate = Date() // This will get the current Date in raw Date type format
+        //Need to add 7 days to this date
+        if let expiryRawDate = Calendar.current.date(byAdding: .day, value: 7, to: currentDate){
+            let formatter = DateFormatter()
+            formatter.dateFormat = "mm-dd-yyyy"
+            let formattedStringDate = formatter.string(from: expiryRawDate)
+            return formattedStringDate
+        }
+        return .none
+    }
     
     func updateNote(){
         if let saveText = textView.text{
@@ -141,6 +163,7 @@ class Dashboard2ViewController: UIViewController,UITextViewDelegate {
         underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
            //to get tag type when button is pressed.
          tagTypeInSelectedNotes = "personal"
+
 //        if contains(key: "password"){
 //
 //        }else{
@@ -181,14 +204,14 @@ class Dashboard2ViewController: UIViewController,UITextViewDelegate {
     //temporary button clicked
     @IBAction func temporaryBUttonClciked(sender : UIButton){
          underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
-        self.underlineView.backgroundColor = UIColor(red: 253.0 / 255.0, green: 69.0 / 255.0, blue: 69.0 / 255.0, alpha: 0.5)
+         self.underlineView.backgroundColor = UIColor(red: 91.0 / 255.0, green: 151.0 / 255.0, blue: 233.0 / 255.0, alpha: 0.5)
         //to get tag type when button is pressed.
         tagTypeInSelectedNotes = "temporary"
     }
     //imporatant button clicked
     @IBAction func importantButtonClciked(sender : UIButton){
          underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
-        self.underlineView.backgroundColor = UIColor(red: 91.0 / 255.0, green: 151.0 / 255.0, blue: 233.0 / 255.0, alpha: 0.5)
+        self.underlineView.backgroundColor = UIColor(red: 253.0 / 255.0, green: 69.0 / 255.0, blue: 69.0 / 255.0, alpha: 0.5)
           tagTypeInSelectedNotes = "important"
     }
     /*

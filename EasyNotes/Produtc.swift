@@ -14,6 +14,7 @@ import RealmSwift
     @objc dynamic var tag = ""
     @objc dynamic var dateCreated = ""
     @objc dynamic var updatedDate = ""
+    @objc dynamic var expireDate = ""
     @objc dynamic var noteID = NSUUID().uuidString  // unique ID
  
     override static func primaryKey() -> String? {

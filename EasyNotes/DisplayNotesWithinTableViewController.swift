@@ -103,6 +103,7 @@ class DisplayNotesWithinTableViewController: UIViewController,UITableViewDelegat
          nextViewController.isNewNote = true
         nextViewController.isAddNoteFromTable = true
         nextViewController.tagTypeInSelectedNotes = tagType
+        nextViewController.isdefault = false
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     /*
