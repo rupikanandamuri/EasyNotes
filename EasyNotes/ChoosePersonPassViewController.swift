@@ -159,6 +159,9 @@ class ChoosePersonPassViewController: UIViewController,UITextFieldDelegate {
             if navigationController?.viewControllers[1] is SecondViewController && navigationController?.viewControllers.count             == 4{
                 //Coming from first onboarding
                 performSegue(withIdentifier: "goToDashboard", sender: nil)
+                
+                let defaults = UserDefaults.standard
+                defaults.set(true, forKey: "OnBoardingFinished")
             }else{
                 //Might be comng from personal note
                 

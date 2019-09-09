@@ -13,10 +13,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if UserDefaults.standard.bool(forKey: "OnBoardingFinished"){
+            //Skip onboarding, show dashboard
+            let dashboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "dashboard")
+            self.window?.rootViewController = UINavigationController(rootViewController: dashboard)
+        }
         return true
     }
 
