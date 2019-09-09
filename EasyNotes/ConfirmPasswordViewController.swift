@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChoosePersonPassViewController: UIViewController,UITextFieldDelegate {
+class ConfirmPasswordViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var firstTextField : UITextField!
     @IBOutlet var secondTextField : UITextField!
@@ -156,7 +156,7 @@ class ChoosePersonPassViewController: UIViewController,UITextFieldDelegate {
         
           if selectedText[0] == conformArray[0] && selectedText[1] == conformArray[1] && selectedText[2] == conformArray[2]  && selectedText[3] == conformArray[3]{
             
-            if navigationController?.viewControllers[1] is SecondViewController && navigationController?.viewControllers.count             == 4{
+            if navigationController?.viewControllers[1] is OnboardingPage2ViewController && navigationController?.viewControllers.count             == 4{
                 //Coming from first onboarding
                 performSegue(withIdentifier: "goToDashboard", sender: nil)
                 
@@ -170,7 +170,7 @@ class ChoosePersonPassViewController: UIViewController,UITextFieldDelegate {
 //                }
                // else{
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! DisplayNotesWithinTableViewController
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! NoteListInTableViewController
                     nextViewController.tagType = "personal"
                     nextViewController.tagColor = tagColor
                     self.navigationController?.pushViewController(nextViewController, animated: true)

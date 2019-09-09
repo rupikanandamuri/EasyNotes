@@ -40,7 +40,7 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
         textAlignmetCenter()
         //continueButton.isEnabled = false
         //for skip button enabled while onboarding and diable in other cases.
-        if navigationController?.viewControllers[1] is SecondViewController && navigationController?.viewControllers.count             == 3{
+        if navigationController?.viewControllers[1] is OnboardingPage2ViewController && navigationController?.viewControllers.count             == 3{
          skipButton.isEnabled = true
         }
         else{
@@ -67,7 +67,7 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
     }
  //for skip button
     @IBAction func skipButtonClicked(){
-        if navigationController?.viewControllers[1] is SecondViewController && navigationController?.viewControllers.count             == 3{
+        if navigationController?.viewControllers[1] is OnboardingPage2ViewController && navigationController?.viewControllers.count             == 3{
             //Coming from first onboarding
             performSegue(withIdentifier: "skipgoToDashboard", sender: nil)
       }
@@ -89,14 +89,14 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
     @IBAction func continueButtonClicked(){
         let str1 = dataSource.joined()
         
-        if   navigationController?.viewControllers[1] is SecondViewController && navigationController?.viewControllers.count             == 3 {
+        if   navigationController?.viewControllers[1] is OnboardingPage2ViewController && navigationController?.viewControllers.count             == 3 {
             performSegue(withIdentifier: "Confirmpassword", sender: dataSource)
         }
         else{
              if let getPassword = UserDefaults.standard.string(forKey: "password"){
              if getPassword == str1{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! DisplayNotesWithinTableViewController
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! NoteListInTableViewController
             nextViewController.tagType = "personal"
             nextViewController.tagColor = tagColor
             self.navigationController?.pushViewController(nextViewController, animated: true)
@@ -129,7 +129,7 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
     {
         if (segue.identifier == "Confirmpassword")
         {
-            let obj = segue.destination as! ChoosePersonPassViewController
+            let obj = segue.destination as! ConfirmPasswordViewController
             obj.selectedText = sender as? [String] ?? ["0"]
             
         }

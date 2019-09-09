@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B1D62B823021D04005BA869 /* ChoosePersonPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1D62B723021D04005BA869 /* ChoosePersonPassViewController.swift */; };
+		0B1D62B823021D04005BA869 /* ConfirmPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1D62B723021D04005BA869 /* ConfirmPasswordViewController.swift */; };
 		0B2A370C23031DDF003A23CD /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A370B23031DDF003A23CD /* DashboardViewController.swift */; };
-		0B5ED43F2301CC8500169397 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5ED43E2301CC8500169397 /* SecondViewController.swift */; };
+		0B5ED43F2301CC8500169397 /* OnboardingPage2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5ED43E2301CC8500169397 /* OnboardingPage2ViewController.swift */; };
 		0B5ED4412301E8B800169397 /* PersonalPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5ED4402301E8B800169397 /* PersonalPasswordViewController.swift */; };
 		0B8F647B2301A46C00120B0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F647A2301A46C00120B0B /* AppDelegate.swift */; };
-		0B8F647D2301A46C00120B0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F647C2301A46C00120B0B /* ViewController.swift */; };
+		0B8F647D2301A46C00120B0B /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F647C2301A46C00120B0B /* OnboardingPageViewController.swift */; };
 		0B8F64802301A46C00120B0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F647E2301A46C00120B0B /* Main.storyboard */; };
 		0B8F64832301A46C00120B0B /* EasyNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F64812301A46C00120B0B /* EasyNotes.xcdatamodeld */; };
 		0B8F64852301A47100120B0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64842301A47100120B0B /* Assets.xcassets */; };
@@ -38,20 +38,20 @@
 		0B8F64B72301AC8900120B0B /* Exo2-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64A42301AC8900120B0B /* Exo2-MediumItalic.ttf */; };
 		0B9446AA230C51B200C1C843 /* DisplayNotesInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9446A8230C51B200C1C843 /* DisplayNotesInTableViewCell.swift */; };
 		0B9446AB230C51B200C1C843 /* DisplayNotesInTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B9446A9230C51B200C1C843 /* DisplayNotesInTableViewCell.xib */; };
-		0B9446AD230C522A00C1C843 /* DisplayNotesWithinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9446AC230C522A00C1C843 /* DisplayNotesWithinTableViewController.swift */; };
-		0B9446AF230C55BE00C1C843 /* Produtc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9446AE230C55BE00C1C843 /* Produtc.swift */; };
-		0B9CA643230C486B00569197 /* Dashboard2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9CA642230C486B00569197 /* Dashboard2ViewController.swift */; };
+		0B9446AD230C522A00C1C843 /* NoteListInTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9446AC230C522A00C1C843 /* NoteListInTableViewController.swift */; };
+		0B9446AF230C55BE00C1C843 /* RLMNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9446AE230C55BE00C1C843 /* RLMNotes.swift */; };
+		0B9CA643230C486B00569197 /* addNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9CA642230C486B00569197 /* addNotesViewController.swift */; };
 		DBAA53D691C2B91603BA77FE /* Pods_EasyNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C4980F6FB6A1844D065564 /* Pods_EasyNotes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B1D62B723021D04005BA869 /* ChoosePersonPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePersonPassViewController.swift; sourceTree = "<group>"; };
+		0B1D62B723021D04005BA869 /* ConfirmPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordViewController.swift; sourceTree = "<group>"; };
 		0B2A370B23031DDF003A23CD /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		0B5ED43E2301CC8500169397 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		0B5ED43E2301CC8500169397 /* OnboardingPage2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage2ViewController.swift; sourceTree = "<group>"; };
 		0B5ED4402301E8B800169397 /* PersonalPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPasswordViewController.swift; sourceTree = "<group>"; };
 		0B8F64772301A46C00120B0B /* EasyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8F647A2301A46C00120B0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B8F647C2301A46C00120B0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0B8F647C2301A46C00120B0B /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		0B8F647F2301A46C00120B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B8F64822301A46C00120B0B /* EasyNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyNotes.xcdatamodel; sourceTree = "<group>"; };
 		0B8F64842301A47100120B0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,9 +78,9 @@
 		0B8F64A42301AC8900120B0B /* Exo2-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-MediumItalic.ttf"; sourceTree = "<group>"; };
 		0B9446A8230C51B200C1C843 /* DisplayNotesInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayNotesInTableViewCell.swift; sourceTree = "<group>"; };
 		0B9446A9230C51B200C1C843 /* DisplayNotesInTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayNotesInTableViewCell.xib; sourceTree = "<group>"; };
-		0B9446AC230C522A00C1C843 /* DisplayNotesWithinTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayNotesWithinTableViewController.swift; sourceTree = "<group>"; };
-		0B9446AE230C55BE00C1C843 /* Produtc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produtc.swift; sourceTree = "<group>"; };
-		0B9CA642230C486B00569197 /* Dashboard2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard2ViewController.swift; sourceTree = "<group>"; };
+		0B9446AC230C522A00C1C843 /* NoteListInTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListInTableViewController.swift; sourceTree = "<group>"; };
+		0B9446AE230C55BE00C1C843 /* RLMNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLMNotes.swift; sourceTree = "<group>"; };
+		0B9CA642230C486B00569197 /* addNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNotesViewController.swift; sourceTree = "<group>"; };
 		3B811C456D4D073DA0B24958 /* Pods-EasyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNotes.release.xcconfig"; path = "Target Support Files/Pods-EasyNotes/Pods-EasyNotes.release.xcconfig"; sourceTree = "<group>"; };
 		A7C4980F6FB6A1844D065564 /* Pods_EasyNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF496C72655D271244CC918C /* Pods-EasyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNotes.debug.xcconfig"; path = "Target Support Files/Pods-EasyNotes/Pods-EasyNotes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,17 +121,17 @@
 			isa = PBXGroup;
 			children = (
 				0B8F647A2301A46C00120B0B /* AppDelegate.swift */,
-				0B8F647C2301A46C00120B0B /* ViewController.swift */,
+				0B8F647C2301A46C00120B0B /* OnboardingPageViewController.swift */,
 				0B8F647E2301A46C00120B0B /* Main.storyboard */,
-				0B5ED43E2301CC8500169397 /* SecondViewController.swift */,
+				0B5ED43E2301CC8500169397 /* OnboardingPage2ViewController.swift */,
 				0B5ED4402301E8B800169397 /* PersonalPasswordViewController.swift */,
-				0B1D62B723021D04005BA869 /* ChoosePersonPassViewController.swift */,
+				0B1D62B723021D04005BA869 /* ConfirmPasswordViewController.swift */,
 				0B2A370B23031DDF003A23CD /* DashboardViewController.swift */,
-				0B9CA642230C486B00569197 /* Dashboard2ViewController.swift */,
-				0B9446AC230C522A00C1C843 /* DisplayNotesWithinTableViewController.swift */,
+				0B9CA642230C486B00569197 /* addNotesViewController.swift */,
+				0B9446AC230C522A00C1C843 /* NoteListInTableViewController.swift */,
 				0B9446A8230C51B200C1C843 /* DisplayNotesInTableViewCell.swift */,
 				0B9446A9230C51B200C1C843 /* DisplayNotesInTableViewCell.xib */,
-				0B9446AE230C55BE00C1C843 /* Produtc.swift */,
+				0B9446AE230C55BE00C1C843 /* RLMNotes.swift */,
 				0B8F64842301A47100120B0B /* Assets.xcassets */,
 				0B8F64862301A47100120B0B /* LaunchScreen.storyboard */,
 				0B8F64892301A47100120B0B /* Info.plist */,
@@ -325,15 +325,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B5ED43F2301CC8500169397 /* SecondViewController.swift in Sources */,
+				0B5ED43F2301CC8500169397 /* OnboardingPage2ViewController.swift in Sources */,
 				0B9446AA230C51B200C1C843 /* DisplayNotesInTableViewCell.swift in Sources */,
 				0B2A370C23031DDF003A23CD /* DashboardViewController.swift in Sources */,
-				0B9446AD230C522A00C1C843 /* DisplayNotesWithinTableViewController.swift in Sources */,
-				0B9CA643230C486B00569197 /* Dashboard2ViewController.swift in Sources */,
-				0B8F647D2301A46C00120B0B /* ViewController.swift in Sources */,
+				0B9446AD230C522A00C1C843 /* NoteListInTableViewController.swift in Sources */,
+				0B9CA643230C486B00569197 /* addNotesViewController.swift in Sources */,
+				0B8F647D2301A46C00120B0B /* OnboardingPageViewController.swift in Sources */,
 				0B8F647B2301A46C00120B0B /* AppDelegate.swift in Sources */,
-				0B1D62B823021D04005BA869 /* ChoosePersonPassViewController.swift in Sources */,
-				0B9446AF230C55BE00C1C843 /* Produtc.swift in Sources */,
+				0B1D62B823021D04005BA869 /* ConfirmPasswordViewController.swift in Sources */,
+				0B9446AF230C55BE00C1C843 /* RLMNotes.swift in Sources */,
 				0B5ED4412301E8B800169397 /* PersonalPasswordViewController.swift in Sources */,
 				0B8F64832301A46C00120B0B /* EasyNotes.xcdatamodeld in Sources */,
 			);

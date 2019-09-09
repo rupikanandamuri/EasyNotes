@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class Dashboard2ViewController: UIViewController,UITextViewDelegate {
+class addNotesViewController: UIViewController,UITextViewDelegate {
     
     @IBOutlet var textView : UITextView!
     @IBOutlet var headerView : UIView!
@@ -117,7 +117,7 @@ class Dashboard2ViewController: UIViewController,UITextViewDelegate {
         //Need to add 7 days to this date
         if let expiryRawDate = Calendar.current.date(byAdding: .day, value: 7, to: currentDate){
             let formatter = DateFormatter()
-            formatter.dateFormat = "mm-dd-yyyy"
+            formatter.dateFormat = "MM-dd-yyyy"
             let formattedStringDate = formatter.string(from: expiryRawDate)
             return formattedStringDate
         }

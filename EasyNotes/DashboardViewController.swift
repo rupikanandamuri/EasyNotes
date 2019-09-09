@@ -37,7 +37,7 @@ class DashboardViewController: UIViewController {
             //check if each note is expired or not
             for note in dataSource{
                 let formatter = DateFormatter()
-                formatter.dateFormat = "mm-dd-yyyy"
+                formatter.dateFormat = "MM-dd-yyyy"
                 if  let expireRawDate = formatter.date(from: note.expireDate){
                      //comprae this date to current date
                     if expireRawDate > Date(){
@@ -62,7 +62,7 @@ class DashboardViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addNotes" {
-            if let vc = segue.destination as? Dashboard2ViewController{
+            if let vc = segue.destination as? addNotesViewController{
                 if  sender == nil {
                     vc.isNewNote = true
                 }
@@ -91,7 +91,7 @@ class DashboardViewController: UIViewController {
     
     func showTableController(_ tag : String){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! DisplayNotesWithinTableViewController
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! NoteListInTableViewController
         nextViewController.tagColor = getColorForTag(tag)
         nextViewController.tagType = tag
         self.navigationController?.pushViewController(nextViewController, animated: true)

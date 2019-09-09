@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class OnboardingPageViewController: UIViewController {
     //for changing the color of uilabel text
     var myString:NSString = "EasyNote.."
     var myMutableString = NSMutableAttributedString()

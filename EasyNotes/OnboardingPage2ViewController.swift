@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class OnboardingPage2ViewController: UIViewController {
 
     @IBOutlet var personalButton : UIButton!
     @IBOutlet var workButton : UIButton!

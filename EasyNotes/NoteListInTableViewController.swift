@@ -9,7 +9,7 @@
 import UIKit
 import  RealmSwift
 
-class DisplayNotesWithinTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+class NoteListInTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
   
     @IBOutlet var tableView : UITableView!
     @IBOutlet var backButton : UIButton!
@@ -65,7 +65,7 @@ class DisplayNotesWithinTableViewController: UIViewController,UITableViewDelegat
     //this is used when u click on table view cell it should go to notes page contains data.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToFinalNotes" {
-            if let vc = segue.destination as? Dashboard2ViewController{
+            if let vc = segue.destination as? addNotesViewController{
                 if let temp =  sender as? Notes{
                     vc.myNote = temp
                     vc.isNewNote = false
@@ -99,7 +99,7 @@ class DisplayNotesWithinTableViewController: UIViewController,UITableViewDelegat
     //MARK - when u click on add notes button in table view cell we are going to notes copntroller using storyboard id.
     @IBAction func addNotesButtonClicked(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "WriteNewNotes") as! Dashboard2ViewController
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "WriteNewNotes") as! addNotesViewController
          nextViewController.isNewNote = true
         nextViewController.isAddNoteFromTable = true
         nextViewController.tagTypeInSelectedNotes = tagType
