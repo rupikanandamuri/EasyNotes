@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 class DashboardViewController: UIViewController {
+    
     @IBOutlet var personalView : UIView!
     @IBOutlet var workView : UIView!
     @IBOutlet var temporaryView : UIView!

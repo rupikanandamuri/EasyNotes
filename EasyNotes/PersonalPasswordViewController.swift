@@ -22,6 +22,7 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
     var dataSource = [String]()
     let defaults    = UserDefaults.standard
     var tagColor : UIColor?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,30 +88,17 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
         
     }
     @IBAction func continueButtonClicked(){
-        let str1 = dataSource.joined()
+     
         
         if   navigationController?.viewControllers[1] is OnboardingPage2ViewController && navigationController?.viewControllers.count             == 3 {
             performSegue(withIdentifier: "Confirmpassword", sender: dataSource)
         }
         else{
-             if let getPassword = UserDefaults.standard.string(forKey: "password"){
-             if getPassword == str1{
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! NoteListInTableViewController
-            nextViewController.tagType = "personal"
-            nextViewController.tagColor = tagColor
-            self.navigationController?.pushViewController(nextViewController, animated: true)
-            print(getPassword)
-             }
-            else{
-                     showAlertForPassword()
-                }
-             }else{
                 //.show confirm pass
                  performSegue(withIdentifier: "Confirmpassword", sender: dataSource)
             }
-       }
 }
+
     
     //show alert if user enter password onbaording  is not matched with  when entered in personal tag to show personal list.
     func showAlertForPassword(){
@@ -119,6 +107,11 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
             UIAlertAction in
             NSLog("OK Pressed")
+            self.dataSource.removeAll()
+            self.firstTextField.text = ""
+            self.secondTextField.text = ""
+            self.thirdTextField.text = ""
+            self.fourthTextField.text = ""
         }
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
@@ -164,9 +157,22 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
             case fourthTextField:
                 fourthTextField.resignFirstResponder()
                 addTextFieldToArray()
-                 // if let getPassword = UserDefaults.standard.string(forKey: "password"){
-                        continueButton.isEnabled = true
-                //}
+                  if let getPassword = UserDefaults.standard.string(forKey: "password"){
+                    continueButton.isHidden = true
+                     let str1 = dataSource.joined()
+                    if getPassword == str1{
+                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! NoteListInTableViewController
+                        nextViewController.tagType = "personal"
+                        nextViewController.tagColor = tagColor
+                        self.navigationController?.pushViewController(nextViewController, animated: true)
+                        print(getPassword)
+                    }
+                    else{
+                        showAlertForPassword()
+                    }
+                }
+                
             default:
                 break
             }
