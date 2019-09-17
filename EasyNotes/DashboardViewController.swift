@@ -15,6 +15,10 @@ class DashboardViewController: UIViewController {
     @IBOutlet var workView : UIView!
     @IBOutlet var temporaryView : UIView!
     @IBOutlet var importantView : UIView!
+    @IBOutlet var personalNotesCount : UILabel!
+    @IBOutlet var workNotesCount : UILabel!
+    @IBOutlet var temporaryNotesCount : UILabel!
+    @IBOutlet var importantNotesCount : UILabel!
    
 
     override func viewDidLoad() {
@@ -22,6 +26,7 @@ class DashboardViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         NoteManager.shared.deleteExpiredNotes()
+        countNotesInEachCategory()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -41,7 +46,13 @@ class DashboardViewController: UIViewController {
             }
         }
     }
-    
+    //to display no of notes in every catergory count label
+    func countNotesInEachCategory(){
+        personalNotesCount.text = String(NoteManager.shared.getPersonalNoteCount())
+        workNotesCount.text = String(NoteManager.shared.getWorkNoteCount())
+        temporaryNotesCount.text = String(NoteManager.shared.getTempNoteCount())
+        importantNotesCount.text = String(NoteManager.shared.getImpNoteCount())
+    }
     @IBAction func addPersonalButtonClicked(){
   
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

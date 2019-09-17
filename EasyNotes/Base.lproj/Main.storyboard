@@ -1044,9 +1044,13 @@
                         <viewLayoutGuide key="safeArea" id="MCO-ju-PYY"/>
                     </view>
                     <connections>
+                        <outlet property="importantNotesCount" destination="AR2-z5-HV3" id="qdC-ix-VtY"/>
                         <outlet property="importantView" destination="3av-ZQ-gsK" id="V8b-4a-gxR"/>
+                        <outlet property="personalNotesCount" destination="zvO-Bx-Vaa" id="r0F-3I-1Ew"/>
                         <outlet property="personalView" destination="tLJ-0A-RTS" id="CnT-Ko-wKx"/>
+                        <outlet property="temporaryNotesCount" destination="o6n-Rc-LsF" id="4nv-8J-Xu2"/>
                         <outlet property="temporaryView" destination="fL3-Kw-neT" id="Idg-co-063"/>
+                        <outlet property="workNotesCount" destination="9St-G6-eiy" id="moJ-D3-MOU"/>
                         <outlet property="workView" destination="JY7-3q-6GK" id="T2N-qS-pTN"/>
                         <segue destination="uLB-Nu-vzs" kind="show" identifier="addNotes" id="OEO-J5-APD"/>
                     </connections>
