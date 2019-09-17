@@ -40,6 +40,7 @@
 		0B9446AD230C522A00C1C843 /* NoteListInTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9446AC230C522A00C1C843 /* NoteListInTableViewController.swift */; };
 		0B9446AF230C55BE00C1C843 /* RLMNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9446AE230C55BE00C1C843 /* RLMNotes.swift */; };
 		0B9CA643230C486B00569197 /* addNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9CA642230C486B00569197 /* addNotesViewController.swift */; };
+		ABDCE3A123315659007331A2 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDCE3A023315659007331A2 /* NoteManager.swift */; };
 		DBAA53D691C2B91603BA77FE /* Pods_EasyNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C4980F6FB6A1844D065564 /* Pods_EasyNotes.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		0B9CA642230C486B00569197 /* addNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNotesViewController.swift; sourceTree = "<group>"; };
 		3B811C456D4D073DA0B24958 /* Pods-EasyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNotes.release.xcconfig"; path = "Target Support Files/Pods-EasyNotes/Pods-EasyNotes.release.xcconfig"; sourceTree = "<group>"; };
 		A7C4980F6FB6A1844D065564 /* Pods_EasyNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABDCE3A023315659007331A2 /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 		EF496C72655D271244CC918C /* Pods-EasyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNotes.debug.xcconfig"; path = "Target Support Files/Pods-EasyNotes/Pods-EasyNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +131,7 @@
 				0B9446AC230C522A00C1C843 /* NoteListInTableViewController.swift */,
 				0B9446A8230C51B200C1C843 /* DisplayNotesInTableViewCell.swift */,
 				0B9446A9230C51B200C1C843 /* DisplayNotesInTableViewCell.xib */,
+				ABDCE3A023315659007331A2 /* NoteManager.swift */,
 				0B9446AE230C55BE00C1C843 /* RLMNotes.swift */,
 				0B8F64842301A47100120B0B /* Assets.xcassets */,
 				0B8F64862301A47100120B0B /* LaunchScreen.storyboard */,
@@ -326,6 +329,7 @@
 				0B9446AA230C51B200C1C843 /* DisplayNotesInTableViewCell.swift in Sources */,
 				0B2A370C23031DDF003A23CD /* DashboardViewController.swift in Sources */,
 				0B9446AD230C522A00C1C843 /* NoteListInTableViewController.swift in Sources */,
+				ABDCE3A123315659007331A2 /* NoteManager.swift in Sources */,
 				0B9CA643230C486B00569197 /* addNotesViewController.swift in Sources */,
 				0B8F647D2301A46C00120B0B /* OnboardingPageViewController.swift in Sources */,
 				0B8F647B2301A46C00120B0B /* AppDelegate.swift in Sources */,
