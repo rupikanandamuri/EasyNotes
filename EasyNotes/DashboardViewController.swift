@@ -32,6 +32,7 @@ class DashboardViewController: UIViewController {
         let allData = realm.objects(Notes.self)
         //filter asccording to expiry date  so that i will display in table view.
         let  dataSource = allData.filter("(tag == 'temporary') and (expireDate != '')") //so we check for non empty strings in the expireDate field
+       
         if dataSource.count > 0{
             
             //check if each note is expired or not

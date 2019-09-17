@@ -30,6 +30,7 @@ class NoteListInTableViewController: UIViewController,UITableViewDelegate,UITabl
         let allData = realm.objects(Notes.self)
         //filter asccording to tag so that i will display in table view.
         dataSource = allData.filter("tag == %@",tagType)
+     dataSource =  dataSource?.sorted(byKeyPath: "dateCreated",ascending: false)
        tableView.reloadData()
     }
     
