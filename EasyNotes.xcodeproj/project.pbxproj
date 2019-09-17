@@ -14,7 +14,6 @@
 		0B8F647B2301A46C00120B0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F647A2301A46C00120B0B /* AppDelegate.swift */; };
 		0B8F647D2301A46C00120B0B /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F647C2301A46C00120B0B /* OnboardingPageViewController.swift */; };
 		0B8F64802301A46C00120B0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F647E2301A46C00120B0B /* Main.storyboard */; };
-		0B8F64832301A46C00120B0B /* EasyNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F64812301A46C00120B0B /* EasyNotes.xcdatamodeld */; };
 		0B8F64852301A47100120B0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64842301A47100120B0B /* Assets.xcassets */; };
 		0B8F64882301A47100120B0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64862301A47100120B0B /* LaunchScreen.storyboard */; };
 		0B8F64A52301AC8900120B0B /* Exo2-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F64922301AC8600120B0B /* Exo2-ExtraLightItalic.ttf */; };
@@ -53,7 +52,6 @@
 		0B8F647A2301A46C00120B0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B8F647C2301A46C00120B0B /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		0B8F647F2301A46C00120B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0B8F64822301A46C00120B0B /* EasyNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyNotes.xcdatamodel; sourceTree = "<group>"; };
 		0B8F64842301A47100120B0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B8F64872301A47100120B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B8F64892301A47100120B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 				0B8F64842301A47100120B0B /* Assets.xcassets */,
 				0B8F64862301A47100120B0B /* LaunchScreen.storyboard */,
 				0B8F64892301A47100120B0B /* Info.plist */,
-				0B8F64812301A46C00120B0B /* EasyNotes.xcdatamodeld */,
 			);
 			path = EasyNotes;
 			sourceTree = "<group>";
@@ -335,7 +332,6 @@
 				0B1D62B823021D04005BA869 /* ConfirmPasswordViewController.swift in Sources */,
 				0B9446AF230C55BE00C1C843 /* RLMNotes.swift in Sources */,
 				0B5ED4412301E8B800169397 /* PersonalPasswordViewController.swift in Sources */,
-				0B8F64832301A46C00120B0B /* EasyNotes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,19 +531,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0B8F64812301A46C00120B0B /* EasyNotes.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0B8F64822301A46C00120B0B /* EasyNotes.xcdatamodel */,
-			);
-			currentVersion = 0B8F64822301A46C00120B0B /* EasyNotes.xcdatamodel */;
-			path = EasyNotes.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 0B8F646F2301A46C00120B0B /* Project object */;
 }
