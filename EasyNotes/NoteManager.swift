@@ -68,6 +68,26 @@ class NoteManager {
         return result
     }
     
+    func getPersonalNoteCount() -> Int{
+        let result = getNotes("personal", false, false)
+        return result?.count ?? 0
+    }
+    
+    func getWorkNoteCount() -> Int{
+        let result = getNotes("work", false, false)
+        return result?.count ?? 0
+    }
+    
+    func getTempNoteCount() -> Int{
+        let result = getNotes("temporary", false, false)
+        return result?.count ?? 0
+    }
+    
+    func getImpNoteCount() -> Int{
+        let result = getNotes("important", false, false)
+        return result?.count ?? 0
+    }
+    
     //Helper method
     func getCurrentDate() -> String{
         let rawDate = Date() //This will give the current date
