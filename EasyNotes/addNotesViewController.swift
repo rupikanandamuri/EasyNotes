@@ -130,6 +130,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
             
             try! realm.write {
                 myNote.notes = saveText
+                //to get the date
                 myNote.dateCreated = getCurrentDate()
                 realm.add(myNote, update: true)
             }
