@@ -26,11 +26,10 @@ class NoteListInTableViewController: UIViewController,UITableViewDelegate,UITabl
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        let realm = try! Realm()
-        let allData = realm.objects(Notes.self)
-        //filter asccording to tag so that i will display in table view.
-        dataSource = allData.filter("tag == %@",tagType)
-     dataSource =  dataSource?.sorted(byKeyPath: "dateCreated",ascending: false)
+       
+        if let tagType = tagType{
+           dataSource =  NoteManager.shared.getNotes(tagType, true, true)
+        }
        tableView.reloadData()
     }
     
@@ -87,12 +86,9 @@ class NoteListInTableViewController: UIViewController,UITableViewDelegate,UITabl
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             // handle delete (by removing the data from your array and updating the tableview)
-            let realm = try! Realm()
             if  let selectNotes = dataSource?[indexPath.row]{
-                try! realm.write {
-                    realm.delete(selectNotes)
-                    self.tableView.reloadData()
-                }
+                NoteManager.shared.deleteNote(selectNotes)
+                self.tableView.reloadData()
             }
 
         }

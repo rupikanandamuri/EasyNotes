@@ -20,41 +20,11 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        checkExpiredNotes()
+        NoteManager.shared.deleteExpiredNotes()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    //to check whether the notes is expired or not for temporoay tag the notes should be within 7 days if it more than 7 days if it is expiried  then we are delteting the notes.
-    func checkExpiredNotes(){
-        let realm = try! Realm()
-        let allData = realm.objects(Notes.self)
-        //filter asccording to expiry date  so that i will display in table view.
-        let  dataSource = allData.filter("(tag == 'temporary') and (expireDate != '')") //so we check for non empty strings in the expireDate field
-       
-        if dataSource.count > 0{
-            
-            //check if each note is expired or not
-            for note in dataSource{
-                let formatter = DateFormatter()
-                formatter.dateFormat = "MM-dd-yyyy"
-                if  let expireRawDate = formatter.date(from: note.expireDate){
-                     //comprae this date to current date
-                    if expireRawDate > Date(){
-                        // note isnt expired yet
-                    }else{
-                        //note is expired
-                        //We can delete the note here
-                        let realm = try! Realm()
-                        try! realm.write {
-                            realm.delete(note)
-                        }
-                        
-                    }
-                }
-            }
-        }
     }
     
     
