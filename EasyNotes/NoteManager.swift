@@ -24,7 +24,10 @@ extension UIColor {
 
 class NoteManager {
     
+    //This is a singleton reference, so all calls to the NoteManager class will be called on shared. Since this is singelton, all calls will share the same reference and will not be creating a new refernce for each call
     public static let shared = NoteManager()
+    
+    //One time initialising the database , this need not be a singleton
     let realm = try! Realm()
     
     private init() {
@@ -65,6 +68,7 @@ class NoteManager {
         return result
     }
     
+    //Helper method
     func getCurrentDate() -> String{
         let rawDate = Date() //This will give the current date
         
@@ -77,6 +81,7 @@ class NoteManager {
         
     }
     
+    //Helper method
     func getExpiryDate() -> String?{
         
         let currentDate = Date() // This will get the current Date in raw Date type format
@@ -93,7 +98,6 @@ class NoteManager {
     
     //to check whether the notes is expired or not for temporoay tag the notes should be within 7 days if it more than 7 days if it is expiried  then we are delteting the notes.
     func deleteExpiredNotes(){
-        let realm = try! Realm()
         let allData = realm.objects(Notes.self)
         //filter asccording to expiry date  so that i will display in table view.
         let  dataSource = allData.filter("(tag == 'temporary') and (expireDate != '')") //so we check for non empty strings in the expireDate field
@@ -111,11 +115,7 @@ class NoteManager {
                     }else{
                         //note is expired
                         //We can delete the note here
-                        let realm = try! Realm()
-                        try! realm.write {
-                            realm.delete(note)
-                        }
-                        
+                        deleteNote(note)
                     }
                 }
             }
