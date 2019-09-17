@@ -19,7 +19,7 @@ class OnboardingPage2ViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-       borderColorForButoon()
+       customiseButtons()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,23 +27,11 @@ class OnboardingPage2ViewController: UIViewController {
     }
     //to get border for button
     
-    func borderColorForButoon(){
-        personalButton.layer.borderWidth = 2.0
-        personalButton.layer.borderWidth = 2.0
-        personalButton.layer.borderColor = UIColor.lightGray.cgColor
-        personalButton.layer.cornerRadius = 5.0
-        workButton.layer.borderWidth = 2.0
-        workButton.layer.borderWidth = 2.0
-        workButton.layer.borderColor = UIColor.lightGray.cgColor
-        workButton.layer.cornerRadius = 5.0
-        important.layer.borderWidth = 2.0
-        important.layer.borderWidth = 2.0
-        important.layer.borderColor = UIColor.lightGray.cgColor
-        important.layer.cornerRadius = 5.0
-        temporary.layer.borderWidth = 2.0
-        temporary.layer.borderWidth = 2.0
-        temporary.layer.borderColor = UIColor.lightGray.cgColor
-        temporary.layer.cornerRadius = 5.0
+    func customiseButtons(){
+        personalButton.applyBorder()
+        workButton.applyBorder()
+        important.applyBorder()
+        temporary.applyBorder()
     }
   
     @IBAction func continueButtonClicked(){
@@ -61,4 +49,14 @@ class OnboardingPage2ViewController: UIViewController {
     }
     */
 
+}
+
+extension UIButton{
+    
+    func applyBorder(){
+        self.layer.borderWidth = 2.0
+        self.layer.borderWidth = 2.0
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.cornerRadius = 5.0
+    }
 }
