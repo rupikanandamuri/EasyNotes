@@ -93,7 +93,7 @@ class NoteManager {
     
     func getLastModifiedNote(_ tag : String) -> String?{
         if var result = getNotes(tag, false, false){
-            result = result.sorted(byKeyPath: "updatedDate",ascending: true)
+            result = result.sorted(byKeyPath: "updatedDate",ascending: false)
             if let note = result.first{
                 return note.updatedDate
             }

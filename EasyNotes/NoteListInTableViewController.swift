@@ -28,7 +28,7 @@ class NoteListInTableViewController: UIViewController,UITableViewDelegate,UITabl
         navigationController?.setNavigationBarHidden(true, animated: animated)
        
         if let tagType = tagType{
-           dataSource =  NoteManager.shared.getNotes(tagType, true, true)
+           dataSource =  NoteManager.shared.getNotes(tagType, true, false)
         }
        tableView.reloadData()
     }
