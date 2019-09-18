@@ -30,12 +30,21 @@ class NoteManager {
     //This is a singleton reference, so all calls to the NoteManager class will be called on shared. Since this is singelton, all calls will share the same reference and will not be creating a new refernce for each call
     public static let shared = NoteManager()
     
+    var changePasswordMode : Bool = false
+    var onBoardingFinished : Bool = false
+    
     //One time initialising the database , this need not be a singleton
     let realm = try! Realm()
     
     private init() {
         print("Singleton initialized")
         print(realm.configuration.fileURL?.absoluteString ?? "no realm file url")
+        onBoardingFinished = UserDefaults.standard.bool(forKey: "OnBoardingFinished")
+    }
+    
+    func updateOnBoardingStatus(_ status : Bool){
+        let defaults = UserDefaults.standard
+        defaults.set(status, forKey: "OnBoardingFinished")
     }
     
     func deleteNote(_ note : Notes){
@@ -153,6 +162,12 @@ class NoteManager {
                 }
             }
         }
+    }
+    
+    func getPersonalPasscodeVc() -> PersonalPasswordViewController{
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "goToPersonal") as!  PersonalPasswordViewController
+        return nextViewController
     }
     
 }

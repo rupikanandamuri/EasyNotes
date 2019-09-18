@@ -91,8 +91,7 @@ class DashboardViewController: UIViewController {
     
     @IBAction func addPersonalButtonClicked(){
         if  NoteManager.shared.getPersonalNoteCount() > 0{
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "goToPersonal") as!  PersonalPasswordViewController
+            let nextViewController = NoteManager.shared.getPersonalPasscodeVc()
             nextViewController.tagColor = personalView.backgroundColor
             self.navigationController?.pushViewController(nextViewController, animated: true)
         }else{
