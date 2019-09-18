@@ -31,6 +31,7 @@ class DashboardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        //in dash board displaying how many notes are there in each category.
         countNotesInEachCategory()
     }
     
@@ -59,23 +60,43 @@ class DashboardViewController: UIViewController {
     
     
     @IBAction func addPersonalButtonClicked(){
-  
+        if  NoteManager.shared.getPersonalNoteCount() > 0{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "goToPersonal") as!  PersonalPasswordViewController
-             nextViewController.tagColor = personalView.backgroundColor
+            nextViewController.tagColor = personalView.backgroundColor
             self.navigationController?.pushViewController(nextViewController, animated: true)
+        }else{
+              performSegue(withIdentifier: "addNotes", sender: nil)
+        }
+        
     }
     
     @IBAction func addWorkButtonClicked(){
-       showTableController("work")
+        if NoteManager.shared.getWorkNoteCount() > 0 {
+              showTableController("work")
+        }else{
+            performSegue(withIdentifier: "addNotes", sender: nil)
+        }
+     
     }
   
     @IBAction func addTemporaryButtonClicked(){
-        showTableController("temporary")
+        if NoteManager.shared.getTempNoteCount() > 0{
+            showTableController("temporary")
+        }
+        else{
+             performSegue(withIdentifier: "addNotes", sender: nil)
+        }
+        
     }
     
     @IBAction func addImportantButtonClicked(){
-         showTableController("important")
+        if NoteManager.shared.getImpNoteCount() > 0{
+              showTableController("important")
+        }else{
+             performSegue(withIdentifier: "addNotes", sender: nil)
+        }
+       
     }
     
     func showTableController(_ tag : String){
