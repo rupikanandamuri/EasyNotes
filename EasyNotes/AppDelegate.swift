@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         if UserDefaults.standard.bool(forKey: "OnBoardingFinished"){
             //Skip onboarding, show dashboard
-            let dashboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "dashboard")
+            let dashboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBArVC")
             self.window?.rootViewController = UINavigationController(rootViewController: dashboard)
         }
         return true

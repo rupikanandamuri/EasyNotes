@@ -559,7 +559,7 @@
                         <outlet property="thirdTextField" destination="b3o-iq-ZCe" id="b9C-R3-QGc"/>
                         <outlet property="titleLabel" destination="qqR-UE-UMl" id="uHf-SD-kA5"/>
                         <segue destination="SRl-Ha-8YV" kind="show" identifier="Confirmpassword" id="TlS-ex-mkX"/>
-                        <segue destination="vXH-YJ-1m1" kind="show" identifier="skipgoToDashboard" id="FxF-bV-VEl"/>
+                        <segue destination="eUU-7q-tIA" kind="show" identifier="skipgoToDashboard" id="FxF-bV-VEl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdb-bS-3G8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -768,14 +768,14 @@
                         <outlet property="secondView" destination="dTF-dW-9oE" id="nso-rn-Z7s"/>
                         <outlet property="thirdTextField" destination="QrQ-Ky-ZIp" id="zol-Po-C16"/>
                         <outlet property="thirdView" destination="OFe-YW-HCr" id="2aH-i5-Jzg"/>
-                        <segue destination="vXH-YJ-1m1" kind="show" identifier="goToDashboard" id="6Rn-sb-8Eg"/>
+                        <segue destination="eUU-7q-tIA" kind="show" identifier="goToDashboard" id="6Rn-sb-8Eg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOX-ff-ZTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3578" y="32"/>
         </scene>
-        <!--Dashboard View Controller-->
+        <!--Dashboard-->
         <scene sceneID="w0b-sg-JbP">
             <objects>
                 <viewController storyboardIdentifier="dashboard" id="vXH-YJ-1m1" customClass="DashboardViewController" customModule="EasyNotes" customModuleProvider="target" sceneMemberID="viewController">
@@ -1000,42 +1000,54 @@
                                     <constraint firstAttribute="height" constant="120" id="zi4-d5-aud"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Quick Note" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDi-uK-erz">
-                                <rect key="frame" x="127.5" y="622" width="120" height="25"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3e-60-rhk">
+                                <rect key="frame" x="100" y="553" width="175" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Quick Note" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDi-uK-erz">
+                                        <rect key="frame" x="5" y="10" width="120" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="aBP-Q8-I09"/>
+                                            <constraint firstAttribute="width" constant="120" id="hah-47-1iN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc6-eG-KMK">
+                                        <rect key="frame" x="130" y="2.5" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="VMF-in-GeD"/>
+                                            <constraint firstAttribute="height" constant="40" id="xLa-wL-Z9J"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="add notes"/>
+                                        <connections>
+                                            <action selector="addNotesButtonClicked" destination="vXH-YJ-1m1" eventType="touchUpInside" id="HX4-Qy-SFu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="aBP-Q8-I09"/>
-                                    <constraint firstAttribute="width" constant="120" id="hah-47-1iN"/>
+                                    <constraint firstItem="rc6-eG-KMK" firstAttribute="centerY" secondItem="PDi-uK-erz" secondAttribute="centerY" id="2qd-2x-A18"/>
+                                    <constraint firstAttribute="bottom" secondItem="PDi-uK-erz" secondAttribute="bottom" constant="10" id="Z3s-d3-m1F"/>
+                                    <constraint firstAttribute="trailing" secondItem="rc6-eG-KMK" secondAttribute="trailing" constant="5" id="mMX-CV-2nv"/>
+                                    <constraint firstItem="rc6-eG-KMK" firstAttribute="leading" secondItem="PDi-uK-erz" secondAttribute="trailing" constant="5" id="nLe-t5-mPu"/>
+                                    <constraint firstItem="PDi-uK-erz" firstAttribute="leading" secondItem="x3e-60-rhk" secondAttribute="leading" constant="5" id="rFw-ob-djS"/>
+                                    <constraint firstItem="PDi-uK-erz" firstAttribute="top" secondItem="x3e-60-rhk" secondAttribute="top" constant="10" id="st6-3x-Erd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc6-eG-KMK">
-                                <rect key="frame" x="167.5" y="577" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="VMF-in-GeD"/>
-                                    <constraint firstAttribute="height" constant="40" id="xLa-wL-Z9J"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="add notes"/>
-                                <connections>
-                                    <action selector="addNotesButtonClicked" destination="vXH-YJ-1m1" eventType="touchUpInside" id="HX4-Qy-SFu"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tLJ-0A-RTS" firstAttribute="top" secondItem="MCO-ju-PYY" secondAttribute="top" constant="20" id="4Q9-1n-9L5"/>
-                            <constraint firstItem="PDi-uK-erz" firstAttribute="centerX" secondItem="Tiv-B8-CBs" secondAttribute="centerX" id="5p7-da-HpI"/>
                             <constraint firstItem="fL3-Kw-neT" firstAttribute="top" secondItem="JY7-3q-6GK" secondAttribute="bottom" constant="10" id="5tB-Bf-fr4"/>
-                            <constraint firstItem="PDi-uK-erz" firstAttribute="top" secondItem="rc6-eG-KMK" secondAttribute="bottom" constant="5" id="LN9-ze-yoL"/>
+                            <constraint firstItem="x3e-60-rhk" firstAttribute="centerX" secondItem="Tiv-B8-CBs" secondAttribute="centerX" id="HCd-qD-OeK"/>
+                            <constraint firstItem="MCO-ju-PYY" firstAttribute="bottom" secondItem="x3e-60-rhk" secondAttribute="bottom" constant="20" id="Jyb-aG-hU4"/>
                             <constraint firstItem="tLJ-0A-RTS" firstAttribute="leading" secondItem="MCO-ju-PYY" secondAttribute="leading" constant="15" id="P8Y-jI-QHI"/>
-                            <constraint firstItem="rc6-eG-KMK" firstAttribute="centerX" secondItem="PDi-uK-erz" secondAttribute="centerX" id="QRe-r8-33y"/>
                             <constraint firstItem="fL3-Kw-neT" firstAttribute="leading" secondItem="MCO-ju-PYY" secondAttribute="leading" constant="15" id="ZUU-ue-tyu"/>
                             <constraint firstItem="3av-ZQ-gsK" firstAttribute="top" secondItem="fL3-Kw-neT" secondAttribute="bottom" constant="10" id="cU6-Bg-5jh"/>
                             <constraint firstItem="JY7-3q-6GK" firstAttribute="leading" secondItem="MCO-ju-PYY" secondAttribute="leading" constant="15" id="e1e-d3-qzB"/>
                             <constraint firstItem="MCO-ju-PYY" firstAttribute="trailing" secondItem="fL3-Kw-neT" secondAttribute="trailing" constant="15" id="g7D-WM-FPA"/>
                             <constraint firstItem="3av-ZQ-gsK" firstAttribute="leading" secondItem="MCO-ju-PYY" secondAttribute="leading" constant="15" id="jne-iO-5Ef"/>
-                            <constraint firstItem="MCO-ju-PYY" firstAttribute="bottom" secondItem="PDi-uK-erz" secondAttribute="bottom" constant="20" id="mXf-UH-saJ"/>
                             <constraint firstItem="JY7-3q-6GK" firstAttribute="top" secondItem="tLJ-0A-RTS" secondAttribute="bottom" constant="10" id="n5S-pq-wJO"/>
                             <constraint firstItem="MCO-ju-PYY" firstAttribute="trailing" secondItem="JY7-3q-6GK" secondAttribute="trailing" constant="15" id="pTp-vl-xdf"/>
                             <constraint firstItem="MCO-ju-PYY" firstAttribute="trailing" secondItem="3av-ZQ-gsK" secondAttribute="trailing" constant="15" id="tgd-fh-Rab"/>
@@ -1043,6 +1055,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MCO-ju-PYY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard" id="wb8-sT-c37"/>
                     <connections>
                         <outlet property="importantLastModified" destination="qYn-Il-SgK" id="AaT-vy-7Kq"/>
                         <outlet property="importantNotesCount" destination="AR2-z5-HV3" id="qdC-ix-VtY"/>
@@ -1061,7 +1074,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1gB-vJ-EBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2910" y="806"/>
+            <point key="canvasLocation" x="3848.8000000000002" y="805.54722638680664"/>
         </scene>
         <!--Note List In Table View Controller-->
         <scene sceneID="7ps-M7-6PY">
@@ -1276,18 +1289,73 @@
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="31.934032983508249"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ABa-Xk-dvu">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBArVC" automaticallyAdjustsScrollViewInsets="NO" id="eUU-7q-tIA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4tT-tH-DAA">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vXH-YJ-1m1" kind="relationship" relationship="viewControllers" id="j1m-8V-ZA9"/>
+                        <segue destination="oHn-WV-2z5" kind="relationship" relationship="viewControllers" id="3SG-dX-zuR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R6X-Pj-68r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2909.5999999999999" y="805.54722638680664"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="d22-4x-KLb">
+            <objects>
+                <viewController id="oHn-WV-2z5" customClass="SettingsViewController" customModule="EasyNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KXz-ed-aNR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RJ0-AT-vjL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oHn-WV-2z5" id="b92-TG-Vsf"/>
+                                    <outlet property="delegate" destination="oHn-WV-2z5" id="qD0-2d-OBb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Yha-6U-omb" firstAttribute="bottom" secondItem="RJ0-AT-vjL" secondAttribute="bottom" id="LMM-YK-Uhv"/>
+                            <constraint firstItem="RJ0-AT-vjL" firstAttribute="top" secondItem="Yha-6U-omb" secondAttribute="top" id="Ug8-i8-tS8"/>
+                            <constraint firstItem="Yha-6U-omb" firstAttribute="trailing" secondItem="RJ0-AT-vjL" secondAttribute="trailing" id="eip-sA-DnM"/>
+                            <constraint firstItem="RJ0-AT-vjL" firstAttribute="leading" secondItem="Yha-6U-omb" secondAttribute="leading" id="qZh-zA-dEM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yha-6U-omb"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="8VK-5n-Vmm"/>
+                    <connections>
+                        <outlet property="settingsListView" destination="RJ0-AT-vjL" id="6T1-8c-hYq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dEU-Bh-Cqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3117" y="1606"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add notes" width="114" height="114"/>
+        <image name="dashboard" width="32" height="32"/>
         <image name="diamond" width="93" height="93"/>
         <image name="error" width="87" height="93"/>
         <image name="more" width="72" height="72"/>
         <image name="more-detail" width="30" height="30"/>
         <image name="orange" width="987" height="159"/>
+        <image name="settings" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="FxF-bV-VEl"/>
         <segue reference="OEO-J5-APD"/>
-        <segue reference="6Rn-sb-8Eg"/>
         <segue reference="gmt-lW-iUe"/>
     </inferredMetricsTieBreakers>
 </document>

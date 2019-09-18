@@ -38,7 +38,7 @@ class NoteListInTableViewController: UIViewController,UITableViewDelegate,UITabl
 //        if  let vc = navigationController?.viewControllers[4]  {
 //            navigationController?.popToViewController(vc, animated: true)
 //        }
-        if let vc = navigationController?.viewControllers.filter({ $0 is DashboardViewController }).first {
+        if let vc = navigationController?.viewControllers.filter({ $0 is UITabBarController }).first {
             navigationController?.popToViewController(vc, animated: true)
         }
     }
