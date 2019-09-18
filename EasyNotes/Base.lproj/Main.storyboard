@@ -784,7 +784,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLJ-0A-RTS" userLabel="personal View">
-                                <rect key="frame" x="15" y="40" width="345" height="120"/>
+                                <rect key="frame" x="15" y="60" width="345" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuM-OB-jRi">
                                         <rect key="frame" x="20" y="45.5" width="99" height="29"/>
@@ -836,7 +836,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JY7-3q-6GK" userLabel="work View">
-                                <rect key="frame" x="15" y="170" width="345" height="120"/>
+                                <rect key="frame" x="15" y="195" width="345" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ous-JX-hZv">
                                         <rect key="frame" x="20" y="45.5" width="59.5" height="29"/>
@@ -891,7 +891,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fL3-Kw-neT" userLabel="temporary view">
-                                <rect key="frame" x="15" y="300" width="345" height="120"/>
+                                <rect key="frame" x="15" y="330" width="345" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temporary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTf-GT-FxQ">
                                         <rect key="frame" x="20" y="45.5" width="120.5" height="29"/>
@@ -946,7 +946,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3av-ZQ-gsK" userLabel="Important View">
-                                <rect key="frame" x="15" y="430" width="345" height="120"/>
+                                <rect key="frame" x="15" y="465" width="345" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvI-M2-BD7">
                                         <rect key="frame" x="20" y="45.5" width="112.5" height="29"/>
@@ -1000,8 +1000,8 @@
                                     <constraint firstAttribute="height" constant="120" id="zi4-d5-aud"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3e-60-rhk">
-                                <rect key="frame" x="100" y="553" width="175" height="45"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3e-60-rhk" userLabel="Quick View">
+                                <rect key="frame" x="100" y="513" width="175" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Quick Note" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDi-uK-erz">
                                         <rect key="frame" x="5" y="10" width="120" height="25"/>
@@ -1009,7 +1009,7 @@
                                             <constraint firstAttribute="height" constant="25" id="aBP-Q8-I09"/>
                                             <constraint firstAttribute="width" constant="120" id="hah-47-1iN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1038,17 +1038,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tLJ-0A-RTS" firstAttribute="top" secondItem="MCO-ju-PYY" secondAttribute="top" constant="20" id="4Q9-1n-9L5"/>
-                            <constraint firstItem="fL3-Kw-neT" firstAttribute="top" secondItem="JY7-3q-6GK" secondAttribute="bottom" constant="10" id="5tB-Bf-fr4"/>
+                            <constraint firstItem="tLJ-0A-RTS" firstAttribute="top" secondItem="MCO-ju-PYY" secondAttribute="top" constant="40" id="4Q9-1n-9L5"/>
+                            <constraint firstItem="fL3-Kw-neT" firstAttribute="top" secondItem="JY7-3q-6GK" secondAttribute="bottom" constant="15" id="5tB-Bf-fr4"/>
                             <constraint firstItem="x3e-60-rhk" firstAttribute="centerX" secondItem="Tiv-B8-CBs" secondAttribute="centerX" id="HCd-qD-OeK"/>
-                            <constraint firstItem="MCO-ju-PYY" firstAttribute="bottom" secondItem="x3e-60-rhk" secondAttribute="bottom" constant="20" id="Jyb-aG-hU4"/>
+                            <constraint firstItem="MCO-ju-PYY" firstAttribute="bottom" secondItem="x3e-60-rhk" secondAttribute="bottom" constant="60" id="Jyb-aG-hU4"/>
                             <constraint firstItem="tLJ-0A-RTS" firstAttribute="leading" secondItem="MCO-ju-PYY" secondAttribute="leading" constant="15" id="P8Y-jI-QHI"/>
                             <constraint firstItem="fL3-Kw-neT" firstAttribute="leading" secondItem="MCO-ju-PYY" secondAttribute="leading" constant="15" id="ZUU-ue-tyu"/>
-                            <constraint firstItem="3av-ZQ-gsK" firstAttribute="top" secondItem="fL3-Kw-neT" secondAttribute="bottom" constant="10" id="cU6-Bg-5jh"/>
+                            <constraint firstItem="3av-ZQ-gsK" firstAttribute="top" secondItem="fL3-Kw-neT" secondAttribute="bottom" constant="15" id="cU6-Bg-5jh"/>
                             <constraint firstItem="JY7-3q-6GK" firstAttribute="leading" secondItem="MCO-ju-PYY" secondAttribute="leading" constant="15" id="e1e-d3-qzB"/>
                             <constraint firstItem="MCO-ju-PYY" firstAttribute="trailing" secondItem="fL3-Kw-neT" secondAttribute="trailing" constant="15" id="g7D-WM-FPA"/>
                             <constraint firstItem="3av-ZQ-gsK" firstAttribute="leading" secondItem="MCO-ju-PYY" secondAttribute="leading" constant="15" id="jne-iO-5Ef"/>
-                            <constraint firstItem="JY7-3q-6GK" firstAttribute="top" secondItem="tLJ-0A-RTS" secondAttribute="bottom" constant="10" id="n5S-pq-wJO"/>
+                            <constraint firstItem="JY7-3q-6GK" firstAttribute="top" secondItem="tLJ-0A-RTS" secondAttribute="bottom" constant="15" id="n5S-pq-wJO"/>
                             <constraint firstItem="MCO-ju-PYY" firstAttribute="trailing" secondItem="JY7-3q-6GK" secondAttribute="trailing" constant="15" id="pTp-vl-xdf"/>
                             <constraint firstItem="MCO-ju-PYY" firstAttribute="trailing" secondItem="3av-ZQ-gsK" secondAttribute="trailing" constant="15" id="tgd-fh-Rab"/>
                             <constraint firstItem="MCO-ju-PYY" firstAttribute="trailing" secondItem="tLJ-0A-RTS" secondAttribute="trailing" constant="15" id="wZW-R9-XNf"/>
@@ -1295,6 +1295,7 @@
                 <tabBarController storyboardIdentifier="tabBArVC" automaticallyAdjustsScrollViewInsets="NO" id="eUU-7q-tIA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4tT-tH-DAA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
