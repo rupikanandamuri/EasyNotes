@@ -109,6 +109,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
             myNote.notes = saveText
             //sending date to relame date
             myNote.dateCreated = NoteManager.shared.getCurrentDate()
+            myNote.updatedDate = NoteManager.shared.getCurrentDate()
             //sending tag value to relam tag
             if let slectedTagForNote = tagTypeInSelectedNotes{
                 myNote.tag = slectedTagForNote

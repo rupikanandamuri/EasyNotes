@@ -11,14 +11,35 @@ import RealmSwift
 
 class DashboardViewController: UIViewController {
     
-    @IBOutlet var personalView : UIView!
-    @IBOutlet var workView : UIView!
-    @IBOutlet var temporaryView : UIView!
-    @IBOutlet var importantView : UIView!
+    @IBOutlet var personalView : UIView!{
+        didSet{
+            personalView.applyRadius()
+        }
+    }
+    @IBOutlet var workView : UIView!{
+        didSet{
+            workView.applyRadius()
+        }
+    }
+    @IBOutlet var temporaryView : UIView!{
+        didSet{
+            temporaryView.applyRadius()
+        }
+    }
+    @IBOutlet var importantView : UIView!{
+        didSet{
+            importantView.applyRadius()
+        }
+    }
+    
     @IBOutlet var personalNotesCount : UILabel!
     @IBOutlet var workNotesCount : UILabel!
     @IBOutlet var temporaryNotesCount : UILabel!
     @IBOutlet var importantNotesCount : UILabel!
+    @IBOutlet var personalLastModified : UILabel!
+    @IBOutlet var workLastModified : UILabel!
+    @IBOutlet var temporaryLastModified : UILabel!
+    @IBOutlet var importantLastModified : UILabel!
    
 
     override func viewDidLoad() {
@@ -33,6 +54,7 @@ class DashboardViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         //in dash board displaying how many notes are there in each category.
         countNotesInEachCategory()
+        updateModifiedDateOnDashboard()
     }
     
     
@@ -56,6 +78,13 @@ class DashboardViewController: UIViewController {
         workNotesCount.text = String(NoteManager.shared.getWorkNoteCount())
         temporaryNotesCount.text = String(NoteManager.shared.getTempNoteCount())
         importantNotesCount.text = String(NoteManager.shared.getImpNoteCount())
+    }
+    
+    func updateModifiedDateOnDashboard(){
+        personalLastModified.text = NoteManager.shared.getLastModifiedNote(NoteType.personal.rawValue)
+        workLastModified.text = NoteManager.shared.getLastModifiedNote(NoteType.work.rawValue)
+        importantLastModified.text = NoteManager.shared.getLastModifiedNote(NoteType.important.rawValue)
+        temporaryLastModified.text = NoteManager.shared.getLastModifiedNote(NoteType.temporary.rawValue)
     }
     
     

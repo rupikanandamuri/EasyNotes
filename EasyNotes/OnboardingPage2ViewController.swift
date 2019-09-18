@@ -28,10 +28,10 @@ class OnboardingPage2ViewController: UIViewController {
     //to get border for button
     
     func customiseButtons(){
-        personalButton.applyBorder()
-        workButton.applyBorder()
-        important.applyBorder()
-        temporary.applyBorder()
+        personalButton.applyBorderAndRadius()
+        workButton.applyBorderAndRadius()
+        important.applyBorderAndRadius()
+        temporary.applyBorderAndRadius()
     }
   
     @IBAction func continueButtonClicked(){
@@ -51,12 +51,15 @@ class OnboardingPage2ViewController: UIViewController {
 
 }
 
-extension UIButton{
+extension UIView{
     
-    func applyBorder(){
+    func applyBorderAndRadius(){
         self.layer.borderWidth = 2.0
         self.layer.borderWidth = 2.0
         self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.cornerRadius = 5.0
+    }
+    func applyRadius(){
         self.layer.cornerRadius = 5.0
     }
 }

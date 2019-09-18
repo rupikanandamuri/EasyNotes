@@ -1001,7 +1001,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Quick Note" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDi-uK-erz">
-                                <rect key="frame" x="127.5" y="625" width="120" height="25"/>
+                                <rect key="frame" x="127.5" y="622" width="120" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="aBP-Q8-I09"/>
                                     <constraint firstAttribute="width" constant="120" id="hah-47-1iN"/>
@@ -1011,7 +1011,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc6-eG-KMK">
-                                <rect key="frame" x="167.5" y="580" width="40" height="40"/>
+                                <rect key="frame" x="167.5" y="577" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="VMF-in-GeD"/>
                                     <constraint firstAttribute="height" constant="40" id="xLa-wL-Z9J"/>
@@ -1030,12 +1030,12 @@
                             <constraint firstItem="PDi-uK-erz" firstAttribute="top" secondItem="rc6-eG-KMK" secondAttribute="bottom" constant="5" id="LN9-ze-yoL"/>
                             <constraint firstItem="tLJ-0A-RTS" firstAttribute="leading" secondItem="MCO-ju-PYY" secondAttribute="leading" constant="15" id="P8Y-jI-QHI"/>
                             <constraint firstItem="rc6-eG-KMK" firstAttribute="centerX" secondItem="PDi-uK-erz" secondAttribute="centerX" id="QRe-r8-33y"/>
-                            <constraint firstItem="rc6-eG-KMK" firstAttribute="top" secondItem="3av-ZQ-gsK" secondAttribute="bottom" constant="30" id="UO7-DI-Zl9"/>
                             <constraint firstItem="fL3-Kw-neT" firstAttribute="leading" secondItem="MCO-ju-PYY" secondAttribute="leading" constant="15" id="ZUU-ue-tyu"/>
                             <constraint firstItem="3av-ZQ-gsK" firstAttribute="top" secondItem="fL3-Kw-neT" secondAttribute="bottom" constant="10" id="cU6-Bg-5jh"/>
                             <constraint firstItem="JY7-3q-6GK" firstAttribute="leading" secondItem="MCO-ju-PYY" secondAttribute="leading" constant="15" id="e1e-d3-qzB"/>
                             <constraint firstItem="MCO-ju-PYY" firstAttribute="trailing" secondItem="fL3-Kw-neT" secondAttribute="trailing" constant="15" id="g7D-WM-FPA"/>
                             <constraint firstItem="3av-ZQ-gsK" firstAttribute="leading" secondItem="MCO-ju-PYY" secondAttribute="leading" constant="15" id="jne-iO-5Ef"/>
+                            <constraint firstItem="MCO-ju-PYY" firstAttribute="bottom" secondItem="PDi-uK-erz" secondAttribute="bottom" constant="20" id="mXf-UH-saJ"/>
                             <constraint firstItem="JY7-3q-6GK" firstAttribute="top" secondItem="tLJ-0A-RTS" secondAttribute="bottom" constant="10" id="n5S-pq-wJO"/>
                             <constraint firstItem="MCO-ju-PYY" firstAttribute="trailing" secondItem="JY7-3q-6GK" secondAttribute="trailing" constant="15" id="pTp-vl-xdf"/>
                             <constraint firstItem="MCO-ju-PYY" firstAttribute="trailing" secondItem="3av-ZQ-gsK" secondAttribute="trailing" constant="15" id="tgd-fh-Rab"/>
@@ -1044,12 +1044,16 @@
                         <viewLayoutGuide key="safeArea" id="MCO-ju-PYY"/>
                     </view>
                     <connections>
+                        <outlet property="importantLastModified" destination="qYn-Il-SgK" id="AaT-vy-7Kq"/>
                         <outlet property="importantNotesCount" destination="AR2-z5-HV3" id="qdC-ix-VtY"/>
                         <outlet property="importantView" destination="3av-ZQ-gsK" id="V8b-4a-gxR"/>
+                        <outlet property="personalLastModified" destination="AMg-wo-NeZ" id="rvk-ul-69Q"/>
                         <outlet property="personalNotesCount" destination="zvO-Bx-Vaa" id="r0F-3I-1Ew"/>
                         <outlet property="personalView" destination="tLJ-0A-RTS" id="CnT-Ko-wKx"/>
+                        <outlet property="temporaryLastModified" destination="njN-c0-756" id="uVN-hU-Tnc"/>
                         <outlet property="temporaryNotesCount" destination="o6n-Rc-LsF" id="4nv-8J-Xu2"/>
                         <outlet property="temporaryView" destination="fL3-Kw-neT" id="Idg-co-063"/>
+                        <outlet property="workLastModified" destination="Lg7-Rh-Oxn" id="Qcm-BS-5dA"/>
                         <outlet property="workNotesCount" destination="9St-G6-eiy" id="moJ-D3-MOU"/>
                         <outlet property="workView" destination="JY7-3q-6GK" id="T2N-qS-pTN"/>
                         <segue destination="uLB-Nu-vzs" kind="show" identifier="addNotes" id="OEO-J5-APD"/>
