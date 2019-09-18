@@ -9,8 +9,11 @@
 import Foundation
 import RealmSwift
 
-enum NoteType{
-   case personal, work, temporary, important
+enum NoteType : String{
+   case personal = "personal"
+   case work = "work"
+   case temporary = "temporary"
+   case important = "important"
 }
 
 extension UIColor {
@@ -88,13 +91,23 @@ class NoteManager {
         return result?.count ?? 0
     }
     
+    func getLastModifiedNote(_ tag : String) -> String?{
+        if var result = getNotes(tag, false, false){
+            result = result.sorted(byKeyPath: "updatedDate",ascending: true)
+            if let note = result.first{
+                return note.updatedDate
+            }
+        }
+        return .none
+    }
+    
     //Helper method
     func getCurrentDate() -> String{
         let rawDate = Date() //This will give the current date
         
         //NEdd to convert this into string format
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d, h:mm a"
+        formatter.dateFormat = "MMM d, h:mm a, yyyy"
         
         let convertedString = formatter.string(from: rawDate)
         return convertedString
