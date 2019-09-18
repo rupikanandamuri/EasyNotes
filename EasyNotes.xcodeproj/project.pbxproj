@@ -42,6 +42,8 @@
 		0B9CA643230C486B00569197 /* addNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9CA642230C486B00569197 /* addNotesViewController.swift */; };
 		ABDCE3A123315659007331A2 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDCE3A023315659007331A2 /* NoteManager.swift */; };
 		ABFE74D723329620003559CF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE74D623329620003559CF /* SettingsViewController.swift */; };
+		ABFE74DD2332BAC2003559CF /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = ABFE74DC2332BAC2003559CF /* colors.json */; };
+		ABFE74DF2332BE73003559CF /* ColorPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE74DE2332BE73003559CF /* ColorPickerController.swift */; };
 		DBAA53D691C2B91603BA77FE /* Pods_EasyNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C4980F6FB6A1844D065564 /* Pods_EasyNotes.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +87,8 @@
 		A7C4980F6FB6A1844D065564 /* Pods_EasyNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDCE3A023315659007331A2 /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 		ABFE74D623329620003559CF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ABFE74DC2332BAC2003559CF /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		ABFE74DE2332BE73003559CF /* ColorPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerController.swift; sourceTree = "<group>"; };
 		EF496C72655D271244CC918C /* Pods-EasyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNotes.debug.xcconfig"; path = "Target Support Files/Pods-EasyNotes/Pods-EasyNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +135,8 @@
 				0B1D62B723021D04005BA869 /* ConfirmPasswordViewController.swift */,
 				0B2A370B23031DDF003A23CD /* DashboardViewController.swift */,
 				0B9CA642230C486B00569197 /* addNotesViewController.swift */,
+				ABFE74DE2332BE73003559CF /* ColorPickerController.swift */,
+				ABFE74DC2332BAC2003559CF /* colors.json */,
 				0B9446AC230C522A00C1C843 /* NoteListInTableViewController.swift */,
 				0B9446A8230C51B200C1C843 /* DisplayNotesInTableViewCell.swift */,
 				0B9446A9230C51B200C1C843 /* DisplayNotesInTableViewCell.xib */,
@@ -267,6 +273,7 @@
 				0B8F64B02301AC8900120B0B /* Exo2-Medium.ttf in Resources */,
 				0B8F64B62301AC8900120B0B /* Exo2-SemiBoldItalic.ttf in Resources */,
 				0B8F64B42301AC8900120B0B /* Exo2-Thin.ttf in Resources */,
+				ABFE74DD2332BAC2003559CF /* colors.json in Resources */,
 				0B8F64A82301AC8900120B0B /* Exo2-SemiBold.ttf in Resources */,
 				0B8F64B72301AC8900120B0B /* Exo2-MediumItalic.ttf in Resources */,
 			);
@@ -335,6 +342,7 @@
 				ABDCE3A123315659007331A2 /* NoteManager.swift in Sources */,
 				0B9CA643230C486B00569197 /* addNotesViewController.swift in Sources */,
 				0B8F647D2301A46C00120B0B /* OnboardingPageViewController.swift in Sources */,
+				ABFE74DF2332BE73003559CF /* ColorPickerController.swift in Sources */,
 				0B8F647B2301A46C00120B0B /* AppDelegate.swift in Sources */,
 				0B1D62B823021D04005BA869 /* ConfirmPasswordViewController.swift in Sources */,
 				0B9446AF230C55BE00C1C843 /* RLMNotes.swift in Sources */,
