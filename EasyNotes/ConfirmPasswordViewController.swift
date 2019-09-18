@@ -154,31 +154,27 @@ class ConfirmPasswordViewController: UIViewController,UITextFieldDelegate {
     }
     @IBAction func continueButtonClicked(){
         
-          if selectedText[0] == conformArray[0] && selectedText[1] == conformArray[1] && selectedText[2] == conformArray[2]  && selectedText[3] == conformArray[3]{
-            
+        if NoteManager.shared.changePasswordMode{
+             self.navigationController?.popToRootViewController(animated: true)
+        }else{
             if navigationController?.viewControllers[1] is OnboardingPage2ViewController && navigationController?.viewControllers.count             == 4{
                 //Coming from first onboarding
                 performSegue(withIdentifier: "goToDashboard", sender: nil)
-                
-                let defaults = UserDefaults.standard
-                defaults.set(true, forKey: "OnBoardingFinished")
+                NoteManager.shared.updateOnBoardingStatus(true)
             }else{
-                //Might be comng from personal note
-                
-//                if  let vc = navigationController?.viewControllers[5]   {
-//                     navigationController?.popToViewController(vc, animated: true)
-//                }
-               // else{
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! NoteListInTableViewController
-                    nextViewController.tagType = .personal
-                    nextViewController.tagColor = tagColor
-                    self.navigationController?.pushViewController(nextViewController, animated: true)
-                   //}
-                }
+                showNotesList()
             }
-        
         }
+    }
+    
+    
+    func showNotesList(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! NoteListInTableViewController
+        nextViewController.tagType = .personal
+        nextViewController.tagColor = tagColor
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
     
 
     /*

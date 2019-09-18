@@ -16,12 +16,13 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var fourthTextField : UITextField!
     @IBOutlet var continueButton : UIButton!
     @IBOutlet var skipButton : UIButton!
-   @IBOutlet var titleLabel : UILabel!
+    @IBOutlet var titleLabel : UILabel!
    
     
     var dataSource = [String]()
     let defaults    = UserDefaults.standard
     var tagColor : UIColor?
+    
     
 
     override func viewDidLoad() {
@@ -47,6 +48,10 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
         else{
             skipButton.isHidden = true
             titleLabel.text = "Enter your personal passcode"
+        }
+        
+        if NoteManager.shared.changePasswordMode {
+            skipButton.isHidden = true
         }
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -78,6 +83,8 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
     func contains(key: String) -> Bool {
         return UserDefaults.standard.value(forKey: "password") != nil
     }
+    
+    
     //adding textfiled to array
     func addTextFieldToArray(){
           //appending all the text filed text into one array
@@ -157,20 +164,8 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
             case fourthTextField:
                 fourthTextField.resignFirstResponder()
                 addTextFieldToArray()
-                  if let getPassword = UserDefaults.standard.string(forKey: "password"){
-                    continueButton.isHidden = true
-                     let str1 = dataSource.joined()
-                    if getPassword == str1{
-                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! NoteListInTableViewController
-                        nextViewController.tagType = .personal
-                        nextViewController.tagColor = tagColor
-                        self.navigationController?.pushViewController(nextViewController, animated: true)
-                        print(getPassword)
-                    }
-                    else{
-                        showAlertForPassword()
-                    }
+                if NoteManager.shared.changePasswordMode == false{
+                    validatePasscode()
                 }
                 
             default:
@@ -193,6 +188,24 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
         }
         else{
             print("cursor not entered into text field")
+        }
+    }
+    
+    func validatePasscode(){
+        if let getPassword = UserDefaults.standard.string(forKey: "password"){
+            continueButton.isHidden = true
+            let str1 = dataSource.joined()
+            if getPassword == str1{
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! NoteListInTableViewController
+                nextViewController.tagType = .personal
+                nextViewController.tagColor = tagColor
+                self.navigationController?.pushViewController(nextViewController, animated: true)
+                print(getPassword)
+            }
+            else{
+                showAlertForPassword()
+            }
         }
     }
 
