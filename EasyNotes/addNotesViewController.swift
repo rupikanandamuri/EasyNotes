@@ -18,7 +18,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var underlineViewLeadingConstraint : NSLayoutConstraint!
     
     var myNote = Notes()
-    var tagTypeInSelectedNotes : String?
+    var tagTypeInSelectedNotes : NoteType?
     var deletedButtonClicked = false
     var isNewNote = false
     var isAddNoteFromTable = false
@@ -37,12 +37,8 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         self.navigationController?.navigationBar.tintColor = UIColor.orange
         //to show by default personal tag.
         if isdefault{
-            tagTypeInSelectedNotes = "personal"
-          //  isdefault = false
+            tagTypeInSelectedNotes = .temporary
         }
-//        else{
-//                tagTypeInSelectedNotes = myNote.tag
-//        }
         if isNewNote == false{
             headerViewHeightConstraint.constant = 0
             self.view.layoutIfNeeded()
@@ -56,7 +52,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     }
     
     func customiseNavBarButtons(){
-        if myNote.tag == "work"{
+        if tagTypeInSelectedNotes == .work{
             if isNewNote == false{
                 let clearBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearNotes))
                 let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonPressed))
@@ -116,7 +112,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
             myNote.updatedDate = NoteManager.shared.getCurrentDate()
             //sending tag value to relam tag
             if let slectedTagForNote = tagTypeInSelectedNotes{
-                myNote.tag = slectedTagForNote
+                myNote.tag = slectedTagForNote.rawValue
                 myNote.expireDate = NoteManager.shared.getExpiryDate() ?? ""
                 NoteManager.shared.addNote(myNote)
             }
@@ -150,7 +146,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
         self.underlineView.backgroundColor = UIColor.EasyNoteTheme.personalColor
         //to get tag type when button is pressed.
-        tagTypeInSelectedNotes = "personal"
+        tagTypeInSelectedNotes = .personal
         
         //        if contains(key: "password"){
         //
@@ -187,20 +183,20 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
         self.underlineView.backgroundColor = UIColor.EasyNoteTheme.workColor
         //to get tag type when button is pressed.
-        tagTypeInSelectedNotes = "work"
+        tagTypeInSelectedNotes = .work
     }
     //temporary button clicked
     @IBAction func temporaryBUttonClciked(sender : UIButton){
         underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
         self.underlineView.backgroundColor = UIColor.EasyNoteTheme.temporaryColor
         //to get tag type when button is pressed.
-        tagTypeInSelectedNotes = "temporary"
+        tagTypeInSelectedNotes = .temporary
     }
     //imporatant button clicked
     @IBAction func importantButtonClciked(sender : UIButton){
         underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
         self.underlineView.backgroundColor = UIColor.EasyNoteTheme.impColor
-        tagTypeInSelectedNotes = "important"
+        tagTypeInSelectedNotes = .important
     }
     /*
      // MARK: - Navigation

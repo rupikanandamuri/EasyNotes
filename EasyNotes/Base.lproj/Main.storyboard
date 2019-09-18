@@ -1072,18 +1072,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fKH-zt-tkE">
-                                <rect key="frame" x="0.0" y="76" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="477"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="510" id="wU1-in-Kub"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="076-FO-wFd" id="WQs-zl-soC"/>
                                     <outlet property="delegate" destination="076-FO-wFd" id="MVl-4Q-55B"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9Z-Z0-rgS">
-                                <rect key="frame" x="167.5" y="611" width="40" height="40"/>
+                                <rect key="frame" x="167.5" y="578" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="1ad-bc-6DU"/>
                                     <constraint firstAttribute="height" constant="40" id="Ex1-hq-Kgh"/>
@@ -1094,7 +1091,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2X-mK-fEV">
-                                <rect key="frame" x="147" y="659" width="81" height="21"/>
+                                <rect key="frame" x="147" y="626" width="81" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1114,6 +1111,7 @@
                         <constraints>
                             <constraint firstItem="m2X-mK-fEV" firstAttribute="centerX" secondItem="efn-gq-J99" secondAttribute="centerX" id="38f-Tf-zlR"/>
                             <constraint firstItem="TgT-zl-5SZ" firstAttribute="leading" secondItem="Wf3-Xu-2no" secondAttribute="leading" constant="20" id="4Ug-rz-pRe"/>
+                            <constraint firstAttribute="bottom" secondItem="m2X-mK-fEV" secondAttribute="bottom" constant="20" id="HJg-5I-kTa"/>
                             <constraint firstItem="m2X-mK-fEV" firstAttribute="top" secondItem="O9Z-Z0-rgS" secondAttribute="bottom" constant="8" id="RDg-3r-hHk"/>
                             <constraint firstItem="fKH-zt-tkE" firstAttribute="top" secondItem="TgT-zl-5SZ" secondAttribute="bottom" constant="10" id="Vj6-ps-97Z"/>
                             <constraint firstItem="TgT-zl-5SZ" firstAttribute="top" secondItem="Wf3-Xu-2no" secondAttribute="top" constant="10" id="Yey-3W-zGW"/>
@@ -1250,7 +1248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EsL-2r-KQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="789"/>
+            <point key="canvasLocation" x="1892" y="947"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2ae-yJ-xCT">
@@ -1290,6 +1288,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="OEO-J5-APD"/>
         <segue reference="6Rn-sb-8Eg"/>
-        <segue reference="24p-dN-Wed"/>
+        <segue reference="gmt-lW-iUe"/>
     </inferredMetricsTieBreakers>
 </document>

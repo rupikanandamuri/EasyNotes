@@ -11,7 +11,11 @@ import UIKit
 class DisplayNotesInTableViewCell: UITableViewCell {
     
     @IBOutlet var notesFirstLabel : UILabel!
-    @IBOutlet var notesSecondLabel : UILabel!
+    @IBOutlet var notesSecondLabel : UILabel!{
+        didSet{
+            notesSecondLabel.isHidden = true
+        }
+    }
     @IBOutlet var dateLabel : UILabel!
     @IBOutlet var viewBackgroundColor : UIView!
     override func awakeFromNib() {

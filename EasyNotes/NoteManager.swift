@@ -61,10 +61,10 @@ class NoteManager {
         }
     }
     
-    func getNotes(_ tagType : String, _ shouldSort : Bool, _ ascendingOrder : Bool) -> Results<Notes>?{
+    func getNotes(_ tagType : NoteType, _ shouldSort : Bool, _ ascendingOrder : Bool) -> Results<Notes>?{
         let allData = realm.objects(Notes.self)
         //filter asccording to tag so that i will display in table view.
-        var result = allData.filter("tag == %@",tagType)
+        var result = allData.filter("tag == %@",tagType.rawValue)
         if shouldSort{
             result = result.sorted(byKeyPath: "dateCreated",ascending: ascendingOrder)
         }
@@ -72,28 +72,28 @@ class NoteManager {
     }
     
     func getPersonalNoteCount() -> Int{
-        let result = getNotes("personal", false, false)
+        let result = getNotes(.personal, false, false)
         return result?.count ?? 0
     }
     
     func getWorkNoteCount() -> Int{
-        let result = getNotes("work", false, false)
+        let result = getNotes(.work, false, false)
         return result?.count ?? 0
     }
     
     func getTempNoteCount() -> Int{
-        let result = getNotes("temporary", false, false)
+        let result = getNotes(.temporary, false, false)
         return result?.count ?? 0
     }
     
     func getImpNoteCount() -> Int{
-        let result = getNotes("important", false, false)
+        let result = getNotes(.important, false, false)
         return result?.count ?? 0
     }
     
-    func getLastModifiedNote(_ tag : String) -> String?{
+    func getLastModifiedNote(_ tag : NoteType) -> String?{
         if var result = getNotes(tag, false, false){
-            result = result.sorted(byKeyPath: "updatedDate",ascending: true)
+            result = result.sorted(byKeyPath: "updatedDate",ascending: false)
             if let note = result.first{
                 return note.updatedDate
             }

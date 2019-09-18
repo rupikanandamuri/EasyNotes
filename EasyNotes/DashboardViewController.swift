@@ -82,10 +82,10 @@ class DashboardViewController: UIViewController {
     
     //to update modified date on bashboard
     func updateModifiedDateOnDashboard(){
-        personalLastModified.text = NoteManager.shared.getLastModifiedNote(NoteType.personal.rawValue)
-        workLastModified.text = NoteManager.shared.getLastModifiedNote(NoteType.work.rawValue)
-        importantLastModified.text = NoteManager.shared.getLastModifiedNote(NoteType.important.rawValue)
-        temporaryLastModified.text = NoteManager.shared.getLastModifiedNote(NoteType.temporary.rawValue)
+        personalLastModified.text = NoteManager.shared.getLastModifiedNote(.personal)
+        workLastModified.text = NoteManager.shared.getLastModifiedNote(.work)
+        importantLastModified.text = NoteManager.shared.getLastModifiedNote(.important)
+        temporaryLastModified.text = NoteManager.shared.getLastModifiedNote(.temporary)
     }
     
     
@@ -103,7 +103,7 @@ class DashboardViewController: UIViewController {
     
     @IBAction func addWorkButtonClicked(){
         if NoteManager.shared.getWorkNoteCount() > 0 {
-              showTableController("work")
+              showTableController(.work)
         }else{
             performSegue(withIdentifier: "addNotes", sender: nil)
         }
@@ -112,7 +112,7 @@ class DashboardViewController: UIViewController {
   
     @IBAction func addTemporaryButtonClicked(){
         if NoteManager.shared.getTempNoteCount() > 0{
-            showTableController("temporary")
+            showTableController(.temporary)
         }
         else{
              performSegue(withIdentifier: "addNotes", sender: nil)
@@ -122,14 +122,14 @@ class DashboardViewController: UIViewController {
     
     @IBAction func addImportantButtonClicked(){
         if NoteManager.shared.getImpNoteCount() > 0{
-              showTableController("important")
+              showTableController(.important)
         }else{
              performSegue(withIdentifier: "addNotes", sender: nil)
         }
        
     }
     
-    func showTableController(_ tag : String){
+    func showTableController(_ tag : NoteType){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! NoteListInTableViewController
         nextViewController.tagColor = getColorForTag(tag)
@@ -137,15 +137,15 @@ class DashboardViewController: UIViewController {
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
-    func getColorForTag(_ tag : String) -> UIColor?{
+    func getColorForTag(_ tag : NoteType) -> UIColor?{
         switch tag {
-        case "temporary":
+        case .temporary:
                  return temporaryView.backgroundColor
-        case "important":
+        case .important:
             return importantView.backgroundColor
-        case "work":
+        case .work:
             return workView.backgroundColor
-        case "personal" :
+        case .personal :
             return personalView.backgroundColor
         default:
            return  UIColor.white
@@ -154,14 +154,6 @@ class DashboardViewController: UIViewController {
     
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
