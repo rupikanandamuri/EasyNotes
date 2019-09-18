@@ -42,19 +42,43 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         if isNewNote == false{
             headerViewHeightConstraint.constant = 0
             self.view.layoutIfNeeded()
-            let deleteBarButtonItem = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteNotes))
-            self.navigationItem.rightBarButtonItem  = deleteBarButtonItem
-        }
-        else if isNewNote == true &&  isAddNoteFromTable == true {
+        }else if isNewNote == true &&  isAddNoteFromTable == true {
+            //We get here when it is new note and add note cliked on table view
             headerViewHeightConstraint.constant = 0
             self.view.layoutIfNeeded()
+        }
+        customiseNavBarButtons()
+        
+    }
+    
+    func customiseNavBarButtons(){
+        if tagTypeInSelectedNotes == "work"{
+            if isNewNote == false{
+                let clearBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearNotes))
+                let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonPressed))
+                let deleteBarButtonItem = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteNotes))
+                self.navigationItem.rightBarButtonItems  = [clearBarButtonItem,deleteBarButtonItem,shareButton]
+            }else{
+                let clearBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearNotes))
+                let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonPressed))
+                self.navigationItem.rightBarButtonItems  = [clearBarButtonItem,shareButton]
+            }
+           
+        }else{
             let clearBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearNotes))
             self.navigationItem.rightBarButtonItem  = clearBarButtonItem
         }
-        else
-        {
-            let clearBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearNotes))
-            self.navigationItem.rightBarButtonItem  = clearBarButtonItem
+    }
+   
+    @objc func shareButtonPressed(){
+        if let string = textView.text{
+            let activityViewController =
+                UIActivityViewController(activityItems: [string],
+                                         applicationActivities: nil)
+            
+            present(activityViewController, animated: true) {
+                // ...
+            }
         }
     }
     

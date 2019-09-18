@@ -26,17 +26,19 @@ class DashboardViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         NoteManager.shared.deleteExpiredNotes()
-        countNotesInEachCategory()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        countNotesInEachCategory()
     }
     
     
     @IBAction func addNotesButtonClicked(){
         performSegue(withIdentifier: "addNotes", sender: nil)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addNotes" {
             if let vc = segue.destination as? addNotesViewController{
@@ -46,6 +48,7 @@ class DashboardViewController: UIViewController {
             }
         }
     }
+    
     //to display no of notes in every catergory count label
     func countNotesInEachCategory(){
         personalNotesCount.text = String(NoteManager.shared.getPersonalNoteCount())
@@ -53,6 +56,8 @@ class DashboardViewController: UIViewController {
         temporaryNotesCount.text = String(NoteManager.shared.getTempNoteCount())
         importantNotesCount.text = String(NoteManager.shared.getImpNoteCount())
     }
+    
+    
     @IBAction func addPersonalButtonClicked(){
   
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -68,6 +73,7 @@ class DashboardViewController: UIViewController {
     @IBAction func addTemporaryButtonClicked(){
         showTableController("temporary")
     }
+    
     @IBAction func addImportantButtonClicked(){
          showTableController("important")
     }
