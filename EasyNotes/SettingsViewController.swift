@@ -56,7 +56,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             showPasswordView()
         }
         if indexPath.row == 1{
-            
+            performSegue(withIdentifier: "showColorPicker", sender: nil)
         }
         if indexPath.row == 2{
             
