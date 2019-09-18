@@ -15,7 +15,7 @@ class NoteListInTableViewController: UIViewController,UITableViewDelegate,UITabl
     @IBOutlet var backButton : UIButton!
    var dataSource :  Results<Notes>?
     var tagColor : UIColor?
-    var tagType  : String?
+    var tagType  : NoteType?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -74,7 +74,7 @@ class NoteListInTableViewController: UIViewController,UITableViewDelegate,UITabl
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 80
     }
    
     //MARK - caneditrowat and editing style is used to create delte when swipe left in table view.

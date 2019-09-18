@@ -171,7 +171,7 @@ class ConfirmPasswordViewController: UIViewController,UITextFieldDelegate {
                // else{
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TableViewController") as! NoteListInTableViewController
-                    nextViewController.tagType = "personal"
+                    nextViewController.tagType = .personal
                     nextViewController.tagColor = tagColor
                     self.navigationController?.pushViewController(nextViewController, animated: true)
                    //}
