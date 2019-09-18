@@ -69,6 +69,8 @@ class NoteListInTableViewController: UIViewController,UITableViewDelegate,UITabl
                 if let temp =  sender as? Notes{
                     vc.myNote = temp
                     vc.isNewNote = false
+                    vc.isdefault = false
+                    vc.tagTypeInSelectedNotes = NoteType(rawValue: temp.tag)
                 }
             }
         }
