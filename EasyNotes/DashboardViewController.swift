@@ -80,6 +80,7 @@ class DashboardViewController: UIViewController {
         importantNotesCount.text = String(NoteManager.shared.getImpNoteCount())
     }
     
+    //to update modified date on bashboard
     func updateModifiedDateOnDashboard(){
         personalLastModified.text = NoteManager.shared.getLastModifiedNote(NoteType.personal.rawValue)
         workLastModified.text = NoteManager.shared.getLastModifiedNote(NoteType.work.rawValue)

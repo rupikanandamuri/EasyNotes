@@ -38,7 +38,11 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         //to show by default personal tag.
         if isdefault{
             tagTypeInSelectedNotes = "personal"
+          //  isdefault = false
         }
+//        else{
+//                tagTypeInSelectedNotes = myNote.tag
+//        }
         if isNewNote == false{
             headerViewHeightConstraint.constant = 0
             self.view.layoutIfNeeded()
@@ -52,7 +56,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     }
     
     func customiseNavBarButtons(){
-        if tagTypeInSelectedNotes == "work"{
+        if myNote.tag == "work"{
             if isNewNote == false{
                 let clearBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearNotes))
                 let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonPressed))
