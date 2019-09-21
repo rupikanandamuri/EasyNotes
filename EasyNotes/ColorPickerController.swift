@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DynamicColor
 
 class ColorPickerController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -15,12 +16,22 @@ class ColorPickerController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var secondaryColorListView : UITableView!
     
     var primaryColors = [[UIColor]]()
-
+    var secondaryColors = [UIColor]()
+    var tagSelected : String?
+    var selectedColor : UIColor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         loadColorPalette()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if (tagSelected != nil) && (selectedColor != nil){
+            NoteManager.shared.saveColor(selectedColor!,tagSelected!)
+        }
     }
     
     func loadColorPalette(){
@@ -46,6 +57,28 @@ class ColorPickerController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
+    
+    func loadSecondaryColorPalette(_ color : UIColor){
+        secondaryColors.removeAll()
+      
+        var i : CGFloat = 0.0
+        var original = color
+        for _ in 0...5{
+            secondaryColors.append(color.lighter(amount: i))
+            i += 0.07
+            print(i)
+        }
+        secondaryColors.reverse()
+        i = 0
+        for _ in 0...5{
+            secondaryColors.append(color.darkened(amount: i))
+            i += 0.06
+            print(i)
+        }
+        
+        
+        secondaryColorListView.reloadData()
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         if tableView == tagTableView{
@@ -69,7 +102,7 @@ class ColorPickerController: UIViewController, UITableViewDelegate, UITableViewD
             return pallete.count
         }
         if tableView == secondaryColorListView{
-            return 1
+            return secondaryColors.count
         }
         return 1
     }
@@ -78,16 +111,16 @@ class ColorPickerController: UIViewController, UITableViewDelegate, UITableViewD
         if tableView == tagTableView{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "tagCell", for: indexPath) as? TagCell{
                 if indexPath.row == 0{
-                    cell.tagName.text = "Personal"
+                    cell.tagName.text = NoteType.personal.rawValue
                 }
                 if indexPath.row == 1{
-                    cell.tagName.text = "Work"
+                    cell.tagName.text = NoteType.temporary.rawValue
                 }
                 if indexPath.row == 2{
-                     cell.tagName.text = "Temporary"
+                     cell.tagName.text = NoteType.work.rawValue
                 }
                 if indexPath.row == 3{
-                     cell.tagName.text = "Important"
+                     cell.tagName.text = NoteType.important.rawValue
                 }
                 cell.selectionStyle = .none
                 return cell
@@ -107,6 +140,8 @@ class ColorPickerController: UIViewController, UITableViewDelegate, UITableViewD
         if tableView == secondaryColorListView{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "secondaryColorCell", for: indexPath) as? SecondaryColorCell{
                 cell.colorView.applyRadius()
+                let color = secondaryColors[indexPath.row]
+                cell.colorView.backgroundColor = color
                 cell.selectionStyle = .none
                 return cell
             }
@@ -126,19 +161,26 @@ class ColorPickerController: UIViewController, UITableViewDelegate, UITableViewD
         if tableView == tagTableView{
             if let cell = tableView.cellForRow(at: indexPath) as? TagCell{
                 cell.contentView.applyBorderAndRadius()
+                tagSelected = cell.tagName.text
             }
         }
         if tableView == primaryColorListView{
             if let cell = tableView.cellForRow(at: indexPath) as? PrimaryColorCell{
                 cell.colorView.applyBorderAndRadius()
+                loadSecondaryColorPalette(cell.colorView.backgroundColor ?? UIColor.white)
+                selectedColor = cell.colorView.backgroundColor
             }
         }
         if tableView == secondaryColorListView{
             if let cell = tableView.cellForRow(at: indexPath) as? SecondaryColorCell{
                 cell.colorView.applyBorderAndRadius()
+                selectedColor = cell.colorView.backgroundColor
             }
         }
     }
+    
+    
+    
     /*
     // MARK: - Navigation
 
@@ -152,6 +194,12 @@ class ColorPickerController: UIViewController, UITableViewDelegate, UITableViewD
 }
 
 extension UIColor {
+    
+    var redValue: CGFloat{ return CIColor(color: self).red }
+    var greenValue: CGFloat{ return CIColor(color: self).green }
+    var blueValue: CGFloat{ return CIColor(color: self).blue }
+    var alphaValue: CGFloat{ return CIColor(color: self).alpha }
+    
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt32()
@@ -169,6 +217,9 @@ extension UIColor {
         }
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
+    
+    
+   
 }
 
 class TagCell : UITableViewCell{
@@ -179,4 +230,33 @@ class PrimaryColorCell: UITableViewCell{
 }
 class SecondaryColorCell : UITableViewCell{
     @IBOutlet weak var colorView : UIView!
+}
+
+extension UserDefaults {
+
+    func color(forKey key: String) -> UIColor? {
+
+        guard let colorData = data(forKey: key) else { return nil }
+
+        do {
+            return try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData)
+        } catch let error {
+            print("color error \(error.localizedDescription)")
+            return nil
+        }
+
+    }
+
+    func set(_ value: UIColor?, forKey key: String) {
+
+        guard let color = value else { return }
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: color, requiringSecureCoding: false)
+            set(data, forKey: key)
+        } catch let error {
+            print("error color key data not saved \(error.localizedDescription)")
+        }
+
+    }
+
 }

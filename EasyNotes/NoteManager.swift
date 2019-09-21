@@ -47,6 +47,33 @@ class NoteManager {
         defaults.set(status, forKey: "OnBoardingFinished")
     }
     
+    func getColor(_ tag : String) -> UIColor{
+        if let color = UserDefaults.standard.color(forKey: tag){
+             return  color
+        }else{
+            if tag == NoteType.personal.rawValue{
+                return UIColor.EasyNoteTheme.personalColor
+            }
+            if tag == NoteType.work.rawValue{
+                return UIColor.EasyNoteTheme.workColor
+            }
+            if tag == NoteType.important.rawValue{
+                return UIColor.EasyNoteTheme.impColor
+            }
+            if tag == NoteType.temporary.rawValue{
+                return UIColor.EasyNoteTheme.temporaryColor
+            }
+        }
+        return UIColor.EasyNoteTheme.personalColor
+    }
+    
+    
+    
+    func saveColor(_ color : UIColor, _ tag : String){
+        UserDefaults.standard.set(color, forKey: tag)
+    }
+    
+    
     func deleteNote(_ note : Notes){
         try! realm.write {
             realm.delete(note)
