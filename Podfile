@@ -7,6 +7,7 @@ target 'EasyNotes' do
 
   # Pods for EasyNotes
     pod 'RealmSwift'
+    pod 'DynamicColor', '~> 4.2.0'
 
 
 end

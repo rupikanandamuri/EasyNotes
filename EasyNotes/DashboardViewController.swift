@@ -55,6 +55,14 @@ class DashboardViewController: UIViewController {
         //in dash board displaying how many notes are there in each category.
         countNotesInEachCategory()
         updateModifiedDateOnDashboard()
+        updateCardsTheme()
+    }
+    
+    func updateCardsTheme(){
+        workView.backgroundColor = NoteManager.shared.getColor(NoteType.work.rawValue)
+        temporaryView.backgroundColor = NoteManager.shared.getColor(NoteType.temporary.rawValue)
+        importantView.backgroundColor = NoteManager.shared.getColor(NoteType.important.rawValue)
+        personalView.backgroundColor = NoteManager.shared.getColor(NoteType.personal.rawValue)
     }
     
     
