@@ -1243,15 +1243,33 @@
                     <connections>
                         <outlet property="headerView" destination="umA-LI-QyB" id="aud-zJ-mV2"/>
                         <outlet property="headerViewHeightConstraint" destination="uTU-O4-zuK" id="Uav-Hw-GB9"/>
+                        <outlet property="temporaryButton" destination="u2H-07-X4I" id="4qy-HB-nYI"/>
                         <outlet property="textView" destination="xOQ-MC-5nz" id="eOH-fB-SCO"/>
+                        <outlet property="toolBar" destination="kW8-oj-d0A" id="bB9-B7-TE1"/>
                         <outlet property="underlineView" destination="nTU-wj-EXG" id="3aX-CT-hBX"/>
                         <outlet property="underlineViewLeadingConstraint" destination="UXv-4P-7pf" id="L0A-kI-g6S"/>
                         <segue destination="Vha-Da-gdG" kind="show" identifier="goToPassword" id="gmt-lW-iUe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EsL-2r-KQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="kW8-oj-d0A">
+                    <rect key="frame" x="0.0" y="0.0" width="488" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sT8-I7-hbU">
+                            <rect key="frame" x="224" y="9" width="40" height="30"/>
+                            <state key="normal" title="Rupig"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="sT8-I7-hbU" firstAttribute="centerY" secondItem="kW8-oj-d0A" secondAttribute="centerY" id="0hi-tX-wkz"/>
+                        <constraint firstItem="sT8-I7-hbU" firstAttribute="centerX" secondItem="kW8-oj-d0A" secondAttribute="centerX" id="r0z-dN-m3u"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="gg9-XF-YCr"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="1892" y="947"/>
+            <point key="canvasLocation" x="993" y="2314"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2ae-yJ-xCT">
