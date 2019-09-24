@@ -83,8 +83,13 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
             }
            
         }else{
-            let clearBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearNotes))
-            self.navigationItem.rightBarButtonItem  = clearBarButtonItem
+            if isNewNote == true{
+                let clearBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearNotes))
+                self.navigationItem.rightBarButtonItem  = clearBarButtonItem
+            }else{
+                let deleteBarButtonItem = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteNotes))
+                self.navigationItem.rightBarButtonItem  = deleteBarButtonItem
+            }
         }
     }
    
@@ -140,8 +145,11 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     
     
     func updateNote(){
-        if let saveText = textView.text{
-            NoteManager.shared.updateNote(myNote, saveText)
+        //You already deleted note, so it will be invalidated
+        if myNote.isInvalidated == false{
+            if let saveText = textView.text{
+                NoteManager.shared.updateNote(myNote, saveText)
+            }
         }
     }
     
