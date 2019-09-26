@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "40540535744CFAFB1E90C4C4E3B8AB18"
+               BlueprintIdentifier = "EFC0FAF2576767963573D82F41E89831"
                BuildableName = "Pods_EasyNotes.framework"
                BlueprintName = "Pods-EasyNotes"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -29,6 +29,8 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -40,6 +42,17 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "EFC0FAF2576767963573D82F41E89831"
+            BuildableName = "Pods_EasyNotes.framework"
+            BlueprintName = "Pods-EasyNotes"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

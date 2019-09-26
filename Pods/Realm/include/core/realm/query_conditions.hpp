@@ -282,7 +282,11 @@ struct NotEqual {
     }
 
     template <class A, class B, class C, class D>
-    bool operator()(A, B, C, D) const = delete;
+    bool operator()(A, B, C, D) const
+    {
+        REALM_ASSERT(false);
+        return false;
+    }
 
     static std::string description()
     {

@@ -1,26 +1,22 @@
 PODS:
-  - DynamicColor (4.2.0)
-  - Realm (3.18.0):
-    - Realm/Headers (= 3.18.0)
-  - Realm/Headers (3.18.0)
-  - RealmSwift (3.18.0):
-    - Realm (= 3.18.0)
+  - Realm (3.13.0):
+    - Realm/Headers (= 3.13.0)
+  - Realm/Headers (3.13.0)
+  - RealmSwift (3.13.0):
+    - Realm (= 3.13.0)
 
 DEPENDENCIES:
-  - DynamicColor (~> 4.2.0)
   - RealmSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - DynamicColor
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
-  DynamicColor: c475f66bda1cabf602f2c54ac1171c0c07148a5a
-  Realm: 7b3d04740facf45e958a514b466a32b04f1113d6
-  RealmSwift: c817b5f374668cf08f649afb05f55d92a787649c
+  Realm: 5edd2ee65406aef591a4f9895de5a3440e51b3d8
+  RealmSwift: be5ebc7930e37cd3376b41cec7f21984528aaa16
 
-PODFILE CHECKSUM: d9f4573861bcafa65f3af19f8c2eb496ade6c750
+PODFILE CHECKSUM: d9b9743c90c1f699de08ab4e337600dba023de03
 
 COCOAPODS: 1.6.1
