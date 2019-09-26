@@ -21,6 +21,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     
     //to connect tool bar is a view  which is in the top of view controller
     @IBOutlet var toolBar : UIView!
+    @IBOutlet var reminderButton : UIButton!
     
     var myNote = Notes()
     var tagTypeInSelectedNotes : NoteType?
@@ -238,5 +239,41 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
      // Pass the selected object to the new view controller.
      }
      */
+    //to add bullet
+    @IBAction func adBulletButtonClicked(){
+        let attributesDictionary = [NSAttributedString.Key.font : textView.font]
+        let fullAttributedString = NSMutableAttributedString(string: "", attributes: attributesDictionary as [NSAttributedString.Key : Any])
+        let convertTextToString = String(textView.text)
+        for  string in convertTextToString
+        {
+            let bulletPoint: String = "\u{2022}"
+            let formattedString: String = "\(bulletPoint) \(string)\n"
+            let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: formattedString)
+             
+            let paragraphStyle = createParagraphAttribute()
+            attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSMakeRange(0, attributedString.length))
+             
+            fullAttributedString.append(attributedString)
+        }
+         
+        textView.attributedText = fullAttributedString
+    }
+    func createParagraphAttribute() ->NSParagraphStyle
+       {
+           var paragraphStyle: NSMutableParagraphStyle
+        paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: 15, options: NSDictionary() as! [NSTextTab.OptionKey : Any])]
+           paragraphStyle.defaultTabInterval = 15
+           paragraphStyle.firstLineHeadIndent = 0
+           paragraphStyle.headIndent = 15
+    
+           return paragraphStyle
+       }
+    //to add reminder
+    @IBAction func reminderButtonClicked(){
+        
+      performSegue(withIdentifier: "Reminder", sender: nil)
+        
+    }
     
 }

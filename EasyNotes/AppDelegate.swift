@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     
@@ -20,9 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //Skip onboarding, show dashboard
             let dashboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBArVC")
             self.window?.rootViewController = UINavigationController(rootViewController: dashboard)
+            //to shedule notifications.
+            let center = UNUserNotificationCenter.current()
+            center.delegate = self
+            center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            // Enable or disable features based on authorization
         }
-        return true
     }
+      return true
+  }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -47,6 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
     }
 
+    
+    //Notification settings
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("got local notification")
+    }
     
 
 }

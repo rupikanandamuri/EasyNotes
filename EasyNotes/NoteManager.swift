@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 
 enum NoteType : String{
-   case personal = "personal"
-   case work = "work"
-   case temporary = "temporary"
-   case important = "important"
+    case personal = "personal"
+    case work = "work"
+    case temporary = "temporary"
+    case important = "important"
 }
 
 extension UIColor {
@@ -49,7 +49,7 @@ class NoteManager {
     
     func getColor(_ tag : String) -> UIColor{
         if let color = UserDefaults.standard.color(forKey: tag){
-             return  color
+            return  color
         }else{
             if tag == NoteType.personal.rawValue{
                 return UIColor.EasyNoteTheme.personalColor
@@ -195,6 +195,60 @@ class NoteManager {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "goToPersonal") as!  PersonalPasswordViewController
         return nextViewController
+    }
+    
+    //to show notification on particular date and time in impoirtant tag
+    // 0 - Once , 1- Daily, 2-Weekly, 3- Monthly, 4 - Yearly
+    func scheduleNotification(date : Date, _ repeatMode : Int) {
+        
+        let content = UNMutableNotificationContent()
+        
+        //adding title, subtitle, body and badge
+        content.title = "Hey this is Simplified iOS"
+        content.subtitle = "iOS Development is fun"
+        content.body = "We are learning about iOS Local Notification"
+        content.badge = 1
+        
+        //getting the notification trigger
+        //it will be called after 5 seconds
+        
+        //let component = Calendar.current.dateComponents([.day,.month,.year,.hour,.minute,.second], from: date)
+        
+        var component = DateComponents()
+        var repeats = false
+        if repeatMode > 0{
+            repeats = true
+        }
+        
+        if repeatMode == 0{
+            component = Calendar.current.dateComponents([.hour,.minute,.second,], from: date)
+        }
+        if repeatMode == 1{
+          component = Calendar.current.dateComponents([.day,.hour,.minute,.second,], from: date)
+        }
+        if repeatMode == 2{
+            component = Calendar.current.dateComponents([.weekday,.hour,.minute,.second,], from: date)
+        }
+        if repeatMode == 3{
+            component = Calendar.current.dateComponents([.month,.hour,.minute,.second,], from: date)
+        }
+        if repeatMode == 4{
+            component = Calendar.current.dateComponents([.year,.hour,.minute,.second,], from: date)
+        }
+        
+        
+        //If user want this to repeat every day, make repeats:true, else make it false
+        let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: repeats)
+        
+        //getting the notification request
+        let request = UNNotificationRequest(identifier: "SimplifiedIOSNotification", content: content, trigger: trigger)
+        
+        //adding the notification to notification center
+        UNUserNotificationCenter.current().add(request) { (error) in
+            guard error == nil else { return }
+             print("Notification scheduled")
+        }
+       
     }
     
 }

@@ -1243,67 +1243,86 @@
                     <connections>
                         <outlet property="headerView" destination="umA-LI-QyB" id="aud-zJ-mV2"/>
                         <outlet property="headerViewHeightConstraint" destination="uTU-O4-zuK" id="Uav-Hw-GB9"/>
+                        <outlet property="reminderButton" destination="khB-sN-hvU" id="qNM-my-yVJ"/>
                         <outlet property="temporaryButton" destination="u2H-07-X4I" id="4qy-HB-nYI"/>
                         <outlet property="textView" destination="xOQ-MC-5nz" id="eOH-fB-SCO"/>
                         <outlet property="toolBar" destination="kW8-oj-d0A" id="bB9-B7-TE1"/>
                         <outlet property="underlineView" destination="nTU-wj-EXG" id="3aX-CT-hBX"/>
                         <outlet property="underlineViewLeadingConstraint" destination="UXv-4P-7pf" id="L0A-kI-g6S"/>
                         <segue destination="Vha-Da-gdG" kind="show" identifier="goToPassword" id="gmt-lW-iUe"/>
+                        <segue destination="hyP-Zf-2NJ" kind="show" identifier="Reminder" id="fAh-x0-NfU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EsL-2r-KQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="kW8-oj-d0A">
-                    <rect key="frame" x="0.0" y="0.0" width="488" height="48"/>
+                    <rect key="frame" x="0.0" y="0.0" width="396" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sT8-I7-hbU">
-                            <rect key="frame" x="60" y="9" width="30" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sT8-I7-hbU" userLabel="bullet">
+                            <rect key="frame" x="50" y="9" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="BVL-pl-ouz"/>
                                 <constraint firstAttribute="width" constant="30" id="Rb0-KW-pQd"/>
                             </constraints>
                             <state key="normal" title="Rupig" image="bullet"/>
+                            <connections>
+                                <action selector="adBulletButtonClicked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="m9g-Oa-SV6"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-9d-W7x">
-                            <rect key="frame" x="137" y="4" width="40" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-9d-W7x" userLabel="bold">
+                            <rect key="frame" x="110" y="4" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="8DG-zr-WId"/>
                                 <constraint firstAttribute="height" constant="40" id="q02-Rl-4wn"/>
                             </constraints>
                             <state key="normal" title="Rupig" image="bold"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFI-Ky-OhH">
-                            <rect key="frame" x="311" y="4" width="40" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFI-Ky-OhH" userLabel="italic">
+                            <rect key="frame" x="250" y="4" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="Nsd-rR-yBq"/>
                                 <constraint firstAttribute="height" constant="40" id="un0-Tu-fPg"/>
                             </constraints>
                             <state key="normal" title="Rupig" image="underline"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAb-3s-VCU">
-                            <rect key="frame" x="227" y="4" width="40" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAb-3s-VCU" userLabel="underline">
+                            <rect key="frame" x="180" y="4" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="A2I-f6-Iaz"/>
                                 <constraint firstAttribute="height" constant="40" id="CyH-7L-4cr"/>
                             </constraints>
                             <state key="normal" title="Rupig" image="italic"/>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khB-sN-hvU" userLabel="timer">
+                            <rect key="frame" x="320" y="4" width="30" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="9Ld-cn-iU4"/>
+                                <constraint firstAttribute="height" constant="40" id="yY5-Ra-sBA"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="timer"/>
+                            <connections>
+                                <action selector="reminderButtonClicked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="Sth-zV-WBE"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="UZu-9d-W7x" firstAttribute="leading" secondItem="sT8-I7-hbU" secondAttribute="trailing" constant="47" id="7Aj-2J-j6X"/>
-                        <constraint firstItem="yAb-3s-VCU" firstAttribute="leading" secondItem="UZu-9d-W7x" secondAttribute="trailing" constant="50" id="9NI-3j-Tmp"/>
-                        <constraint firstItem="sT8-I7-hbU" firstAttribute="leading" secondItem="gg9-XF-YCr" secondAttribute="leading" constant="60" id="S0G-BU-DiN"/>
-                        <constraint firstItem="cFI-Ky-OhH" firstAttribute="leading" secondItem="yAb-3s-VCU" secondAttribute="trailing" constant="44" id="SNm-M6-Pg0"/>
+                        <constraint firstItem="UZu-9d-W7x" firstAttribute="leading" secondItem="sT8-I7-hbU" secondAttribute="trailing" constant="30" id="7Aj-2J-j6X"/>
+                        <constraint firstItem="yAb-3s-VCU" firstAttribute="leading" secondItem="UZu-9d-W7x" secondAttribute="trailing" constant="30" id="9NI-3j-Tmp"/>
+                        <constraint firstItem="sT8-I7-hbU" firstAttribute="leading" secondItem="gg9-XF-YCr" secondAttribute="leading" constant="50" id="S0G-BU-DiN"/>
+                        <constraint firstItem="cFI-Ky-OhH" firstAttribute="leading" secondItem="yAb-3s-VCU" secondAttribute="trailing" constant="30" id="SNm-M6-Pg0"/>
                         <constraint firstItem="cFI-Ky-OhH" firstAttribute="centerY" secondItem="kW8-oj-d0A" secondAttribute="centerY" id="acI-gG-kxw"/>
+                        <constraint firstItem="sT8-I7-hbU" firstAttribute="leading" secondItem="gg9-XF-YCr" secondAttribute="leading" priority="999" constant="70" id="cKa-L6-2PK"/>
                         <constraint firstItem="UZu-9d-W7x" firstAttribute="centerY" secondItem="kW8-oj-d0A" secondAttribute="centerY" id="kVT-OL-nD7"/>
+                        <constraint firstItem="khB-sN-hvU" firstAttribute="leading" secondItem="cFI-Ky-OhH" secondAttribute="trailing" constant="30" id="lfo-Lw-DR5"/>
                         <constraint firstItem="sT8-I7-hbU" firstAttribute="centerY" secondItem="kW8-oj-d0A" secondAttribute="centerY" id="lfv-Eu-AUL"/>
+                        <constraint firstItem="khB-sN-hvU" firstAttribute="centerY" secondItem="kW8-oj-d0A" secondAttribute="centerY" id="luC-3f-ciu"/>
                         <constraint firstItem="yAb-3s-VCU" firstAttribute="centerY" secondItem="kW8-oj-d0A" secondAttribute="centerY" id="mN2-JX-FcB"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="gg9-XF-YCr"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="993" y="2314"/>
+            <point key="canvasLocation" x="935" y="1760"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2ae-yJ-xCT">
@@ -1421,6 +1440,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEU-Bh-Cqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3848.8000000000002" y="1596.2518740629687"/>
+        </scene>
+        <!--Reminder View Controller-->
+        <scene sceneID="5LX-Nw-sPH">
+            <objects>
+                <viewController id="hyP-Zf-2NJ" customClass="ReminderViewController" customModule="EasyNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RJs-Kg-1EM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me on " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72i-LT-M26">
+                                <rect key="frame" x="20" y="50" width="114.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QPF-nz-O8v">
+                                <rect key="frame" x="15" y="383" width="345" height="32"/>
+                                <segments>
+                                    <segment title="Once"/>
+                                    <segment title="Daily"/>
+                                    <segment title="Weekly"/>
+                                    <segment title="Monhtly"/>
+                                    <segment title="Yearly"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjZ-TG-r6T">
+                                <rect key="frame" x="20" y="347" width="60" height="21"/>
+                                <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hid-UZ-cPp">
+                                <rect key="frame" x="15" y="485" width="345" height="32"/>
+                                <segments>
+                                    <segment title="Low"/>
+                                    <segment title="Medium"/>
+                                    <segment title="High"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdr-x2-v6x">
+                                <rect key="frame" x="20" y="444" width="60" height="21"/>
+                                <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="RgY-0J-fjM">
+                                <rect key="frame" x="0.0" y="96" width="375" height="216"/>
+                                <connections>
+                                    <action selector="datePickerClicked" destination="hyP-Zf-2NJ" eventType="valueChanged" id="Y7L-4G-D9i"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QPF-nz-O8v" firstAttribute="leading" secondItem="Wwy-0f-2yK" secondAttribute="leading" constant="15" id="3jJ-VO-bUe"/>
+                            <constraint firstItem="hid-UZ-cPp" firstAttribute="top" secondItem="Jdr-x2-v6x" secondAttribute="bottom" constant="20" id="41H-z5-Ccr"/>
+                            <constraint firstItem="RgY-0J-fjM" firstAttribute="top" secondItem="72i-LT-M26" secondAttribute="bottom" constant="25" id="Bwp-je-nZw"/>
+                            <constraint firstItem="hid-UZ-cPp" firstAttribute="leading" secondItem="Wwy-0f-2yK" secondAttribute="leading" constant="15" id="DBF-YJ-f1x"/>
+                            <constraint firstItem="Jdr-x2-v6x" firstAttribute="leading" secondItem="Wwy-0f-2yK" secondAttribute="leading" constant="20" id="GKf-xh-M9q"/>
+                            <constraint firstItem="Wwy-0f-2yK" firstAttribute="trailing" secondItem="QPF-nz-O8v" secondAttribute="trailing" constant="15" id="LZ3-PZ-JtA"/>
+                            <constraint firstItem="72i-LT-M26" firstAttribute="leading" secondItem="Wwy-0f-2yK" secondAttribute="leading" constant="20" id="Tul-Fs-xc4"/>
+                            <constraint firstItem="QPF-nz-O8v" firstAttribute="top" secondItem="IjZ-TG-r6T" secondAttribute="bottom" constant="15" id="aRu-EE-p6f"/>
+                            <constraint firstItem="Wwy-0f-2yK" firstAttribute="trailing" secondItem="hid-UZ-cPp" secondAttribute="trailing" constant="15" id="arh-hq-mzc"/>
+                            <constraint firstItem="RgY-0J-fjM" firstAttribute="leading" secondItem="Wwy-0f-2yK" secondAttribute="leading" id="dXQ-Sq-OU8"/>
+                            <constraint firstItem="IjZ-TG-r6T" firstAttribute="leading" secondItem="Wwy-0f-2yK" secondAttribute="leading" constant="20" id="e7W-dG-KB7"/>
+                            <constraint firstItem="Jdr-x2-v6x" firstAttribute="top" secondItem="QPF-nz-O8v" secondAttribute="bottom" constant="30" id="jIp-dF-cv8"/>
+                            <constraint firstItem="IjZ-TG-r6T" firstAttribute="top" secondItem="RgY-0J-fjM" secondAttribute="bottom" constant="35.5" id="kLX-9U-rVg"/>
+                            <constraint firstItem="RgY-0J-fjM" firstAttribute="trailing" secondItem="Wwy-0f-2yK" secondAttribute="trailing" id="mPX-zw-Dnd"/>
+                            <constraint firstItem="72i-LT-M26" firstAttribute="top" secondItem="Wwy-0f-2yK" secondAttribute="top" constant="50" id="paT-Me-omI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wwy-0f-2yK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qcn-Fa-PdE"/>
+                    <connections>
+                        <outlet property="datePicker" destination="RgY-0J-fjM" id="Ktq-5k-h23"/>
+                        <outlet property="prioritySegment" destination="hid-UZ-cPp" id="ryp-lc-sob"/>
+                        <outlet property="repeatSegment" destination="QPF-nz-O8v" id="GXr-NI-LDE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="miK-xM-3oe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1895" y="1760"/>
         </scene>
         <!--Color Picker Controller-->
         <scene sceneID="9uL-eO-p5R">
@@ -1623,6 +1724,7 @@
         <image name="more-detail" width="30" height="30"/>
         <image name="orange" width="987" height="159"/>
         <image name="settings" width="30" height="30"/>
+        <image name="timer" width="50" height="50"/>
         <image name="underline" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
