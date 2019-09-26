@@ -11,16 +11,22 @@ import RealmSwift
 
 class addNotesViewController: UIViewController,UITextViewDelegate {
     
+    
     @IBOutlet var textView : UITextView!
     @IBOutlet var headerView : UIView!
     @IBOutlet weak var headerViewHeightConstraint : NSLayoutConstraint!
     @IBOutlet var underlineView : UIView!
     @IBOutlet weak var underlineViewLeadingConstraint : NSLayoutConstraint!
+    @IBOutlet var temporaryButton : UIButton!
+    
+    //to connect tool bar is a view  which is in the top of view controller
+    @IBOutlet var toolBar : UIView!
     
     var myNote = Notes()
     var tagTypeInSelectedNotes : NoteType?
     var deletedButtonClicked = false
     var isNewNote = false
+    var notesFromDashboard = false
     var isAddNoteFromTable = false
     //to get make personal as default when it enter into add quick notes
     var isdefault = true
@@ -29,6 +35,8 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         super.viewDidLoad()
         textView.delegate = self
         textView.text = myNote.notes
+        
+        textView.inputAccessoryView = toolBar
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,19 +44,29 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.navigationBar.tintColor = UIColor.orange
         //to show by default personal tag.
-        if isdefault{
-            tagTypeInSelectedNotes = .temporary
-        }
+        
         if isNewNote == false{
             headerViewHeightConstraint.constant = 0
             self.view.layoutIfNeeded()
-        }else if isNewNote == true &&  isAddNoteFromTable == true {
+        }else if isNewNote == true &&  isAddNoteFromTable == true{
             //We get here when it is new note and add note cliked on table view
+            headerViewHeightConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }
+        else if notesFromDashboard == true{
+            //we got here from dashboard if there is no 
             headerViewHeightConstraint.constant = 0
             self.view.layoutIfNeeded()
         }
         customiseNavBarButtons()
         
+    }
+    override func viewWillLayoutSubviews() {
+        
+        if isdefault{
+            //tagTypeInSelectedNotes = .temporary
+            temporaryBUttonClciked(sender:temporaryButton )
+        }
     }
     
     func customiseNavBarButtons(){
@@ -65,8 +83,13 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
             }
            
         }else{
-            let clearBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearNotes))
-            self.navigationItem.rightBarButtonItem  = clearBarButtonItem
+            if isNewNote == true{
+                let clearBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearNotes))
+                self.navigationItem.rightBarButtonItem  = clearBarButtonItem
+            }else{
+                let deleteBarButtonItem = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteNotes))
+                self.navigationItem.rightBarButtonItem  = deleteBarButtonItem
+            }
         }
     }
    
@@ -122,8 +145,11 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     
     
     func updateNote(){
-        if let saveText = textView.text{
-            NoteManager.shared.updateNote(myNote, saveText)
+        //You already deleted note, so it will be invalidated
+        if myNote.isInvalidated == false{
+            if let saveText = textView.text{
+                NoteManager.shared.updateNote(myNote, saveText)
+            }
         }
     }
     
@@ -144,7 +170,9 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     //MARK -for button tags
     @IBAction func personalButtonClciked(sender : UIButton){
         underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
-        self.underlineView.backgroundColor = UIColor.EasyNoteTheme.personalColor
+        let personalColorForUnderline = NoteManager.shared.getColor(NoteType.personal.rawValue)
+        self.underlineView.backgroundColor = personalColorForUnderline
+        
         //to get tag type when button is pressed.
         tagTypeInSelectedNotes = .personal
         
@@ -181,21 +209,24 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     // work button clicked
     @IBAction func workButtonClciked(sender : UIButton){
         underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
-        self.underlineView.backgroundColor = UIColor.EasyNoteTheme.workColor
+         let workColorForUnderline = NoteManager.shared.getColor(NoteType.work.rawValue)
+        self.underlineView.backgroundColor = workColorForUnderline
         //to get tag type when button is pressed.
         tagTypeInSelectedNotes = .work
     }
     //temporary button clicked
     @IBAction func temporaryBUttonClciked(sender : UIButton){
         underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
-        self.underlineView.backgroundColor = UIColor.EasyNoteTheme.temporaryColor
+        let tempColorForUnderline = NoteManager.shared.getColor(NoteType.temporary.rawValue)
+        self.underlineView.backgroundColor = tempColorForUnderline
         //to get tag type when button is pressed.
         tagTypeInSelectedNotes = .temporary
     }
     //imporatant button clicked
     @IBAction func importantButtonClciked(sender : UIButton){
         underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
-        self.underlineView.backgroundColor = UIColor.EasyNoteTheme.impColor
+        let impColorForUnderline = NoteManager.shared.getColor(NoteType.important.rawValue)
+        self.underlineView.backgroundColor = impColorForUnderline
         tagTypeInSelectedNotes = .important
     }
     /*

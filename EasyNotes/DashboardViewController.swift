@@ -75,6 +75,7 @@ class DashboardViewController: UIViewController {
             if let vc = segue.destination as? addNotesViewController{
                 if  sender == nil {
                     vc.isNewNote = true
+                    
                 }
             }
         }
@@ -103,7 +104,15 @@ class DashboardViewController: UIViewController {
             nextViewController.tagColor = personalView.backgroundColor
             self.navigationController?.pushViewController(nextViewController, animated: true)
         }else{
-              performSegue(withIdentifier: "addNotes", sender: nil)
+             // performSegue(withIdentifier: "addNotes", sender: nil)
+            //when there are no notes available in table list when u click on any tag in dahsboard it will take you to add notes by defaitl tag u clicked to write notes.
+            let nextViewController = storyboard?.instantiateViewController(withIdentifier: "WriteNewNotes") as! addNotesViewController
+            nextViewController.isNewNote = true
+            nextViewController.notesFromDashboard = true
+            nextViewController.tagTypeInSelectedNotes = NoteType(rawValue: "personal")
+            nextViewController.isdefault = false
+            self.navigationController?.pushViewController(nextViewController, animated: true)
+               
         }
         
     }
@@ -112,7 +121,14 @@ class DashboardViewController: UIViewController {
         if NoteManager.shared.getWorkNoteCount() > 0 {
               showTableController(.work)
         }else{
-            performSegue(withIdentifier: "addNotes", sender: nil)
+           // performSegue(withIdentifier: "addNotes", sender: nil)
+            //when there are no notes available in table list when u click on any tag in dahsboard it will take you to add notes by defaitl tag u clicked to write notes.
+            let nextViewController = storyboard?.instantiateViewController(withIdentifier: "WriteNewNotes") as! addNotesViewController
+            nextViewController.isNewNote = true
+            nextViewController.notesFromDashboard = true
+            nextViewController.tagTypeInSelectedNotes = NoteType(rawValue: "work")
+            nextViewController.isdefault = false
+            self.navigationController?.pushViewController(nextViewController, animated: true)
         }
      
     }
@@ -122,7 +138,14 @@ class DashboardViewController: UIViewController {
             showTableController(.temporary)
         }
         else{
-             performSegue(withIdentifier: "addNotes", sender: nil)
+             //performSegue(withIdentifier: "addNotes", sender: nil)
+            //when there are no notes available in table list when u click on any tag in dahsboard it will take you to add notes by defaitl tag u clicked to write notes.
+            let nextViewController = storyboard?.instantiateViewController(withIdentifier: "WriteNewNotes") as! addNotesViewController
+            nextViewController.isNewNote = true
+            nextViewController.notesFromDashboard = true
+            nextViewController.tagTypeInSelectedNotes = NoteType(rawValue: "temporary")
+            nextViewController.isdefault = false
+            self.navigationController?.pushViewController(nextViewController, animated: true)
         }
         
     }
@@ -131,7 +154,14 @@ class DashboardViewController: UIViewController {
         if NoteManager.shared.getImpNoteCount() > 0{
               showTableController(.important)
         }else{
-             performSegue(withIdentifier: "addNotes", sender: nil)
+            //performSegue(withIdentifier: "addNotes", sender: nil)
+            //when there are no notes available in table list when u click on any tag in dahsboard it will take you to add notes by defaitl tag u clicked to write notes.
+               let nextViewController = storyboard?.instantiateViewController(withIdentifier: "WriteNewNotes") as! addNotesViewController
+               nextViewController.isNewNote = true
+               nextViewController.notesFromDashboard = true
+               nextViewController.tagTypeInSelectedNotes = NoteType(rawValue: "important")
+               nextViewController.isdefault = false
+               self.navigationController?.pushViewController(nextViewController, animated: true)
         }
        
     }

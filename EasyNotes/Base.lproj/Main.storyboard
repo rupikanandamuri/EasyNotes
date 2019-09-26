@@ -1243,15 +1243,67 @@
                     <connections>
                         <outlet property="headerView" destination="umA-LI-QyB" id="aud-zJ-mV2"/>
                         <outlet property="headerViewHeightConstraint" destination="uTU-O4-zuK" id="Uav-Hw-GB9"/>
+                        <outlet property="temporaryButton" destination="u2H-07-X4I" id="4qy-HB-nYI"/>
                         <outlet property="textView" destination="xOQ-MC-5nz" id="eOH-fB-SCO"/>
+                        <outlet property="toolBar" destination="kW8-oj-d0A" id="bB9-B7-TE1"/>
                         <outlet property="underlineView" destination="nTU-wj-EXG" id="3aX-CT-hBX"/>
                         <outlet property="underlineViewLeadingConstraint" destination="UXv-4P-7pf" id="L0A-kI-g6S"/>
                         <segue destination="Vha-Da-gdG" kind="show" identifier="goToPassword" id="gmt-lW-iUe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EsL-2r-KQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="kW8-oj-d0A">
+                    <rect key="frame" x="0.0" y="0.0" width="488" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sT8-I7-hbU">
+                            <rect key="frame" x="60" y="9" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="BVL-pl-ouz"/>
+                                <constraint firstAttribute="width" constant="30" id="Rb0-KW-pQd"/>
+                            </constraints>
+                            <state key="normal" title="Rupig" image="bullet"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-9d-W7x">
+                            <rect key="frame" x="137" y="4" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="8DG-zr-WId"/>
+                                <constraint firstAttribute="height" constant="40" id="q02-Rl-4wn"/>
+                            </constraints>
+                            <state key="normal" title="Rupig" image="bold"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFI-Ky-OhH">
+                            <rect key="frame" x="311" y="4" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Nsd-rR-yBq"/>
+                                <constraint firstAttribute="height" constant="40" id="un0-Tu-fPg"/>
+                            </constraints>
+                            <state key="normal" title="Rupig" image="underline"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAb-3s-VCU">
+                            <rect key="frame" x="227" y="4" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="A2I-f6-Iaz"/>
+                                <constraint firstAttribute="height" constant="40" id="CyH-7L-4cr"/>
+                            </constraints>
+                            <state key="normal" title="Rupig" image="italic"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="UZu-9d-W7x" firstAttribute="leading" secondItem="sT8-I7-hbU" secondAttribute="trailing" constant="47" id="7Aj-2J-j6X"/>
+                        <constraint firstItem="yAb-3s-VCU" firstAttribute="leading" secondItem="UZu-9d-W7x" secondAttribute="trailing" constant="50" id="9NI-3j-Tmp"/>
+                        <constraint firstItem="sT8-I7-hbU" firstAttribute="leading" secondItem="gg9-XF-YCr" secondAttribute="leading" constant="60" id="S0G-BU-DiN"/>
+                        <constraint firstItem="cFI-Ky-OhH" firstAttribute="leading" secondItem="yAb-3s-VCU" secondAttribute="trailing" constant="44" id="SNm-M6-Pg0"/>
+                        <constraint firstItem="cFI-Ky-OhH" firstAttribute="centerY" secondItem="kW8-oj-d0A" secondAttribute="centerY" id="acI-gG-kxw"/>
+                        <constraint firstItem="UZu-9d-W7x" firstAttribute="centerY" secondItem="kW8-oj-d0A" secondAttribute="centerY" id="kVT-OL-nD7"/>
+                        <constraint firstItem="sT8-I7-hbU" firstAttribute="centerY" secondItem="kW8-oj-d0A" secondAttribute="centerY" id="lfv-Eu-AUL"/>
+                        <constraint firstItem="yAb-3s-VCU" firstAttribute="centerY" secondItem="kW8-oj-d0A" secondAttribute="centerY" id="mN2-JX-FcB"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="gg9-XF-YCr"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="1892" y="947"/>
+            <point key="canvasLocation" x="993" y="2314"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2ae-yJ-xCT">
@@ -1561,13 +1613,17 @@
     </scenes>
     <resources>
         <image name="add notes" width="114" height="114"/>
+        <image name="bold" width="50" height="50"/>
+        <image name="bullet" width="50" height="50"/>
         <image name="dashboard" width="32" height="32"/>
         <image name="diamond" width="93" height="93"/>
         <image name="error" width="87" height="93"/>
+        <image name="italic" width="50" height="50"/>
         <image name="more" width="72" height="72"/>
         <image name="more-detail" width="30" height="30"/>
         <image name="orange" width="987" height="159"/>
         <image name="settings" width="30" height="30"/>
+        <image name="underline" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FxF-bV-VEl"/>
