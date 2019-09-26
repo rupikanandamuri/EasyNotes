@@ -156,9 +156,9 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" {
-            textView.resignFirstResponder()
-            return false
+        
+        if text == "\n"{
+            adBulletButtonClicked()
         }
         return true
     }
@@ -230,6 +230,21 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         self.underlineView.backgroundColor = impColorForUnderline
         tagTypeInSelectedNotes = .important
     }
+    
+    func getNewLineStrings() -> [String]{
+        let noBullets = textView.text.replacingOccurrences(of: "\u{2022}", with: "")
+        let arr = noBullets.components(separatedBy: "\n")
+        var temp = [String]()
+        for str in arr{
+            if str == "" || str == " " || str == "  "{
+                
+            }else{
+                temp.append(str)
+            }
+        }
+        return temp
+    }
+    
     /*
      // MARK: - Navigation
      
@@ -243,17 +258,18 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     @IBAction func adBulletButtonClicked(){
         let attributesDictionary = [NSAttributedString.Key.font : textView.font]
         let fullAttributedString = NSMutableAttributedString(string: "", attributes: attributesDictionary as [NSAttributedString.Key : Any])
-        let convertTextToString = String(textView.text)
+        let convertTextToString = getNewLineStrings()
         for  string in convertTextToString
         {
-            let bulletPoint: String = "\u{2022}"
-            let formattedString: String = "\(bulletPoint) \(string)\n"
-            let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: formattedString)
-             
-            let paragraphStyle = createParagraphAttribute()
-            attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSMakeRange(0, attributedString.length))
-             
-            fullAttributedString.append(attributedString)
+                let bulletPoint: String = "\u{2022}"
+                let formattedString: String = "\(bulletPoint) \(string) \n"
+                let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: formattedString)
+                 
+                let paragraphStyle = createParagraphAttribute()
+                attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSMakeRange(0, attributedString.length))
+                 
+                fullAttributedString.append(attributedString)
+            
         }
          
         textView.attributedText = fullAttributedString

@@ -583,7 +583,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHf-W5-Qap">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idl-ct-uch" userLabel="first View">
                                                 <rect key="frame" x="0.0" y="60" width="64" height="5"/>
@@ -1270,34 +1270,34 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-9d-W7x" userLabel="bold">
-                            <rect key="frame" x="110" y="4" width="40" height="40"/>
+                            <rect key="frame" x="110" y="9" width="30" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="8DG-zr-WId"/>
-                                <constraint firstAttribute="height" constant="40" id="q02-Rl-4wn"/>
+                                <constraint firstAttribute="width" constant="30" id="8DG-zr-WId"/>
+                                <constraint firstAttribute="height" constant="30" id="q02-Rl-4wn"/>
                             </constraints>
                             <state key="normal" title="Rupig" image="bold"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFI-Ky-OhH" userLabel="italic">
-                            <rect key="frame" x="250" y="4" width="40" height="40"/>
+                            <rect key="frame" x="230" y="9" width="30" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="Nsd-rR-yBq"/>
-                                <constraint firstAttribute="height" constant="40" id="un0-Tu-fPg"/>
+                                <constraint firstAttribute="width" constant="30" id="Nsd-rR-yBq"/>
+                                <constraint firstAttribute="height" constant="30" id="un0-Tu-fPg"/>
                             </constraints>
                             <state key="normal" title="Rupig" image="underline"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAb-3s-VCU" userLabel="underline">
-                            <rect key="frame" x="180" y="4" width="40" height="40"/>
+                            <rect key="frame" x="170" y="9" width="30" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="A2I-f6-Iaz"/>
-                                <constraint firstAttribute="height" constant="40" id="CyH-7L-4cr"/>
+                                <constraint firstAttribute="width" constant="30" id="A2I-f6-Iaz"/>
+                                <constraint firstAttribute="height" constant="30" id="CyH-7L-4cr"/>
                             </constraints>
                             <state key="normal" title="Rupig" image="italic"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khB-sN-hvU" userLabel="timer">
-                            <rect key="frame" x="320" y="4" width="30" height="40"/>
+                            <rect key="frame" x="290" y="9" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="9Ld-cn-iU4"/>
-                                <constraint firstAttribute="height" constant="40" id="yY5-Ra-sBA"/>
+                                <constraint firstAttribute="height" constant="30" id="yY5-Ra-sBA"/>
                             </constraints>
                             <state key="normal" title="Button" image="timer"/>
                             <connections>
@@ -1486,7 +1486,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="RgY-0J-fjM">
-                                <rect key="frame" x="0.0" y="96" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="95.5" width="375" height="216"/>
                                 <connections>
                                     <action selector="datePickerClicked" destination="hyP-Zf-2NJ" eventType="valueChanged" id="Y7L-4G-D9i"/>
                                 </connections>
@@ -1728,7 +1728,7 @@
         <image name="underline" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FxF-bV-VEl"/>
+        <segue reference="6Rn-sb-8Eg"/>
         <segue reference="OEO-J5-APD"/>
         <segue reference="gmt-lW-iUe"/>
     </inferredMetricsTieBreakers>
