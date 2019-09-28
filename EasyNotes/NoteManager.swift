@@ -68,7 +68,6 @@ class NoteManager {
     }
     
     
-    
     func saveColor(_ color : UIColor, _ tag : String){
         UserDefaults.standard.set(color, forKey: tag)
     }
