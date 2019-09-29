@@ -82,7 +82,7 @@ class NoteManager {
     func addNote(_ note : Notes){
         //save in realm
         try! realm.write {
-            realm.add(note,update: false)
+            realm.add(note, update: .all)
         }
     }
     
@@ -92,7 +92,7 @@ class NoteManager {
             note.notes = notes
             //to get the date
             note.updatedDate = getCurrentDate()
-            realm.add(note,update: true)
+            realm.add(note,update: .modified)
         }
     }
     
