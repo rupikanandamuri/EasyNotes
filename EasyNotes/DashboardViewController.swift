@@ -176,14 +176,14 @@ class DashboardViewController: UIViewController {
     
     func getColorForTag(_ tag : NoteType) -> UIColor?{
         switch tag {
-        case .temporary:
-                 return temporaryView.backgroundColor
-        case .important:
-            return importantView.backgroundColor
-        case .work:
-            return workView.backgroundColor
-        case .personal :
-            return personalView.backgroundColor
+            case .temporary:
+                     return temporaryView.backgroundColor
+            case .important:
+                return importantView.backgroundColor
+            case .work:
+                return workView.backgroundColor
+            case .personal :
+                return personalView.backgroundColor
         }
     }
     
