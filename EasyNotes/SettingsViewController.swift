@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        datasource.append(Setting(title: "About", image: UIImage(named: "info")!))
         datasource.append(Setting(title: "Change Password", image: UIImage(named: "password")!))
         datasource.append(Setting(title: "Change Color", image: UIImage(named: "paint")!))
         datasource.append(Setting(title: "Notifications", image: UIImage(named: "notifications")!))
@@ -52,16 +53,19 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0{
+        if indexPath.row == 1{
             showPasswordView()
         }
         if indexPath.row == 1{
-            performSegue(withIdentifier: "showColorPicker", sender: nil)
+            showPasswordView()
         }
         if indexPath.row == 2{
-            
+            performSegue(withIdentifier: "showColorPicker", sender: nil)
         }
         if indexPath.row == 3{
+            
+        }
+        if indexPath.row == 4{
             
         }
     }
@@ -70,6 +74,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         let nextViewController = NoteManager.shared.getPersonalPasscodeVc()
         NoteManager.shared.changePasswordMode = true
         self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    func showAbout(){
+        
     }
 
 }
