@@ -22,7 +22,6 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     //to connect tool bar is a view  which is in the top of view controller
     @IBOutlet var toolBar : UIView!
     @IBOutlet var reminderButton : UIButton!
-    
     var myNote = Notes()
     var tagTypeInSelectedNotes : NoteType?
     var deletedButtonClicked = false
@@ -291,5 +290,92 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
       performSegue(withIdentifier: "Reminder", sender: nil)
         
     }
+    //to add Bold
+    @IBAction func boldButtonClicked(){
+        
+        if textView?.font?.isBold == true{
+            textView.font = UIFont.systemFont(ofSize: 16.0)
+        }else{
+            textView.font = UIFont.boldSystemFont(ofSize: 16.0)
+        }
+    }
+    @IBAction func italicButtonClicked(){
+         if textView?.font?.isItalic == true{
+                   textView.font = UIFont.systemFont(ofSize: 16.0)
+               }else{
+                   textView.font = UIFont.italicSystemFont(ofSize: 16.0)
+        }
+    }
+    
     
 }
+//extension to see whther text is bold or italic.
+
+extension UIFont {
+    
+    func withTraits(traits:UIFontDescriptor.SymbolicTraits) -> UIFont {
+        let descriptor = fontDescriptor.withSymbolicTraits(traits)
+        return UIFont(descriptor: descriptor!, size: 0) //size 0 means keep the size as it is
+    }
+    
+    var isBold: Bool {
+        return fontDescriptor.symbolicTraits.contains(.traitBold)
+    }
+
+    var isItalic: Bool {
+        return fontDescriptor.symbolicTraits.contains(.traitItalic)
+    }
+
+    func bold() -> UIFont {
+        return withTraits(traits: .traitBold)
+    }
+
+    func italic() -> UIFont {
+        return withTraits(traits: .traitItalic)
+    }
+//    func removeBold()-> UIFont {
+//        var symTraits = fontDescriptor.symbolicTraits
+//        symTraits.remove([.traitBold])
+//        let fontDescriptorVar = fontDescriptor.withSymbolicTraits(symTraits)
+//        return UIFont(descriptor: fontDescriptorVar!, size: 0)
+//   }
+//    func removeItalic()-> UIFont{
+//        var symTraits = fontDescriptor.symbolicTraits
+//        symTraits.remove([.traitItalic])
+//        let fontDescriptorVar = fontDescriptor.withSymbolicTraits(symTraits)
+//        return UIFont(descriptor: fontDescriptorVar!, size: 0)
+//    }
+}
+//extension UIFont {
+//    var isBold: Bool {
+//        return fontDescriptor.symbolicTraits.contains(.traitBold)
+//    }
+//
+//    var isItalic: Bool {
+//        return fontDescriptor.symbolicTraits.contains(.traitItalic)
+//    }
+//    func setBold() -> UIFont
+//    {
+//        if isBold {
+//            return self
+//        } else {
+//            var symTraits = fontDescriptor.symbolicTraits
+//            symTraits.insert([.traitBold])
+//            let fontDescriptorVar = fontDescriptor.withSymbolicTraits(symTraits)
+//            return UIFont(descriptor: fontDescriptorVar!, size: 0)
+//        }
+//    }
+//func removeBold()-> UIFont
+//    {
+//        if !isBold {
+//            return self
+//        } else {
+//            var symTraits = fontDescriptor.symbolicTraits
+//            symTraits.remove([.traitBold])
+//            let fontDescriptorVar = fontDescriptor.withSymbolicTraits(symTraits)
+//            return UIFont(descriptor: fontDescriptorVar!, size: 0)
+//        }
+//
+//    }
+//
+//}

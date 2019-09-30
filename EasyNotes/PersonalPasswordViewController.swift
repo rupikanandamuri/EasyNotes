@@ -58,9 +58,17 @@ class PersonalPasswordViewController: UIViewController,UITextFieldDelegate {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
          dataSource.removeAll()
+         addSecureToPassword()
+        
         
     }
-    
+    //add secure entry to text filed so that it will display * instaed of password
+    func addSecureToPassword(){
+        firstTextField.isSecureTextEntry = true
+        secondTextField.isSecureTextEntry = true
+        thirdTextField.isSecureTextEntry = true
+        fourthTextField.isSecureTextEntry = true
+    }
     func textAlignmetCenter(){
         firstTextField.textAlignment = .center
         firstTextField.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 48.0)

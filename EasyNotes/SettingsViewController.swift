@@ -53,8 +53,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 1{
-            showPasswordView()
+        if indexPath.row == 0{
+            performSegue(withIdentifier: "about", sender: nil)
         }
         if indexPath.row == 1{
             showPasswordView()
