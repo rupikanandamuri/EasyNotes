@@ -256,23 +256,27 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     //to add bullet
     @IBAction func adBulletButtonClicked(){
         let attributesDictionary = [NSAttributedString.Key.font : textView.font]
-        let fullAttributedString = NSMutableAttributedString(string: "", attributes: attributesDictionary as [NSAttributedString.Key : Any])
+        var fullAttributedString = NSMutableAttributedString(string: "", attributes: attributesDictionary as [NSAttributedString.Key : Any])
         let convertTextToString = getNewLineStrings()
         for  string in convertTextToString
         {
-                let bulletPoint: String = "\u{2022}"
-                let formattedString: String = "\(bulletPoint) \(string) \n"
-                let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: formattedString)
-                 
-                let paragraphStyle = createParagraphAttribute()
-                attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSMakeRange(0, attributedString.length))
-                 
-                fullAttributedString.append(attributedString)
-            
+            addBullet(&fullAttributedString, string)
         }
          
         textView.attributedText = fullAttributedString
     }
+    
+    
+    func addBullet(_ attrString : inout NSMutableAttributedString, _ str : String){
+        let bulletPoint: String = "\u{2022}"
+        let formattedString: String = "\(bulletPoint) \(str) \n"
+        let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: formattedString)
+         
+        let paragraphStyle = createParagraphAttribute()
+        attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSMakeRange(0, attributedString.length))
+        attrString.append(attributedString)
+    }
+    
     func createParagraphAttribute() ->NSParagraphStyle
        {
            var paragraphStyle: NSMutableParagraphStyle
@@ -292,90 +296,39 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     }
     //to add Bold
     @IBAction func boldButtonClicked(){
-        
         if textView?.font?.isBold == true{
-            textView.font = UIFont.systemFont(ofSize: 16.0)
+            textView.font = NoteManager.shared.noteFont
         }else{
-            textView.font = UIFont.boldSystemFont(ofSize: 16.0)
+            textView.font = NoteManager.shared.getBoldFont()
         }
     }
     @IBAction func italicButtonClicked(){
          if textView?.font?.isItalic == true{
-                   textView.font = UIFont.systemFont(ofSize: 16.0)
-               }else{
-                   textView.font = UIFont.italicSystemFont(ofSize: 16.0)
+            textView.font = NoteManager.shared.noteFont
+          }else{
+            textView.font = NoteManager.shared.getItalicFont()
         }
     }
     
+    @IBAction func increaseFontSize(){
+        NoteManager.shared.fontSize += 3
+        textView.font = UIFont(name: textView?.font?.fontName ?? "", size: NoteManager.shared.fontSize)
+    }
+    
+    @IBAction func decreaseFontSize(){
+        NoteManager.shared.fontSize -= 3
+        textView.font = UIFont(name: textView?.font?.fontName ?? "", size: NoteManager.shared.fontSize)
+    }
+    
+    func attributedText(withString string: String, boldString: String, font: UIFont) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: string,
+                                                     attributes: [NSAttributedString.Key.font: font])
+        let boldFontAttribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: font.pointSize)]
+        let range = (string as NSString).range(of: boldString)
+        attributedString.addAttributes(boldFontAttribute, range: range)
+        return attributedString
+    }
+    
     
 }
-//extension to see whther text is bold or italic.
 
-extension UIFont {
-    
-    func withTraits(traits:UIFontDescriptor.SymbolicTraits) -> UIFont {
-        let descriptor = fontDescriptor.withSymbolicTraits(traits)
-        return UIFont(descriptor: descriptor!, size: 0) //size 0 means keep the size as it is
-    }
-    
-    var isBold: Bool {
-        return fontDescriptor.symbolicTraits.contains(.traitBold)
-    }
-
-    var isItalic: Bool {
-        return fontDescriptor.symbolicTraits.contains(.traitItalic)
-    }
-
-    func bold() -> UIFont {
-        return withTraits(traits: .traitBold)
-    }
-
-    func italic() -> UIFont {
-        return withTraits(traits: .traitItalic)
-    }
-//    func removeBold()-> UIFont {
-//        var symTraits = fontDescriptor.symbolicTraits
-//        symTraits.remove([.traitBold])
-//        let fontDescriptorVar = fontDescriptor.withSymbolicTraits(symTraits)
-//        return UIFont(descriptor: fontDescriptorVar!, size: 0)
-//   }
-//    func removeItalic()-> UIFont{
-//        var symTraits = fontDescriptor.symbolicTraits
-//        symTraits.remove([.traitItalic])
-//        let fontDescriptorVar = fontDescriptor.withSymbolicTraits(symTraits)
-//        return UIFont(descriptor: fontDescriptorVar!, size: 0)
-//    }
-}
-//extension UIFont {
-//    var isBold: Bool {
-//        return fontDescriptor.symbolicTraits.contains(.traitBold)
-//    }
-//
-//    var isItalic: Bool {
-//        return fontDescriptor.symbolicTraits.contains(.traitItalic)
-//    }
-//    func setBold() -> UIFont
-//    {
-//        if isBold {
-//            return self
-//        } else {
-//            var symTraits = fontDescriptor.symbolicTraits
-//            symTraits.insert([.traitBold])
-//            let fontDescriptorVar = fontDescriptor.withSymbolicTraits(symTraits)
-//            return UIFont(descriptor: fontDescriptorVar!, size: 0)
-//        }
-//    }
-//func removeBold()-> UIFont
-//    {
-//        if !isBold {
-//            return self
-//        } else {
-//            var symTraits = fontDescriptor.symbolicTraits
-//            symTraits.remove([.traitBold])
-//            let fontDescriptorVar = fontDescriptor.withSymbolicTraits(symTraits)
-//            return UIFont(descriptor: fontDescriptorVar!, size: 0)
-//        }
-//
-//    }
-//
-//}
