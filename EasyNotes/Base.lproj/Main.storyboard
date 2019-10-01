@@ -1288,7 +1288,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
                                     <state key="normal" title="Rupig" image="bullet"/>
                                     <connections>
-                                        <action selector="adBulletButtonClicked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="m9g-Oa-SV6"/>
+                                        <action selector="adBulletButtonClicked:" destination="uLB-Nu-vzs" eventType="touchUpInside" id="inr-GQ-ZIy"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-9d-W7x" userLabel="bold">
@@ -1618,14 +1618,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tagCell" id="iSQ-qh-86k" customClass="TagCell" customModule="EasyNotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="120" height="40.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="120" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iSQ-qh-86k" id="MYC-nQ-Mhb">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="40.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK3-BC-J0I">
-                                                    <rect key="frame" x="15" y="11" width="90" height="18.5"/>
+                                                    <rect key="frame" x="15" y="11" width="90" height="18"/>
                                                     <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
