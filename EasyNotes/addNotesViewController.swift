@@ -37,6 +37,13 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         textView.text = myNote.notes
         
         textView.inputAccessoryView = toolBar
+        //to wrap last words
+        textView.textContainer.lineBreakMode = .byCharWrapping
+        //For scrolllling text view,I was able to achieve this by simply enabling alwaysBounceVertical, and making sure User interaction and scrolling was enabled.
+        textView.alwaysBounceVertical = true
+        textView.isUserInteractionEnabled = true
+        textView.isScrollEnabled = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -175,6 +182,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         
         //to get tag type when button is pressed.
         tagTypeInSelectedNotes = .personal
+        reminderButton.isHidden = true
         
         //        if contains(key: "password"){
         //
@@ -213,6 +221,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         self.underlineView.backgroundColor = workColorForUnderline
         //to get tag type when button is pressed.
         tagTypeInSelectedNotes = .work
+        reminderButton.isHidden = true
     }
     //temporary button clicked
     @IBAction func temporaryBUttonClciked(sender : UIButton){
@@ -221,6 +230,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         self.underlineView.backgroundColor = tempColorForUnderline
         //to get tag type when button is pressed.
         tagTypeInSelectedNotes = .temporary
+        reminderButton.isHidden = true
     }
     //imporatant button clicked
     @IBAction func importantButtonClciked(sender : UIButton){
@@ -228,6 +238,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         let impColorForUnderline = NoteManager.shared.getColor(NoteType.important.rawValue)
         self.underlineView.backgroundColor = impColorForUnderline
         tagTypeInSelectedNotes = .important
+        reminderButton.isHidden = false
     }
     
     func getNewLineStrings() -> [String]{

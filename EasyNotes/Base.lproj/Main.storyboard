@@ -1333,14 +1333,25 @@
                                     </connections>
                                 </button>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="yAb-3s-VCU" firstAttribute="height" secondItem="sT8-I7-hbU" secondAttribute="height" id="5YG-sI-oUR"/>
+                                <constraint firstItem="cFI-Ky-OhH" firstAttribute="width" secondItem="sT8-I7-hbU" secondAttribute="width" id="6px-Ma-pB3"/>
+                                <constraint firstItem="UZu-9d-W7x" firstAttribute="height" secondItem="sT8-I7-hbU" secondAttribute="height" id="9Ps-Al-HrM"/>
+                                <constraint firstItem="khB-sN-hvU" firstAttribute="height" secondItem="sT8-I7-hbU" secondAttribute="height" id="Jss-V1-Sh9"/>
+                                <constraint firstItem="khB-sN-hvU" firstAttribute="width" secondItem="sT8-I7-hbU" secondAttribute="width" id="LGF-EB-yf9"/>
+                                <constraint firstItem="cFI-Ky-OhH" firstAttribute="height" secondItem="sT8-I7-hbU" secondAttribute="height" id="hRc-YS-oTJ"/>
+                                <constraint firstItem="UZu-9d-W7x" firstAttribute="width" secondItem="sT8-I7-hbU" secondAttribute="width" id="tTU-t7-MbJ"/>
+                                <constraint firstItem="yAb-3s-VCU" firstAttribute="width" secondItem="sT8-I7-hbU" secondAttribute="width" id="xF3-fo-6By"/>
+                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
+                        <constraint firstItem="m6m-NP-SjO" firstAttribute="leading" secondItem="gg9-XF-YCr" secondAttribute="leading" constant="60" id="7vj-NW-aXA"/>
                         <constraint firstItem="m6m-NP-SjO" firstAttribute="leading" secondItem="gg9-XF-YCr" secondAttribute="leading" constant="60" id="8AG-FU-1zJ"/>
                         <constraint firstItem="gg9-XF-YCr" firstAttribute="bottom" secondItem="m6m-NP-SjO" secondAttribute="bottom" constant="10" id="G2B-Zg-Uza"/>
+                        <constraint firstItem="gg9-XF-YCr" firstAttribute="trailing" secondItem="m6m-NP-SjO" secondAttribute="trailing" constant="60" id="pKS-gR-aB7"/>
                         <constraint firstItem="m6m-NP-SjO" firstAttribute="top" secondItem="gg9-XF-YCr" secondAttribute="top" constant="10" id="uuq-7z-Ph5"/>
-                        <constraint firstItem="gg9-XF-YCr" firstAttribute="trailing" secondItem="m6m-NP-SjO" secondAttribute="trailing" constant="50" id="yOd-7E-AEv"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="gg9-XF-YCr"/>
                 </view>
