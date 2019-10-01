@@ -55,11 +55,13 @@ extension UIView{
     
     func applyBorderAndRadius(){
         self.layer.borderWidth = 2.0
-        self.layer.borderWidth = 2.0
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.layer.cornerRadius = 5.0
     }
     func applyRadius(){
         self.layer.cornerRadius = 5.0
+    }
+    func removeBorder(){
+         self.layer.borderWidth = 0
     }
 }

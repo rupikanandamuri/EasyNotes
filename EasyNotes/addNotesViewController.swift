@@ -31,6 +31,15 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     //to get make personal as default when it enter into add quick notes
     var isdefault = true
     
+    @IBOutlet var bulletButton : UIButton!
+    @IBOutlet var boldButton : UIButton!
+    @IBOutlet var italicButton : UIButton!
+    @IBOutlet var underlineButton : UIButton!
+    var bulletMode = false
+    var boldMode = false
+    var italicMode = false
+    var underlineMode = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.delegate = self
@@ -157,7 +166,8 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         if text == "\n"{
-            adBulletButtonClicked()
+            
+            adBulletButtonClicked(true)
         }
         return true
     }
@@ -254,9 +264,16 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
      }
      */
     //to add bullet
-    @IBAction func adBulletButtonClicked(){
-        let attributesDictionary = [NSAttributedString.Key.font : textView.font]
-        var fullAttributedString = NSMutableAttributedString(string: "", attributes: attributesDictionary as [NSAttributedString.Key : Any])
+    @IBAction func adBulletButtonClicked( _ newLine : Bool){
+        
+        bulletMode = bulletButton.isSelected
+        if bulletButton.isSelected{
+            bulletButton.applyBorderAndRadius()
+        }else{
+            bulletButton.removeBorder()
+        }
+        bulletButton.isSelected = !bulletButton.isSelected
+        var fullAttributedString = NSMutableAttributedString()
         let convertTextToString = getNewLineStrings()
         for  string in convertTextToString
         {
@@ -273,7 +290,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: formattedString)
          
         let paragraphStyle = createParagraphAttribute()
-        attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSMakeRange(0, attributedString.length))
+        attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle,NSAttributedString.Key.font : textView.font!], range: NSMakeRange(0, attributedString.length))
         attrString.append(attributedString)
     }
     
@@ -296,28 +313,60 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     }
     //to add Bold
     @IBAction func boldButtonClicked(){
-        if textView?.font?.isBold == true{
-            textView.font = NoteManager.shared.noteFont
-        }else{
-            textView.font = NoteManager.shared.getBoldFont()
+        boldButton.isSelected = !boldButton.isSelected
+        boldMode = boldButton.isSelected
+       if boldMode && italicMode{
+           boldButton.applyBorderAndRadius()
+          textView.font = NoteManager.shared.getBoldItalicFont()
+       }else if boldMode{
+           boldButton.applyBorderAndRadius()
+          textView.font = NoteManager.shared.getBoldFont()
+       }else if italicMode{
+           boldButton.removeBorder()
+           textView.font = NoteManager.shared.getItalicFont()
+       }else{
+            boldButton.removeBorder()
+            textView.font = NoteManager.shared.getNormalFont()
         }
+      
     }
+    
     @IBAction func italicButtonClicked(){
-         if textView?.font?.isItalic == true{
-            textView.font = NoteManager.shared.noteFont
-          }else{
-            textView.font = NoteManager.shared.getItalicFont()
+        italicButton.isSelected = !italicButton.isSelected
+        italicMode = italicButton.isSelected
+        
+         if boldMode && italicMode{
+            italicButton.applyBorderAndRadius()
+            textView.font = NoteManager.shared.getBoldItalicFont()
+         }else if italicMode{
+             italicButton.applyBorderAndRadius()
+             textView.font = NoteManager.shared.getItalicFont()
+         }else if boldMode{
+             italicButton.removeBorder()
+             textView.font = NoteManager.shared.getBoldFont()
+         }else{
+            italicButton.removeBorder()
+            textView.font = NoteManager.shared.getNormalFont()
         }
     }
     
     @IBAction func increaseFontSize(){
         NoteManager.shared.fontSize += 3
-        textView.font = UIFont(name: textView?.font?.fontName ?? "", size: NoteManager.shared.fontSize)
+        if boldMode{
+            textView.font = NoteManager.shared.getBoldFont()
+        }else{
+            textView.font = NoteManager.shared.getNormalFont()
+        }
+        
     }
     
     @IBAction func decreaseFontSize(){
         NoteManager.shared.fontSize -= 3
-        textView.font = UIFont(name: textView?.font?.fontName ?? "", size: NoteManager.shared.fontSize)
+        if boldMode{
+            textView.font = NoteManager.shared.getBoldFont()
+        }else{
+            textView.font = NoteManager.shared.getNormalFont()
+        }
     }
     
     func attributedText(withString string: String, boldString: String, font: UIFont) -> NSAttributedString {
@@ -331,4 +380,3 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     
     
 }
-

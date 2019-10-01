@@ -275,6 +275,10 @@ class NoteManager {
         return UIFont.systemFont(ofSize: fontSize).boldItalic()
     }
     
+    func getNormalFont() -> UIFont{
+        return UIFont.systemFont(ofSize: fontSize)
+    }
+    
     
     
 }

@@ -1260,12 +1260,16 @@
                         <viewLayoutGuide key="safeArea" id="OOw-Qf-rz1"/>
                     </view>
                     <connections>
+                        <outlet property="boldButton" destination="UZu-9d-W7x" id="7su-Rq-QV7"/>
+                        <outlet property="bulletButton" destination="sT8-I7-hbU" id="bdu-iZ-mOg"/>
                         <outlet property="headerView" destination="umA-LI-QyB" id="aud-zJ-mV2"/>
                         <outlet property="headerViewHeightConstraint" destination="uTU-O4-zuK" id="Uav-Hw-GB9"/>
+                        <outlet property="italicButton" destination="yAb-3s-VCU" id="oNs-6L-enJ"/>
                         <outlet property="reminderButton" destination="khB-sN-hvU" id="qNM-my-yVJ"/>
                         <outlet property="temporaryButton" destination="u2H-07-X4I" id="4qy-HB-nYI"/>
                         <outlet property="textView" destination="xOQ-MC-5nz" id="eOH-fB-SCO"/>
                         <outlet property="toolBar" destination="kW8-oj-d0A" id="bB9-B7-TE1"/>
+                        <outlet property="underlineButton" destination="cFI-Ky-OhH" id="18I-mt-e2v"/>
                         <outlet property="underlineView" destination="nTU-wj-EXG" id="3aX-CT-hBX"/>
                         <outlet property="underlineViewLeadingConstraint" destination="UXv-4P-7pf" id="L0A-kI-g6S"/>
                         <segue destination="Vha-Da-gdG" kind="show" identifier="goToPassword" id="gmt-lW-iUe"/>
@@ -1294,14 +1298,14 @@
                                         <action selector="boldButtonClicked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="k6Q-Lr-158"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAb-3s-VCU" userLabel="underline">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAb-3s-VCU" userLabel="italic">
                                     <rect key="frame" x="121.5" y="0.0" width="31" height="30"/>
                                     <state key="normal" title="Rupig" image="italic"/>
                                     <connections>
                                         <action selector="italicButtonClicked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="aom-1B-ifW"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFI-Ky-OhH" userLabel="italic">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFI-Ky-OhH" userLabel="underline">
                                     <rect key="frame" x="182.5" y="0.0" width="31" height="30"/>
                                     <state key="normal" title="Rupig" image="underline"/>
                                 </button>
