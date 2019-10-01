@@ -33,6 +33,17 @@ class NoteManager {
     var changePasswordMode : Bool = false
     var onBoardingFinished : Bool = false
     
+    var fontSize : CGFloat = 12{
+        didSet{
+            if fontSize < 12 {
+                fontSize = 12
+            }
+        }
+    }
+    
+    //Why I used lazy here?
+    lazy var noteFont = UIFont.systemFont(ofSize: fontSize)
+    
     //One time initialising the database , this need not be a singleton
     let realm = try! Realm()
     
@@ -250,4 +261,54 @@ class NoteManager {
        
     }
     
+    
+    // MARK: Font related code
+    func getBoldFont() -> UIFont{
+        return UIFont.systemFont(ofSize: fontSize).bold()
+    }
+    
+    func getItalicFont() -> UIFont{
+        return UIFont.systemFont(ofSize: fontSize).italic()
+    }
+    
+    func getBoldItalicFont() -> UIFont{
+        return UIFont.systemFont(ofSize: fontSize).boldItalic()
+    }
+    
+    func getNormalFont() -> UIFont{
+        return UIFont.systemFont(ofSize: fontSize)
+    }
+    
+    
+    
 }
+
+extension UIFont {
+    
+    func withTraits(traits:UIFontDescriptor.SymbolicTraits) -> UIFont {
+        let descriptor = fontDescriptor.withSymbolicTraits(traits)
+        return UIFont(descriptor: descriptor!, size: 0) //size 0 means keep the size as it is
+    }
+    
+    var isBold: Bool {
+        return fontDescriptor.symbolicTraits.contains(.traitBold)
+    }
+
+    var isItalic: Bool {
+        return fontDescriptor.symbolicTraits.contains(.traitItalic)
+    }
+
+    func bold() -> UIFont {
+        return withTraits(traits: .traitBold)
+    }
+
+    func italic() -> UIFont {
+        return withTraits(traits: .traitItalic)
+    }
+    
+    func boldItalic() -> UIFont {
+        return withTraits(traits: [.traitItalic, .traitBold])
+    }
+
+}
+
