@@ -64,15 +64,33 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         if isNewNote == false{
             headerViewHeightConstraint.constant = 0
             self.view.layoutIfNeeded()
+            //if reminder button is has to show on the top of keyboard for only important other than that tag it has to hide.
+            if tagTypeInSelectedNotes!.rawValue == "important"{
+                reminderButton.isHidden = false
+            }else{
+                reminderButton.isHidden = true
+            }
         }else if isNewNote == true &&  isAddNoteFromTable == true{
             //We get here when it is new note and add note cliked on table view
             headerViewHeightConstraint.constant = 0
             self.view.layoutIfNeeded()
+            //if reminder button is has to show on the top of keyboard for only important other than that tag it has to hide.
+            if tagTypeInSelectedNotes!.rawValue == "important"{
+                reminderButton.isHidden = false
+            }else{
+                reminderButton.isHidden = true
+            }
         }
         else if notesFromDashboard == true{
             //we got here from dashboard if there is no 
             headerViewHeightConstraint.constant = 0
             self.view.layoutIfNeeded()
+            //if reminder button is has to show on the top of keyboard for only important other than that tag it has to hide.
+            if tagTypeInSelectedNotes!.rawValue == "important"{
+                reminderButton.isHidden = false
+            }else{
+                reminderButton.isHidden = true
+            }
         }
         customiseNavBarButtons()
         

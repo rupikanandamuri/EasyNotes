@@ -1265,7 +1265,7 @@
                         <outlet property="headerView" destination="umA-LI-QyB" id="aud-zJ-mV2"/>
                         <outlet property="headerViewHeightConstraint" destination="uTU-O4-zuK" id="Uav-Hw-GB9"/>
                         <outlet property="italicButton" destination="yAb-3s-VCU" id="oNs-6L-enJ"/>
-                        <outlet property="reminderButton" destination="khB-sN-hvU" id="qNM-my-yVJ"/>
+                        <outlet property="reminderButton" destination="khB-sN-hvU" id="RN0-Rv-vMm"/>
                         <outlet property="temporaryButton" destination="u2H-07-X4I" id="4qy-HB-nYI"/>
                         <outlet property="textView" destination="xOQ-MC-5nz" id="eOH-fB-SCO"/>
                         <outlet property="toolBar" destination="kW8-oj-d0A" id="bB9-B7-TE1"/>
@@ -1282,49 +1282,49 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="m6m-NP-SjO">
-                            <rect key="frame" x="0.0" y="18" width="396" height="30"/>
+                            <rect key="frame" x="5" y="18" width="386" height="30"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sT8-I7-hbU" userLabel="bullet">
-                                    <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="29.5" height="30"/>
                                     <state key="normal" title="Rupig" image="bullet"/>
                                     <connections>
                                         <action selector="adBulletButtonClicked:" destination="uLB-Nu-vzs" eventType="touchUpInside" id="inr-GQ-ZIy"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-9d-W7x" userLabel="bold">
-                                    <rect key="frame" x="61" y="0.0" width="30.5" height="30"/>
+                                    <rect key="frame" x="59.5" y="0.0" width="29.5" height="30"/>
                                     <state key="normal" title="Rupig" image="bold"/>
                                     <connections>
                                         <action selector="boldButtonClicked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="k6Q-Lr-158"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAb-3s-VCU" userLabel="italic">
-                                    <rect key="frame" x="121.5" y="0.0" width="31" height="30"/>
+                                    <rect key="frame" x="119" y="0.0" width="29.5" height="30"/>
                                     <state key="normal" title="Rupig" image="italic"/>
                                     <connections>
                                         <action selector="italicButtonClicked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="aom-1B-ifW"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFI-Ky-OhH" userLabel="underline">
-                                    <rect key="frame" x="182.5" y="0.0" width="31" height="30"/>
+                                    <rect key="frame" x="178.5" y="0.0" width="29" height="30"/>
                                     <state key="normal" title="Rupig" image="underline"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khB-sN-hvU" userLabel="timer">
-                                    <rect key="frame" x="243.5" y="0.0" width="31" height="30"/>
+                                    <rect key="frame" x="237.5" y="0.0" width="29.5" height="30"/>
                                     <state key="normal" title="Button" image="timer"/>
                                     <connections>
-                                        <action selector="reminderButtonClicked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="Sth-zV-WBE"/>
+                                        <action selector="reminderButtonClicked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="ZUE-c7-7IM"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1b1-eL-tgx" userLabel="timer">
-                                    <rect key="frame" x="304.5" y="0.0" width="30.5" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1b1-eL-tgx" userLabel="zoom down">
+                                    <rect key="frame" x="297" y="0.0" width="29.5" height="30"/>
                                     <state key="normal" title="Button" image="small_font"/>
                                     <connections>
                                         <action selector="decreaseFontSize" destination="uLB-Nu-vzs" eventType="touchUpInside" id="ODZ-NW-KSZ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haa-tY-oP2" userLabel="timer">
-                                    <rect key="frame" x="365" y="0.0" width="31" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haa-tY-oP2" userLabel="zoom up">
+                                    <rect key="frame" x="356.5" y="0.0" width="29.5" height="30"/>
                                     <state key="normal" title="Button" image="large_font"/>
                                     <connections>
                                         <action selector="increaseFontSize" destination="uLB-Nu-vzs" eventType="touchUpInside" id="F95-UH-aF4"/>
@@ -1350,9 +1350,9 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="m6m-NP-SjO" firstAttribute="leading" secondItem="gg9-XF-YCr" secondAttribute="leading" id="8AG-FU-1zJ"/>
+                        <constraint firstItem="m6m-NP-SjO" firstAttribute="leading" secondItem="gg9-XF-YCr" secondAttribute="leading" constant="5" id="8AG-FU-1zJ"/>
                         <constraint firstItem="gg9-XF-YCr" firstAttribute="bottom" secondItem="m6m-NP-SjO" secondAttribute="bottom" id="G2B-Zg-Uza"/>
-                        <constraint firstItem="gg9-XF-YCr" firstAttribute="trailing" secondItem="m6m-NP-SjO" secondAttribute="trailing" id="yOd-7E-AEv"/>
+                        <constraint firstItem="gg9-XF-YCr" firstAttribute="trailing" secondItem="m6m-NP-SjO" secondAttribute="trailing" constant="5" id="yOd-7E-AEv"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="gg9-XF-YCr"/>
                 </view>
