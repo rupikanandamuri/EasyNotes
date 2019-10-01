@@ -20,8 +20,7 @@ class AboutViewController: UIViewController {
         displayText()
     }
     func displayText(){
-        textView.text = "Personal: The notes with personal tag are password protected. You can set password in two ways, while onboarding you can select password, if you skip that u can also select password when you are entering from Dashboard.\n \nWork : The note with work tag can share via email so that it will be easy to assign tasks. \n\nTemporary : The notes with temporary tag will be deleted automatically after 7 days,you can also call temporary notes as quick notes. \n\nImportant : The notes with important tag will get reminder depends up on the selected date or time by the user."
-        textView.font = UIFont.boldSystemFont(ofSize: 20)
+        textView.text = "Personal: The notes with personal tag are passcode protected. You can set passcode in two ways, while onboarding you can select passcode, if you skip that you may set it again before reading the personal notes. You can always change the passcode from the settings tab.\n \nWork : The notes with work tag can be shared via email or SMS. \n\nTemporary : The notes with temporary tag will be deleted automatically after 7 days,you can also call temporary notes as quick notes. \n\nImportant : The notes with important tag will get reminder depends up on the selected date or time by the user."
     }
 
     /*
