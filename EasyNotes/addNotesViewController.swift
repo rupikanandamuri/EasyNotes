@@ -47,6 +47,18 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         if myNote.isBolded {
             boldButtonClicked()
         }
+        if myNote.isItalic{
+            italicButtonClicked()
+        }
+        if myNote.isUnderLine{
+            underelineButtonClciked()
+        }
+        if myNote.isZommedUp{
+            increaseFontSize()
+        }
+        if myNote.isZoomedLow{
+            decreaseFontSize()
+        }
         textView.inputAccessoryView = toolBar
         //to wrap last words
         textView.textContainer.lineBreakMode = .byCharWrapping
@@ -169,7 +181,10 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
             //sending date to relame date
             myNote.dateCreated = NoteManager.shared.getCurrentDate()
             myNote.updatedDate = NoteManager.shared.getCurrentDate()
+            //here we are assigning the boldmode values to the relam database.
             myNote.isBolded = boldMode
+            myNote.isItalic = italicMode
+            myNote.isUnderLine = underlineMode
             //sending tag value to relam tag
             if let slectedTagForNote = tagTypeInSelectedNotes{
                 myNote.tag = slectedTagForNote.rawValue
@@ -315,7 +330,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         textView.attributedText = fullAttributedString
     }
     
-    
+   //to add bullet
     func addBullet(_ attrString : inout NSMutableAttributedString, _ str : String){
         let bulletPoint: String = "\u{2022}"
         let formattedString: String = "\(bulletPoint) \(str) \n"
@@ -337,6 +352,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     
            return paragraphStyle
        }
+    
     //to add reminder
     @IBAction func reminderButtonClicked(){
         
@@ -362,7 +378,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         }
       
     }
-    
+    //to add italic.
     @IBAction func italicButtonClicked(){
         italicButton.isSelected = !italicButton.isSelected
         italicMode = italicButton.isSelected
@@ -381,7 +397,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
             textView.font = NoteManager.shared.getNormalFont()
         }
     }
-    
+    //to zoom UP
     @IBAction func increaseFontSize(){
         NoteManager.shared.fontSize += 3
         if boldMode{
@@ -391,7 +407,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         }
         
     }
-    
+    //to zoom down
     @IBAction func decreaseFontSize(){
         NoteManager.shared.fontSize -= 3
         if boldMode{
@@ -413,7 +429,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
             //Here you are chaing font to normal, but the attributes text still stays same now we should change attributed text
         }
     }
-    
+    //underline func 
     func toaddUnderline(){
         let text = textView.text
         let textRange = NSRange(location: 0, length: (text?.count)!)

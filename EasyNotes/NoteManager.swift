@@ -282,7 +282,7 @@ class NoteManager {
     
     
 }
-
+//to check font is bold or italic.
 extension UIFont {
     
     func withTraits(traits:UIFontDescriptor.SymbolicTraits) -> UIFont {
