@@ -16,6 +16,7 @@ import RealmSwift
     @objc dynamic var updatedDate = ""
     @objc dynamic var expireDate = "" //By defualt we are giving empty string
     @objc dynamic var noteID = NSUUID().uuidString  // unique ID
+    @objc dynamic var isBolded = false
  
     override static func primaryKey() -> String? {
         return "noteID"

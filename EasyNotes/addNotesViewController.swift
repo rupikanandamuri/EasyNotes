@@ -44,7 +44,9 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         super.viewDidLoad()
         textView.delegate = self
         textView.text = myNote.notes
-        
+        if myNote.isBolded {
+            boldButtonClicked()
+        }
         textView.inputAccessoryView = toolBar
         //to wrap last words
         textView.textContainer.lineBreakMode = .byCharWrapping
@@ -167,6 +169,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
             //sending date to relame date
             myNote.dateCreated = NoteManager.shared.getCurrentDate()
             myNote.updatedDate = NoteManager.shared.getCurrentDate()
+            myNote.isBolded = boldMode
             //sending tag value to relam tag
             if let slectedTagForNote = tagTypeInSelectedNotes{
                 myNote.tag = slectedTagForNote.rawValue
@@ -396,6 +399,28 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         }else{
             textView.font = NoteManager.shared.getNormalFont()
         }
+    }
+    //for adding underline
+    @IBAction func underelineButtonClciked(){
+        underlineButton.isSelected = !underlineButton.isSelected
+        underlineMode = underlineButton.isSelected
+        if underlineMode {
+             toaddUnderline()
+        }else{
+            textView.font = NoteManager.shared.getNormalFont()
+            let attr = NSAttributedString(string: textView.text, attributes: [ : ])
+            textView.attributedText = attr
+            //Here you are chaing font to normal, but the attributes text still stays same now we should change attributed text
+        }
+    }
+    
+    func toaddUnderline(){
+        let text = textView.text
+        let textRange = NSRange(location: 0, length: (text?.count)!)
+        let attributedText = NSMutableAttributedString(string: text!)
+        attributedText.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: textRange)
+        textView.attributedText = attributedText
+        //Here you are setting attributed text to make it underline
     }
     
     func attributedText(withString string: String, boldString: String, font: UIFont) -> NSAttributedString {

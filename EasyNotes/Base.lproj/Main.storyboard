@@ -1308,6 +1308,9 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFI-Ky-OhH" userLabel="underline">
                                     <rect key="frame" x="178.5" y="0.0" width="29" height="30"/>
                                     <state key="normal" title="Rupig" image="underline"/>
+                                    <connections>
+                                        <action selector="underelineButtonClciked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="Asv-i1-Tkr"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khB-sN-hvU" userLabel="timer">
                                     <rect key="frame" x="237.5" y="0.0" width="29.5" height="30"/>
