@@ -32,7 +32,7 @@ class NoteManager {
     
     var changePasswordMode : Bool = false
     var onBoardingFinished : Bool = false
-    
+    var myNote = Notes()
     var fontSize : CGFloat = 12{
         didSet{
             if fontSize < 12 {
@@ -214,9 +214,8 @@ class NoteManager {
         let content = UNMutableNotificationContent()
         
         //adding title, subtitle, body and badge
-        content.title = "Hey this is Simplified iOS"
-        content.subtitle = "iOS Development is fun"
-        content.body = "We are learning about iOS Local Notification"
+        content.title = "Note Reminder"
+        content.subtitle = myNote.notes
         content.badge = 1
         
         //getting the notification trigger
@@ -251,7 +250,7 @@ class NoteManager {
         let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: repeats)
         
         //getting the notification request
-        let request = UNNotificationRequest(identifier: "SimplifiedIOSNotification", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "EasyNoteNotification", content: content, trigger: trigger)
         
         //adding the notification to notification center
         UNUserNotificationCenter.current().add(request) { (error) in

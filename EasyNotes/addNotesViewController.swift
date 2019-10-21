@@ -22,6 +22,8 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     //to connect tool bar is a view  which is in the top of view controller
     @IBOutlet var toolBar : UIView!
     @IBOutlet var reminderButton : UIButton!
+    //One time initialising the database , this need not be a singleton
+    let realm = try! Realm()
     var myNote = Notes()
     var tagTypeInSelectedNotes : NoteType?
     var deletedButtonClicked = false
@@ -35,6 +37,9 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     @IBOutlet var boldButton : UIButton!
     @IBOutlet var italicButton : UIButton!
     @IBOutlet var underlineButton : UIButton!
+    @IBOutlet var increaseSizeButton : UIButton!
+    @IBOutlet var decreaseSizeButton : UIButton!
+    
     var bulletMode = false
     var boldMode = false
     var italicMode = false
@@ -53,12 +58,8 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         if myNote.isUnderLine{
             underelineButtonClciked()
         }
-        if myNote.isZommedUp{
-            increaseFontSize()
-        }
-        if myNote.isZoomedLow{
-            decreaseFontSize()
-        }
+        updateFontSize(CGFloat(myNote.size))
+        
         textView.inputAccessoryView = toolBar
         //to wrap last words
         textView.textContainer.lineBreakMode = .byCharWrapping
@@ -66,7 +67,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         textView.alwaysBounceVertical = true
         textView.isUserInteractionEnabled = true
         textView.isScrollEnabled = true
-        
+        textView.becomeFirstResponder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -129,7 +130,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
                 let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonPressed))
                 self.navigationItem.rightBarButtonItems  = [clearBarButtonItem,shareButton]
             }
-           
+            
         }else{
             if isNewNote == true{
                 let clearBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearNotes))
@@ -140,7 +141,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
             }
         }
     }
-   
+    
     @objc func shareButtonPressed(){
         if let string = textView.text{
             let activityViewController =
@@ -177,19 +178,42 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     func addNote(){
         if let saveText = textView.text, saveText != " ", saveText.count > 0{
             //sending notes to relam notes class
-            myNote.notes = saveText
-            //sending date to relame date
-            myNote.dateCreated = NoteManager.shared.getCurrentDate()
-            myNote.updatedDate = NoteManager.shared.getCurrentDate()
-            //here we are assigning the boldmode values to the relam database.
-            myNote.isBolded = boldMode
-            myNote.isItalic = italicMode
-            myNote.isUnderLine = underlineMode
-            //sending tag value to relam tag
-            if let slectedTagForNote = tagTypeInSelectedNotes{
-                myNote.tag = slectedTagForNote.rawValue
-                myNote.expireDate = NoteManager.shared.getExpiryDate() ?? ""
+            
+            if realm.isInWriteTransaction{
+                myNote.notes = saveText
+                //sending date to relame date
+                myNote.dateCreated = NoteManager.shared.getCurrentDate()
+                myNote.updatedDate = NoteManager.shared.getCurrentDate()
+                //here we are assigning the boldmode values to the relam database.
+                myNote.isBolded = boldMode
+                myNote.isItalic = italicMode
+                myNote.isUnderLine = underlineMode
+                myNote.size =  Int(NoteManager.shared.fontSize)
+                //sending tag value to relam tag
+                if let slectedTagForNote = tagTypeInSelectedNotes{
+                    myNote.tag = slectedTagForNote.rawValue
+                    myNote.expireDate = NoteManager.shared.getExpiryDate() ?? ""
+                    NoteManager.shared.addNote(myNote)
+                }
+            }else{
+                try! realm.write {
+                    myNote.notes = saveText
+                    //sending date to relame date
+                    myNote.dateCreated = NoteManager.shared.getCurrentDate()
+                    myNote.updatedDate = NoteManager.shared.getCurrentDate()
+                    //here we are assigning the boldmode values to the relam database.
+                    myNote.isBolded = boldMode
+                    myNote.isItalic = italicMode
+                    myNote.isUnderLine = underlineMode
+                    myNote.size =  Int(NoteManager.shared.fontSize)
+                    //sending tag value to relam tag
+                    if let slectedTagForNote = tagTypeInSelectedNotes{
+                        myNote.tag = slectedTagForNote.rawValue
+                        myNote.expireDate = NoteManager.shared.getExpiryDate() ?? ""
+                    }
+                }
                 NoteManager.shared.addNote(myNote)
+                            
             }
         }
     }
@@ -263,7 +287,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     // work button clicked
     @IBAction func workButtonClciked(sender : UIButton){
         underlineViewLeadingConstraint.constant = sender.frame.origin.x + 20
-         let workColorForUnderline = NoteManager.shared.getColor(NoteType.work.rawValue)
+        let workColorForUnderline = NoteManager.shared.getColor(NoteType.work.rawValue)
         self.underlineView.backgroundColor = workColorForUnderline
         //to get tag type when button is pressed.
         tagTypeInSelectedNotes = .work
@@ -326,73 +350,73 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
         {
             addBullet(&fullAttributedString, string)
         }
-         
+        
         textView.attributedText = fullAttributedString
     }
     
-   //to add bullet
+    //to add bullet
     func addBullet(_ attrString : inout NSMutableAttributedString, _ str : String){
         let bulletPoint: String = "\u{2022}"
         let formattedString: String = "\(bulletPoint) \(str) \n"
         let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: formattedString)
-         
+        
         let paragraphStyle = createParagraphAttribute()
         attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle,NSAttributedString.Key.font : textView.font!], range: NSMakeRange(0, attributedString.length))
         attrString.append(attributedString)
     }
     
     func createParagraphAttribute() ->NSParagraphStyle
-       {
-           var paragraphStyle: NSMutableParagraphStyle
+    {
+        var paragraphStyle: NSMutableParagraphStyle
         paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: 15, options: NSDictionary() as! [NSTextTab.OptionKey : Any])]
-           paragraphStyle.defaultTabInterval = 15
-           paragraphStyle.firstLineHeadIndent = 0
-           paragraphStyle.headIndent = 15
-    
-           return paragraphStyle
-       }
+        paragraphStyle.defaultTabInterval = 15
+        paragraphStyle.firstLineHeadIndent = 0
+        paragraphStyle.headIndent = 15
+        
+        return paragraphStyle
+    }
     
     //to add reminder
     @IBAction func reminderButtonClicked(){
         
-      performSegue(withIdentifier: "Reminder", sender: nil)
+        performSegue(withIdentifier: "Reminder", sender: nil)
         
     }
     //to add Bold
     @IBAction func boldButtonClicked(){
         boldButton.isSelected = !boldButton.isSelected
         boldMode = boldButton.isSelected
-       if boldMode && italicMode{
-           boldButton.applyBorderAndRadius()
-          textView.font = NoteManager.shared.getBoldItalicFont()
-       }else if boldMode{
-           boldButton.applyBorderAndRadius()
-          textView.font = NoteManager.shared.getBoldFont()
-       }else if italicMode{
-           boldButton.removeBorder()
-           textView.font = NoteManager.shared.getItalicFont()
-       }else{
+        if boldMode && italicMode{
+            boldButton.applyBorderAndRadius()
+            textView.font = NoteManager.shared.getBoldItalicFont()
+        }else if boldMode{
+            boldButton.applyBorderAndRadius()
+            textView.font = NoteManager.shared.getBoldFont()
+        }else if italicMode{
+            boldButton.removeBorder()
+            textView.font = NoteManager.shared.getItalicFont()
+        }else{
             boldButton.removeBorder()
             textView.font = NoteManager.shared.getNormalFont()
         }
-      
+        
     }
     //to add italic.
     @IBAction func italicButtonClicked(){
         italicButton.isSelected = !italicButton.isSelected
         italicMode = italicButton.isSelected
         
-         if boldMode && italicMode{
+        if boldMode && italicMode{
             italicButton.applyBorderAndRadius()
             textView.font = NoteManager.shared.getBoldItalicFont()
-         }else if italicMode{
-             italicButton.applyBorderAndRadius()
-             textView.font = NoteManager.shared.getItalicFont()
-         }else if boldMode{
-             italicButton.removeBorder()
-             textView.font = NoteManager.shared.getBoldFont()
-         }else{
+        }else if italicMode{
+            italicButton.applyBorderAndRadius()
+            textView.font = NoteManager.shared.getItalicFont()
+        }else if boldMode{
+            italicButton.removeBorder()
+            textView.font = NoteManager.shared.getBoldFont()
+        }else{
             italicButton.removeBorder()
             textView.font = NoteManager.shared.getNormalFont()
         }
@@ -416,12 +440,21 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
             textView.font = NoteManager.shared.getNormalFont()
         }
     }
+    
+    func updateFontSize(_ size : CGFloat){
+        NoteManager.shared.fontSize = size
+        if boldMode{
+            textView.font = NoteManager.shared.getBoldFont()
+        }else{
+            textView.font = NoteManager.shared.getNormalFont()
+        }
+    }
     //for adding underline
     @IBAction func underelineButtonClciked(){
         underlineButton.isSelected = !underlineButton.isSelected
         underlineMode = underlineButton.isSelected
         if underlineMode {
-             toaddUnderline()
+            toaddUnderline()
         }else{
             textView.font = NoteManager.shared.getNormalFont()
             let attr = NSAttributedString(string: textView.text, attributes: [ : ])
@@ -441,7 +474,7 @@ class addNotesViewController: UIViewController,UITextViewDelegate {
     
     func attributedText(withString string: String, boldString: String, font: UIFont) -> NSAttributedString {
         let attributedString = NSMutableAttributedString(string: string,
-                                                     attributes: [NSAttributedString.Key.font: font])
+                                                         attributes: [NSAttributedString.Key.font: font])
         let boldFontAttribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: font.pointSize)]
         let range = (string as NSString).range(of: boldString)
         attributedString.addAttributes(boldFontAttribute, range: range)

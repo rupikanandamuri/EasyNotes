@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EXA-Mh-Tl0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EXA-Mh-Tl0">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1262,8 +1262,10 @@
                     <connections>
                         <outlet property="boldButton" destination="UZu-9d-W7x" id="7su-Rq-QV7"/>
                         <outlet property="bulletButton" destination="sT8-I7-hbU" id="bdu-iZ-mOg"/>
+                        <outlet property="decreaseSizeButton" destination="1b1-eL-tgx" id="ds3-fH-fxv"/>
                         <outlet property="headerView" destination="umA-LI-QyB" id="aud-zJ-mV2"/>
                         <outlet property="headerViewHeightConstraint" destination="uTU-O4-zuK" id="Uav-Hw-GB9"/>
+                        <outlet property="increaseSizeButton" destination="haa-tY-oP2" id="y30-oQ-QPN"/>
                         <outlet property="italicButton" destination="yAb-3s-VCU" id="oNs-6L-enJ"/>
                         <outlet property="reminderButton" destination="khB-sN-hvU" id="RN0-Rv-vMm"/>
                         <outlet property="temporaryButton" destination="u2H-07-X4I" id="4qy-HB-nYI"/>
@@ -1621,14 +1623,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tagCell" id="iSQ-qh-86k" customClass="TagCell" customModule="EasyNotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="120" height="40"/>
+                                        <rect key="frame" x="0.0" y="28" width="120" height="40.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iSQ-qh-86k" id="MYC-nQ-Mhb">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="40.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK3-BC-J0I">
-                                                    <rect key="frame" x="15" y="11" width="90" height="18"/>
+                                                    <rect key="frame" x="15" y="11" width="90" height="18.5"/>
                                                     <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

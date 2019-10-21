@@ -155,6 +155,7 @@ class ConfirmPasswordViewController: UIViewController,UITextFieldDelegate {
     @IBAction func continueButtonClicked(){
         
         if NoteManager.shared.changePasswordMode{
+            NoteManager.shared.changePasswordMode = false
              self.navigationController?.popToRootViewController(animated: true)
         }else{
             if navigationController?.viewControllers[1] is OnboardingPage2ViewController && navigationController?.viewControllers.count             == 4{

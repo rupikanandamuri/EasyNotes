@@ -19,8 +19,7 @@ import RealmSwift
     @objc dynamic var isBolded = false
     @objc dynamic var isItalic = false
     @objc dynamic var isUnderLine = false
-    @objc dynamic var isZommedUp = false
-    @objc dynamic var isZoomedLow = false
+    @objc dynamic var size = 0
     override static func primaryKey() -> String? {
         return "noteID"
     }

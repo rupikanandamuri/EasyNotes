@@ -25,6 +25,8 @@ class ColorPickerController: UIViewController, UITableViewDelegate, UITableViewD
 
         // Do any additional setup after loading the view.
         loadColorPalette()
+        primaryColorListView.isHidden = true
+        secondaryColorListView.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -114,10 +116,10 @@ class ColorPickerController: UIViewController, UITableViewDelegate, UITableViewD
                     cell.tagName.text = NoteType.personal.rawValue
                 }
                 if indexPath.row == 1{
-                    cell.tagName.text = NoteType.temporary.rawValue
+                    cell.tagName.text = NoteType.work.rawValue
                 }
                 if indexPath.row == 2{
-                     cell.tagName.text = NoteType.work.rawValue
+                     cell.tagName.text = NoteType.temporary.rawValue
                 }
                 if indexPath.row == 3{
                      cell.tagName.text = NoteType.important.rawValue
@@ -162,6 +164,8 @@ class ColorPickerController: UIViewController, UITableViewDelegate, UITableViewD
             if let cell = tableView.cellForRow(at: indexPath) as? TagCell{
                 cell.contentView.applyBorderAndRadius()
                 tagSelected = cell.tagName.text
+                primaryColorListView.isHidden = false
+                secondaryColorListView.isHidden = false
             }
         }
         if tableView == primaryColorListView{

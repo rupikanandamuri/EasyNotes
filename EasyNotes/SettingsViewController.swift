@@ -63,7 +63,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             performSegue(withIdentifier: "showColorPicker", sender: nil)
         }
         if indexPath.row == 3{
-            
+            //to allow notifcation nif user not allowed when app launched.
+            UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
         }
         if indexPath.row == 4{
             
@@ -74,9 +75,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         let nextViewController = NoteManager.shared.getPersonalPasscodeVc()
         NoteManager.shared.changePasswordMode = true
         self.navigationController?.pushViewController(nextViewController, animated: true)
-    }
-    func showAbout(){
-        
     }
 
 }
