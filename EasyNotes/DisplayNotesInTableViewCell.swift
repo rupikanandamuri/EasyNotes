@@ -17,10 +17,14 @@ class DisplayNotesInTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet var dateLabel : UILabel!
-    @IBOutlet var viewBackgroundColor : UIView!
+    @IBOutlet var viewBackground : UIView!
+    @IBOutlet var mainBackgroundColor : UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        if traitCollection.userInterfaceStyle == .dark{
+            mainBackgroundColor.backgroundColor = UIColor(red: 22/255, green: 16/255, blue: 20/255, alpha: 1.0)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

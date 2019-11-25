@@ -37,6 +37,13 @@ class OnboardingPageViewController: UIViewController {
         thirdView.layer.borderWidth = 2.0
         thirdView.layer.borderColor = UIColor.lightGray.cgColor
         thirdView.layer.cornerRadius = 5
+        
+        //to change color in dark mode for the views
+        if traitCollection.userInterfaceStyle == .dark{
+                   firstView.layer.backgroundColor = UIColor(red: 168/255, green: 168/255, blue: 168/255, alpha: 1.0).cgColor
+                   secondView.layer.backgroundColor = UIColor(red: 168/255, green: 168/255, blue: 168/255, alpha: 1.0).cgColor
+                   thirdView.backgroundColor = UIColor(red: 168/255, green: 168/255, blue: 168/255, alpha: 1.0)
+               }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

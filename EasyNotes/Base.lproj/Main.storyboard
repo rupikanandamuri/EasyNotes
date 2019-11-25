@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EXA-Mh-Tl0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EXA-Mh-Tl0">
     <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,11 +58,10 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories your notes instantly." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXO-Bj-SJD">
                                         <rect key="frame" x="70" y="18.5" width="185" height="43.5"/>
                                         <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="18"/>
-                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="A9J-uT-I6Z"/>
                                     <constraint firstAttribute="bottom" secondItem="IKM-c1-iAK" secondAttribute="bottom" constant="25" id="CJN-rJ-nID"/>
@@ -86,11 +85,10 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatic temporary note deletion." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i89-0c-qPo">
                                         <rect key="frame" x="70" y="18.5" width="185" height="43.5"/>
                                         <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="18"/>
-                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="i89-0c-qPo" firstAttribute="centerY" secondItem="a95-br-W1X" secondAttribute="centerY" id="7Ug-ry-7ce"/>
                                     <constraint firstAttribute="trailing" secondItem="i89-0c-qPo" secondAttribute="trailing" constant="20" id="Osm-Vx-qfH"/>
@@ -114,12 +112,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Never worry about  forgetting  something  important." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCM-EH-sBp">
                                         <rect key="frame" x="70" y="7.5" width="185" height="65"/>
                                         <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="18"/>
-                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="czH-I6-57F" firstAttribute="top" secondItem="eca-b3-PAi" secondAttribute="top" constant="25" id="0r5-gs-jYf"/>
                                     <constraint firstAttribute="bottom" secondItem="czH-I6-57F" secondAttribute="bottom" constant="25" id="6bw-Rm-wjN"/>
@@ -421,7 +418,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="RkZ-EP-tbc" firstAttribute="top" secondItem="lQo-gz-lvv" secondAttribute="bottom" id="4k9-PP-Ebd"/>
                                             <constraint firstItem="lQo-gz-lvv" firstAttribute="top" secondItem="Wr1-qc-YvJ" secondAttribute="top" id="5Vq-Pt-I1N"/>
@@ -451,7 +448,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="jx3-Sb-aVj" firstAttribute="top" secondItem="jld-Tv-zx2" secondAttribute="top" id="UEi-It-ORx"/>
                                             <constraint firstItem="jx3-Sb-aVj" firstAttribute="leading" secondItem="jld-Tv-zx2" secondAttribute="leading" id="Un5-Lq-7c4"/>
@@ -481,7 +478,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="UrQ-Sl-eFa" secondAttribute="bottom" id="JsH-Tl-Ri9"/>
                                             <constraint firstItem="UrQ-Sl-eFa" firstAttribute="top" secondItem="b3o-iq-ZCe" secondAttribute="bottom" id="bX5-l9-pMd"/>
@@ -511,7 +508,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="QcI-ae-aKg" firstAttribute="leading" secondItem="PeK-pn-B3e" secondAttribute="leading" id="80A-AV-1VR"/>
                                             <constraint firstAttribute="bottom" secondItem="bGV-SL-nRY" secondAttribute="bottom" id="I2t-29-FYM"/>
@@ -620,7 +617,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="hHf-W5-Qap" firstAttribute="leading" secondItem="OMz-hu-QZn" secondAttribute="leading" id="9TN-fw-luq"/>
                                             <constraint firstItem="idl-ct-uch" firstAttribute="top" secondItem="hHf-W5-Qap" secondAttribute="bottom" id="EMH-jJ-LqC"/>
@@ -647,7 +644,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="R4j-MO-nn9" firstAttribute="leading" secondItem="qEu-Tf-NT9" secondAttribute="leading" id="3XU-T1-fE8"/>
                                             <constraint firstItem="dTF-dW-9oE" firstAttribute="leading" secondItem="qEu-Tf-NT9" secondAttribute="leading" id="Fkc-lU-5xo"/>
@@ -674,7 +671,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="OFe-YW-HCr" secondAttribute="trailing" id="Cub-Wc-goc"/>
                                             <constraint firstItem="OFe-YW-HCr" firstAttribute="top" secondItem="QrQ-Ky-ZIp" secondAttribute="bottom" id="Lww-7e-pCi"/>
@@ -701,7 +698,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="2Xp-4K-UgT" firstAttribute="top" secondItem="p27-WO-zcb" secondAttribute="bottom" id="0Q5-Xp-dVS"/>
                                             <constraint firstAttribute="trailing" secondItem="2Xp-4K-UgT" secondAttribute="trailing" id="2B3-Ce-3Nj"/>
@@ -1047,7 +1044,7 @@
                                             <constraint firstAttribute="width" constant="40" id="VMF-in-GeD"/>
                                             <constraint firstAttribute="height" constant="40" id="xLa-wL-Z9J"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="add notes"/>
+                                        <state key="normal" image="add notes"/>
                                         <connections>
                                             <action selector="addNotesButtonClicked" destination="vXH-YJ-1m1" eventType="touchUpInside" id="HX4-Qy-SFu"/>
                                         </connections>
@@ -1118,7 +1115,7 @@
                                     <constraint firstAttribute="width" constant="30" id="1ad-bc-6DU"/>
                                     <constraint firstAttribute="height" constant="30" id="Ex1-hq-Kgh"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="add notes"/>
+                                <state key="normal" image="add notes"/>
                                 <connections>
                                     <action selector="addNotesButtonClicked" destination="076-FO-wFd" eventType="touchUpInside" id="8J6-hH-9NM"/>
                                 </connections>
@@ -1299,49 +1296,49 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sT8-I7-hbU" userLabel="bullet">
                                     <rect key="frame" x="0.0" y="0.0" width="29.5" height="30"/>
-                                    <state key="normal" title="Rupig" image="bullet"/>
+                                    <state key="normal" image="bullet"/>
                                     <connections>
                                         <action selector="adBulletButtonClicked:" destination="uLB-Nu-vzs" eventType="touchUpInside" id="inr-GQ-ZIy"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-9d-W7x" userLabel="bold">
                                     <rect key="frame" x="59.5" y="0.0" width="29.5" height="30"/>
-                                    <state key="normal" title="Rupig" image="bold"/>
+                                    <state key="normal" image="bold"/>
                                     <connections>
                                         <action selector="boldButtonClicked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="k6Q-Lr-158"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAb-3s-VCU" userLabel="italic">
                                     <rect key="frame" x="119" y="0.0" width="29.5" height="30"/>
-                                    <state key="normal" title="Rupig" image="italic"/>
+                                    <state key="normal" image="italic"/>
                                     <connections>
                                         <action selector="italicButtonClicked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="aom-1B-ifW"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFI-Ky-OhH" userLabel="underline">
                                     <rect key="frame" x="178.5" y="0.0" width="29" height="30"/>
-                                    <state key="normal" title="Rupig" image="underline"/>
+                                    <state key="normal" image="underline"/>
                                     <connections>
                                         <action selector="underelineButtonClciked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="Asv-i1-Tkr"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khB-sN-hvU" userLabel="timer">
                                     <rect key="frame" x="237.5" y="0.0" width="29.5" height="30"/>
-                                    <state key="normal" title="Button" image="timer"/>
+                                    <state key="normal" image="timer"/>
                                     <connections>
                                         <action selector="reminderButtonClicked" destination="uLB-Nu-vzs" eventType="touchUpInside" id="ZUE-c7-7IM"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1b1-eL-tgx" userLabel="zoom down">
                                     <rect key="frame" x="297" y="0.0" width="29.5" height="30"/>
-                                    <state key="normal" title="Button" image="small_font"/>
+                                    <state key="normal" image="small_font"/>
                                     <connections>
                                         <action selector="decreaseFontSize" destination="uLB-Nu-vzs" eventType="touchUpInside" id="ODZ-NW-KSZ"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haa-tY-oP2" userLabel="zoom up">
                                     <rect key="frame" x="356.5" y="0.0" width="29.5" height="30"/>
-                                    <state key="normal" title="Button" image="large_font"/>
+                                    <state key="normal" image="large_font"/>
                                     <connections>
                                         <action selector="increaseFontSize" destination="uLB-Nu-vzs" eventType="touchUpInside" id="F95-UH-aF4"/>
                                     </connections>
@@ -1809,8 +1806,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add notes" width="114" height="114"/>
-        <image name="bold" width="50" height="50"/>
+        <image name="add notes" width="57" height="57"/>
+        <image name="bold" width="25" height="25"/>
         <image name="bullet" width="50" height="50"/>
         <image name="dashboard" width="32" height="32"/>
         <image name="diamond" width="93" height="93"/>
@@ -1826,8 +1823,8 @@
         <image name="underline" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FxF-bV-VEl"/>
-        <segue reference="Aaa-HD-ab3"/>
+        <segue reference="6Rn-sb-8Eg"/>
+        <segue reference="OEO-J5-APD"/>
         <segue reference="gmt-lW-iUe"/>
     </inferredMetricsTieBreakers>
 </document>

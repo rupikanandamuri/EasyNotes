@@ -52,7 +52,7 @@ class NoteListInTableViewController: UIViewController,UITableViewDelegate,UITabl
         if let selectedNote = dataSource?[indexPath.row]{
               cell.notesFirstLabel.text = selectedNote.notes
               cell.dateLabel.text = selectedNote.dateCreated
-              cell.viewBackgroundColor.backgroundColor = tagColor
+              cell.viewBackground.backgroundColor = tagColor
         }
       
         return cell
